@@ -1,0 +1,159 @@
+/* ======================================================================
+   Professional / Light Branding — Yaqeen Institute-Inspired
+   Applied when: data-layout="professional" on <html>
+   ====================================================================== */
+
+[data-layout="professional"] {
+  --pro-bg: #FAFAF7;
+  --pro-surface: #FFFFFF;
+  --pro-text: #1A1A2E;
+  --pro-text-muted: #6B7280;
+  --pro-accent: #2C6E49;
+  --pro-accent-hover: #1B5E3A;
+  --pro-accent-light: #E8F5EE;
+  --pro-border: #E5E7EB;
+  --pro-gold: #C8A951;
+  --pro-nav-bg: #FFFFFF;
+  --pro-nav-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --pro-hero-bg: #1A1A2E;
+}
+
+/* ---- Scrollbar overrides for professional mode ---- */
+[data-layout="professional"] ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+[data-layout="professional"] ::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+}
+
+[data-layout="professional"] ::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* ---- Container ---- */
+.pro-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .pro-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ---- Cards ---- */
+.pro-card {
+  background: var(--pro-surface);
+  border: 1px solid var(--pro-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.pro-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+
+/* ---- Section ---- */
+.pro-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* ---- Headings ---- */
+.pro-heading {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 700;
+  color: var(--pro-text);
+  line-height: 1.2;
+}
+
+/* ---- Badge ---- */
+.pro-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--pro-accent-light);
+  color: var(--pro-accent);
+}
+
+/* ---- Button ---- */
+.pro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pro-btn-primary {
+  background: var(--pro-accent);
+  color: white;
+}
+
+.pro-btn-primary:hover {
+  background: var(--pro-accent-hover);
+}
+
+.pro-btn-outline {
+  background: transparent;
+  color: var(--pro-accent);
+  border: 1.5px solid var(--pro-accent);
+}
+
+.pro-btn-outline:hover {
+  background: var(--pro-accent-light);
+}
+
+/* ---- Glass morphism override (disable in professional mode) ---- */
+[data-layout="professional"] .glass {
+  background: var(--pro-surface);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--pro-border);
+}
+
+/* ---- Gold gradient text override ---- */
+[data-layout="professional"] .text-gold-gradient {
+  background: linear-gradient(135deg, var(--pro-accent), var(--pro-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Gold button override ---- */
+[data-layout="professional"] .btn-gold {
+  background: var(--pro-accent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(44,110,73,0.2);
+}
+
+[data-layout="professional"] .btn-gold:hover {
+  background: var(--pro-accent-hover);
+  box-shadow: 0 4px 16px rgba(44,110,73,0.3);
+}
+
+/* ---- Sidebar offset not needed in professional mode ---- */
+[data-layout="professional"] .sidebar-offset {
+  margin-left: 0 !important;
+}
+
+/* ---- Hide fixed dark backgrounds in professional mode ---- */
+[data-layout="professional"] .dark-bg-overlay {
+  display: none !important;
+}

@@ -1,0 +1,41 @@
+/* ======================================================================
+   Theme: Dark Mode — "Living Light" Direction
+
+   Dark mode inverts surfaces and text while preserving brand warmth.
+   Applied via data-theme="dark" on <html>.
+   ====================================================================== */
+
+[data-theme="dark"] {
+  /* ── Surfaces ── */
+  --color-surface-page: 18 22 42;           /* #12162A  Deep Navy */
+  --color-surface-card: 24 28 52;           /* #181C34 */
+  --color-surface-elevated: 32 36 62;       /* #20243E */
+  --color-surface-subtle: 14 18 34;         /* #0E1222 */
+
+  /* ── Text ── */
+  --color-text-heading: 248 244 236;        /* #F8F4EC  Warm white */
+  --color-text-body: 220 214 204;           /* #DCD6CC */
+  --color-text-muted: 140 134 124;          /* #8C867C */
+  --color-text-inverse: 44 36 24;           /* #2C2418 */
+  --color-text-quranic: 168 210 192;        /* #A8D2C0  Lighter teal */
+
+  /* ── Borders ── */
+  --color-border-default: 50 54 78;         /* #32364E */
+  --color-border-subtle: 36 40 62;          /* #24283E */
+
+  /* ── Interactive ── */
+  --color-interactive-muted: 36 40 62;      /* #24283E */
+
+  /* ── Semantic (darker variants for dark mode) ── */
+  --color-semantic-success-light: 26 46 36;
+  --color-semantic-warning-light: 52 40 22;
+  --color-semantic-error-light: 52 28 28;
+  --color-semantic-info-light: 22 36 52;
+
+  /* ── Shadows (stronger in dark mode) ── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 30px rgba(184, 149, 106, 0.2);
+}

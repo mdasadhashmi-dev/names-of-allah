@@ -1,0 +1,12 @@
+/* Color Scheme: Green */
+[data-scheme="green"] {
+  --color-brand-primary: 102 204 153;
+  --color-brand-secondary: 128 217 179;
+  --color-brand-accent: 80 180 130;
+  --color-interactive-primary: 102 204 153;
+  --color-interactive-hover: 82 184 133;
+  --color-interactive-pressed: 62 164 113;
+  --color-border-focus: 102 204 153;
+  --gradient-brand: linear-gradient(135deg, rgb(208 248 228), rgb(180 240 210));
+  --gradient-brand-strong: linear-gradient(135deg, rgb(102 204 153), rgb(82 184 133));
+}

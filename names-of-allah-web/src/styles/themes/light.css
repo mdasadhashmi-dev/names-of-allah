@@ -1,0 +1,44 @@
+/* ======================================================================
+   Theme: Light Mode — "Living Light" Direction
+
+   Light mode is the default. This file exists for explicit overrides
+   when data-theme="light" to ensure consistency.
+   ====================================================================== */
+
+[data-theme="light"] {
+  /* Light is the default defined in tokens/colors.css.
+     These are explicit resets for when switching from dark to light. */
+
+  /* ── Surfaces ── */
+  --color-surface-page: 254 252 248;
+  --color-surface-card: 255 255 255;
+  --color-surface-elevated: 255 255 255;
+  --color-surface-subtle: 248 244 236;
+
+  /* ── Text ── */
+  --color-text-heading: 44 36 24;
+  --color-text-body: 64 56 44;
+  --color-text-muted: 140 130 116;
+  --color-text-inverse: 254 252 248;
+  --color-text-quranic: 26 74 58;
+
+  /* ── Borders ── */
+  --color-border-default: 230 224 214;
+  --color-border-subtle: 240 236 228;
+
+  /* ── Interactive ── */
+  --color-interactive-muted: 240 232 220;
+
+  /* ── Semantic ── */
+  --color-semantic-success-light: 232 245 238;
+  --color-semantic-warning-light: 252 243 228;
+  --color-semantic-error-light: 252 236 236;
+  --color-semantic-info-light: 232 242 252;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(184, 149, 106, 0.06);
+  --shadow-md: 0 4px 12px rgba(184, 149, 106, 0.08);
+  --shadow-lg: 0 8px 30px rgba(184, 149, 106, 0.12);
+  --shadow-xl: 0 16px 50px rgba(184, 149, 106, 0.16);
+  --shadow-glow: 0 0 30px rgba(184, 149, 106, 0.15);
+}

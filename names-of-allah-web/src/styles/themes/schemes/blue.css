@@ -1,0 +1,12 @@
+/* Color Scheme: Blue */
+[data-scheme="blue"] {
+  --color-brand-primary: 102 153 230;
+  --color-brand-secondary: 128 179 242;
+  --color-brand-accent: 80 130 200;
+  --color-interactive-primary: 102 153 230;
+  --color-interactive-hover: 82 133 210;
+  --color-interactive-pressed: 62 113 190;
+  --color-border-focus: 102 153 230;
+  --gradient-brand: linear-gradient(135deg, rgb(208 224 248), rgb(180 210 244));
+  --gradient-brand-strong: linear-gradient(135deg, rgb(102 153 230), rgb(82 133 210));
+}

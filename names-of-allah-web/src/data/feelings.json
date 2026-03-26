@@ -1,0 +1,654 @@
+{
+  "feelings": [
+    {
+      "id": "hopeless",
+      "primaryLabel": "hopeless",
+      "aliases": ["despair", "no hope", "giving up", "defeated", "no way out", "stuck"],
+      "description": "Remember that Allah is the Opener of all doors",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-fattah",
+          "priority": 1,
+          "rationale": "Al-Fattāḥ is the Opener, the One who opens doors that seem permanently closed. When Prophet Musa عَلَيْهِ ٱلسَّلَامُ faced the sea with Pharaoh's army behind him, Allah opened a path through the impossible."
+        },
+        {
+          "nameId": "al-wakeel",
+          "priority": 2,
+          "rationale": "Al-Wakeel is the Trustee, the One you can rely upon completely. When you've exhausted all options, trust that He has a plan you cannot yet see."
+        },
+        {
+          "nameId": "ar-rahman",
+          "priority": 3,
+          "rationale": "Ar-Rahmān's mercy encompasses all creation. Even in your darkest moment, His mercy has not abandoned you."
+        }
+      ]
+    },
+    {
+      "id": "anxious",
+      "primaryLabel": "anxious",
+      "aliases": ["worried", "nervous", "stressed", "panic", "restless", "uneasy", "tense", "overwhelmed with worry"],
+      "description": "Find peace in knowing that Allah is in control of all affairs",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-wakeel",
+          "priority": 1,
+          "rationale": "Al-Wakeel is the ultimate Trustee. Hand over your worries to Him, for He manages all affairs with perfect wisdom. 'Sufficient for us is Allah, and He is the best Disposer of affairs.'"
+        },
+        {
+          "nameId": "as-samee",
+          "priority": 2,
+          "rationale": "As-Samīʿ hears every whisper of your anxious heart. You are never alone with your worries—He hears you, even when you cannot speak."
+        },
+        {
+          "nameId": "al-mumin",
+          "priority": 3,
+          "rationale": "Al-Muʾmin is the Granter of Security. He can replace the anxiety in your heart with a peace that transcends understanding."
+        }
+      ]
+    },
+    {
+      "id": "fearful",
+      "primaryLabel": "fearful",
+      "aliases": ["scared", "afraid", "terrified", "frightened", "dread", "worried about future"],
+      "description": "Let the Guardian watch over you",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-muhaymin",
+          "priority": 1,
+          "rationale": "Al-Muhaymin is the Guardian who watches over every detail of your life. Nothing escapes His protection. What you fear is already under His watchful care."
+        },
+        {
+          "nameId": "al-hafeez",
+          "priority": 2,
+          "rationale": "Al-Ḥafīẓ is the Protector who guards you from harm. Like He protected Yusuf عَلَيْهِ ٱلسَّلَامُ in the well, He protects you even when you feel most vulnerable."
+        },
+        {
+          "nameId": "al-qawiyy",
+          "priority": 3,
+          "rationale": "Al-Qawiyy is the All-Strong. Whatever you fear has no power compared to His strength. Lean on His power, not your own."
+        }
+      ]
+    },
+    {
+      "id": "lonely",
+      "primaryLabel": "lonely",
+      "aliases": ["alone", "isolated", "abandoned", "forgotten", "no one understands", "disconnected"],
+      "description": "Allah is closer to you than you can imagine",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-wali",
+          "priority": 1,
+          "rationale": "Al-Walī is the Protecting Friend who never leaves your side. He is with you in every moment of solitude, a companion closer than any human could be."
+        },
+        {
+          "nameId": "al-wadud",
+          "priority": 2,
+          "rationale": "Al-Wadūd is the Most Loving. His love for you is constant and unconditional. You are never truly alone when the One who created you loves you this deeply."
+        },
+        {
+          "nameId": "al-khabeer",
+          "priority": 3,
+          "rationale": "Al-Khabīr knows your hidden pain, the loneliness no one else sees. He is aware of every silent tear and unspoken word."
+        }
+      ]
+    },
+    {
+      "id": "sad",
+      "primaryLabel": "sad",
+      "aliases": ["depressed", "down", "unhappy", "sorrowful", "melancholy", "blue", "grief", "grieving"],
+      "description": "Let the Most Gentle comfort your heart",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-lateef",
+          "priority": 1,
+          "rationale": "Al-Laṭīf is the Most Gentle and Subtle. He works in ways so gentle you may not notice until later. Like how Yusuf عَلَيْهِ ٱلسَّلَامُ's pain led to reuniting with his family, your sadness may be leading to something beautiful."
+        },
+        {
+          "nameId": "ar-rauf",
+          "priority": 2,
+          "rationale": "Ar-Raʾūf is the Most Kind. His kindness reaches into the depths of sadness to bring unexpected comfort."
+        },
+        {
+          "nameId": "al-jabbar",
+          "priority": 3,
+          "rationale": "Al-Jabbār means the One who mends. He mends broken hearts and restores what feels shattered. Let Him heal you."
+        }
+      ]
+    },
+    {
+      "id": "guilty",
+      "primaryLabel": "guilty",
+      "aliases": ["ashamed", "regret", "remorse", "sinful", "made mistake", "messed up", "shame"],
+      "description": "The door of forgiveness is always open",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "at-tawwab",
+          "priority": 1,
+          "rationale": "At-Tawwāb is the One who always accepts repentance. No matter how many times you fall, His door remains open. He loves those who turn back to Him."
+        },
+        {
+          "nameId": "al-ghafoor",
+          "priority": 2,
+          "rationale": "Al-Ghafūr is the All-Forgiving. His forgiveness is so complete that He can erase sins as if they never happened. He covers your faults with His mercy."
+        },
+        {
+          "nameId": "al-afuw",
+          "priority": 3,
+          "rationale": "Al-ʿAfuww is the Pardoner who not only forgives but erases the sin from your record completely. This is beyond forgiveness—it is total erasure."
+        }
+      ]
+    },
+    {
+      "id": "overwhelmed",
+      "primaryLabel": "overwhelmed",
+      "aliases": ["too much", "cant cope", "drowning", "burning out", "exhausted", "at limit"],
+      "description": "Allah never burdens a soul beyond its capacity",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-muqeet",
+          "priority": 1,
+          "rationale": "Al-Muqīt is the Sustainer who nourishes you with exactly what you need. He will give you the strength to carry what He has placed on your shoulders."
+        },
+        {
+          "nameId": "al-qayyum",
+          "priority": 2,
+          "rationale": "Al-Qayyūm is the Self-Sustaining who sustains all things. When you feel like you can't keep going, remember that He sustains you every moment."
+        },
+        {
+          "nameId": "al-haleem",
+          "priority": 3,
+          "rationale": "Al-Ḥalīm is the Forbearing. He is patient with you even when you feel you can't be patient with yourself. Rest in His patience."
+        }
+      ]
+    },
+    {
+      "id": "lost",
+      "primaryLabel": "lost",
+      "aliases": ["confused about life", "no direction", "purposeless", "wandering", "dont know what to do"],
+      "description": "Let the Guide show you the way",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-hadi",
+          "priority": 1,
+          "rationale": "Al-Hādī is the Guide who leads hearts to the straight path. When you feel lost, ask Him to guide you. He guided countless prophets through uncertainty."
+        },
+        {
+          "nameId": "ar-rasheed",
+          "priority": 2,
+          "rationale": "Ar-Rashīd is the Guide to the Right Path. He directs affairs with perfect wisdom and can direct your life even when you see no clear path."
+        },
+        {
+          "nameId": "an-nur",
+          "priority": 3,
+          "rationale": "An-Nūr is the Light that illuminates darkness. Ask Him to light your path, to show you the next step even when the whole journey isn't clear."
+        }
+      ]
+    },
+    {
+      "id": "angry",
+      "primaryLabel": "angry",
+      "aliases": ["frustrated", "irritated", "bitter", "resentful", "mad", "furious", "rage"],
+      "description": "Find peace in divine justice and forbearance",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-haleem",
+          "priority": 1,
+          "rationale": "Al-Ḥalīm is the Forbearing One who does not rush to punish despite having every right. Learn from His patience—He models the restraint He wishes us to have."
+        },
+        {
+          "nameId": "al-adl",
+          "priority": 2,
+          "rationale": "Al-ʿAdl is the Just. Whatever wrong has angered you, trust that perfect justice will be served. You don't have to carry the burden of making things right."
+        },
+        {
+          "nameId": "as-sabur",
+          "priority": 3,
+          "rationale": "Aṣ-Ṣabūr is the Patient. Allah's patience is infinite. Ask Him to grant you patience to handle what has angered you."
+        }
+      ]
+    },
+    {
+      "id": "heartbroken",
+      "primaryLabel": "heartbroken",
+      "aliases": ["betrayed", "rejected", "hurt by someone", "broken heart", "devastated", "crushed"],
+      "description": "The One who mends hearts is near",
+      "category": "struggling",
+      "linkedNames": [
+        {
+          "nameId": "al-jabbar",
+          "priority": 1,
+          "rationale": "Al-Jabbār has a beautiful meaning: the One who mends what is broken. He can mend your heart, restore your spirit, and make you whole again."
+        },
+        {
+          "nameId": "al-wadud",
+          "priority": 2,
+          "rationale": "Al-Wadūd is the Most Loving. When human love fails, His love remains constant. His love heals wounds that no human love can reach."
+        },
+        {
+          "nameId": "ash-shakur",
+          "priority": 3,
+          "rationale": "Ash-Shakūr appreciates every good deed. The love and kindness you gave is not lost—He has counted every moment, even if others didn't appreciate it."
+        }
+      ]
+    },
+    {
+      "id": "seeking-clarity",
+      "primaryLabel": "confused",
+      "aliases": ["unclear", "seeking clarity", "need answers", "uncertain", "indecisive", "dont understand"],
+      "description": "Ask the All-Knowing for wisdom",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "al-aleem",
+          "priority": 1,
+          "rationale": "Al-ʿAlīm knows all things—past, present, and future. The clarity you seek is already known to Him. Ask Him to grant you the knowledge you need."
+        },
+        {
+          "nameId": "al-hakim",
+          "priority": 2,
+          "rationale": "Al-Ḥakīm is the Most Wise. He sees the wisdom in what confuses you. Sometimes clarity comes not from understanding everything, but trusting His wisdom."
+        },
+        {
+          "nameId": "al-baseer",
+          "priority": 3,
+          "rationale": "Al-Baṣīr sees all things clearly. Ask Him to help you see what you need to see, and to accept that some things are hidden for your benefit."
+        }
+      ]
+    },
+    {
+      "id": "seeking-strength",
+      "primaryLabel": "weak",
+      "aliases": ["powerless", "need strength", "cant do this", "no energy", "exhausted", "fragile"],
+      "description": "Draw strength from the All-Strong",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "al-qawiyy",
+          "priority": 1,
+          "rationale": "Al-Qawiyy is the All-Strong. When you feel weak, connect to His infinite strength. Your weakness acknowledged before Him becomes a source of strength."
+        },
+        {
+          "nameId": "al-mateen",
+          "priority": 2,
+          "rationale": "Al-Matīn is the Firm, whose strength never wavers. When you feel shaky, hold onto the One whose foundation never moves."
+        },
+        {
+          "nameId": "al-muqtadir",
+          "priority": 3,
+          "rationale": "Al-Muqtadir is the All-Powerful. Nothing is beyond His power. What feels impossible for you is effortless for Him."
+        }
+      ]
+    },
+    {
+      "id": "seeking-patience",
+      "primaryLabel": "impatient",
+      "aliases": ["cant wait", "need patience", "struggling to wait", "tired of waiting", "when will it end"],
+      "description": "Learn patience from the Most Patient",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "as-sabur",
+          "priority": 1,
+          "rationale": "Aṣ-Ṣabūr is the Most Patient. Nuh عَلَيْهِ ٱلسَّلَامُ called his people for 950 years. Allah's patience teaches us that beautiful things take time."
+        },
+        {
+          "nameId": "al-muakhkhir",
+          "priority": 2,
+          "rationale": "Al-Muʾakhkhir is the Delayer. When something is delayed, trust it is delayed for a reason only He knows. His timing is perfect."
+        },
+        {
+          "nameId": "al-hakim",
+          "priority": 3,
+          "rationale": "Al-Ḥakīm is the Most Wise. Every delay contains wisdom. What seems like waiting is often preparation."
+        }
+      ]
+    },
+    {
+      "id": "seeking-guidance",
+      "primaryLabel": "seeking guidance",
+      "aliases": ["need direction", "which path", "what should i do", "guide me", "show me the way"],
+      "description": "Turn to the Guide of all paths",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "al-hadi",
+          "priority": 1,
+          "rationale": "Al-Hādī is the Guide who leads to the straight path. Sincerely ask Him for guidance, and He will make the right path clear to you."
+        },
+        {
+          "nameId": "an-nur",
+          "priority": 2,
+          "rationale": "An-Nūr is the Light. He illuminates the path for those who seek it. Walk towards His light, and the darkness of confusion will fade."
+        },
+        {
+          "nameId": "ar-rasheed",
+          "priority": 3,
+          "rationale": "Ar-Rashīd directs to the right path with perfect wisdom. Trust that if you sincerely seek guidance, He will not let you go astray."
+        }
+      ]
+    },
+    {
+      "id": "seeking-forgiveness",
+      "primaryLabel": "need forgiveness",
+      "aliases": ["want to repent", "seeking mercy", "made mistakes", "need second chance", "start fresh"],
+      "description": "His forgiveness is greater than any sin",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "al-ghaffar",
+          "priority": 1,
+          "rationale": "Al-Ghaffār forgives again and again. No matter how many times you've fallen, He forgives repeatedly. Like Prophet Yunus عَلَيْهِ ٱلسَّلَامُ in the whale, there is no darkness too deep for His forgiveness to reach."
+        },
+        {
+          "nameId": "at-tawwab",
+          "priority": 2,
+          "rationale": "At-Tawwāb accepts repentance. He not only forgives but loves it when His servants return to Him. Your repentance brings Him joy."
+        },
+        {
+          "nameId": "ar-raheem",
+          "priority": 3,
+          "rationale": "Ar-Raḥīm shows special mercy to believers. His mercy embraces those who turn back to Him with sincere hearts."
+        }
+      ]
+    },
+    {
+      "id": "seeking-peace",
+      "primaryLabel": "seeking peace",
+      "aliases": ["need calm", "want tranquility", "inner peace", "rest", "serenity", "stillness"],
+      "description": "Find peace with the Source of Peace",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "al-mumin",
+          "priority": 1,
+          "rationale": "Al-Muʾmin is the Granter of Security. True peace comes from feeling secure with Him. He can calm the storms inside your heart."
+        },
+        {
+          "nameId": "al-wadud",
+          "priority": 2,
+          "rationale": "Al-Wadūd's love brings a peace that nothing else can. Knowing you are loved by the Creator brings deep tranquility."
+        },
+        {
+          "nameId": "al-wali",
+          "priority": 3,
+          "rationale": "Al-Walī is your Protecting Friend. Peace comes from knowing you have a Friend who will never abandon you."
+        }
+      ]
+    },
+    {
+      "id": "seeking-purpose",
+      "primaryLabel": "purposeless",
+      "aliases": ["no purpose", "why am i here", "meaningless", "whats the point", "searching for meaning"],
+      "description": "You were created by the Creator with purpose",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "al-khaliq",
+          "priority": 1,
+          "rationale": "Al-Khāliq is the Creator who creates nothing without purpose. You were intentionally designed, carefully crafted. Your existence is not an accident."
+        },
+        {
+          "nameId": "al-musawwir",
+          "priority": 2,
+          "rationale": "Al-Muṣawwir is the Fashioner who shaped you uniquely. No one else has your exact combination of gifts, experiences, and potential."
+        },
+        {
+          "nameId": "al-hakim",
+          "priority": 3,
+          "rationale": "Al-Ḥakīm placed you in this time and place with perfect wisdom. Your purpose is woven into His greater plan."
+        }
+      ]
+    },
+    {
+      "id": "seeking-provision",
+      "primaryLabel": "worried about money",
+      "aliases": ["financial stress", "need provision", "poor", "struggling financially", "cant afford", "broke"],
+      "description": "The Provider's treasures never run out",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "ar-razzaq",
+          "priority": 1,
+          "rationale": "Ar-Razzāq is the Provider whose provision never runs out. He provided for Maryam عَلَيْهَا ٱلسَّلَامُ when she had nothing. He will provide for you."
+        },
+        {
+          "nameId": "al-wahhab",
+          "priority": 2,
+          "rationale": "Al-Wahhāb is the Bestower who gives without expecting anything in return. He gives gifts you never even asked for."
+        },
+        {
+          "nameId": "al-mughni",
+          "priority": 3,
+          "rationale": "Al-Mughnī is the Enricher who can transform poverty into abundance. True richness is contentment with what He provides."
+        }
+      ]
+    },
+    {
+      "id": "grateful-blessed",
+      "primaryLabel": "blessed",
+      "aliases": ["fortunate", "lucky", "favored", "privileged", "abundant"],
+      "description": "Express gratitude to the Source of all blessings",
+      "category": "grateful",
+      "linkedNames": [
+        {
+          "nameId": "ash-shakur",
+          "priority": 1,
+          "rationale": "Ash-Shakūr is the Most Appreciative. When you recognize His blessings, He appreciates your gratitude and multiplies your blessings."
+        },
+        {
+          "nameId": "al-wahhab",
+          "priority": 2,
+          "rationale": "Al-Wahhāb is the Bestower of all good. Every blessing you have is a gift from Him. Acknowledge the Giver behind every gift."
+        },
+        {
+          "nameId": "al-kareem",
+          "priority": 3,
+          "rationale": "Al-Karīm is the Most Generous. His generosity knows no bounds. The blessings you see are just a fraction of His gifts."
+        }
+      ]
+    },
+    {
+      "id": "grateful-thankful",
+      "primaryLabel": "thankful",
+      "aliases": ["grateful", "appreciative", "want to thank", "feeling gratitude"],
+      "description": "Turn gratitude into worship",
+      "category": "grateful",
+      "linkedNames": [
+        {
+          "nameId": "al-hameed",
+          "priority": 1,
+          "rationale": "Al-Ḥamīd is the Praiseworthy. All praise ultimately belongs to Him. Channel your gratitude into praising the One who deserves all thanks."
+        },
+        {
+          "nameId": "ash-shakur",
+          "priority": 2,
+          "rationale": "Ash-Shakūr appreciates even your smallest acts of gratitude. He sees your thankful heart and rewards it abundantly."
+        },
+        {
+          "nameId": "al-barr",
+          "priority": 3,
+          "rationale": "Al-Barr is the Source of all Goodness. Every good thing flows from Him. Your gratitude connects you to the Source."
+        }
+      ]
+    },
+    {
+      "id": "grateful-content",
+      "primaryLabel": "content",
+      "aliases": ["satisfied", "at peace", "enough", "fulfilled", "complete"],
+      "description": "Contentment is a treasure from the Self-Sufficient",
+      "category": "grateful",
+      "linkedNames": [
+        {
+          "nameId": "al-ghaniyy",
+          "priority": 1,
+          "rationale": "Al-Ghaniyy is Self-Sufficient, needing nothing. True contentment comes from connecting to the One who lacks nothing. In Him, you have everything."
+        },
+        {
+          "nameId": "as-samad",
+          "priority": 2,
+          "rationale": "Aṣ-Ṣamad is the Eternal Refuge. When you find refuge in Him, you need nothing else. He is enough."
+        },
+        {
+          "nameId": "al-wadud",
+          "priority": 3,
+          "rationale": "Al-Wadūd's love fills the heart completely. Contentment often flows from knowing you are deeply loved."
+        }
+      ]
+    },
+    {
+      "id": "grateful-loved",
+      "primaryLabel": "loved",
+      "aliases": ["feeling loved", "cherished", "valued", "appreciated", "cared for"],
+      "description": "Bask in the love of the Most Loving",
+      "category": "grateful",
+      "linkedNames": [
+        {
+          "nameId": "al-wadud",
+          "priority": 1,
+          "rationale": "Al-Wadūd is the Most Loving. His love for you predates any human love. He loved you before anyone else knew you existed."
+        },
+        {
+          "nameId": "ar-rauf",
+          "priority": 2,
+          "rationale": "Ar-Raʾūf is the Most Kind. His kindness towards you is tender and gentle, like the most loving embrace."
+        },
+        {
+          "nameId": "al-kareem",
+          "priority": 3,
+          "rationale": "Al-Karīm is generous in His love. He doesn't love sparingly—He loves abundantly and unconditionally."
+        }
+      ]
+    },
+    {
+      "id": "reflecting-humble",
+      "primaryLabel": "humble",
+      "aliases": ["humbled", "small", "in awe", "insignificant", "realizing my place"],
+      "description": "Humility before the Supreme is wisdom",
+      "category": "reflecting",
+      "linkedNames": [
+        {
+          "nameId": "al-adheem",
+          "priority": 1,
+          "rationale": "Al-ʿAẓīm is the Magnificent. True humility comes from witnessing His magnificence. The more you know Him, the more humble you become."
+        },
+        {
+          "nameId": "al-kabeer",
+          "priority": 2,
+          "rationale": "Al-Kabīr is the Greatest. When you truly grasp His greatness, pride melts away naturally."
+        },
+        {
+          "nameId": "al-mutaali",
+          "priority": 3,
+          "rationale": "Al-Mutaʿālī is the Supreme, exalted beyond comparison. Recognizing His supreme status puts everything else in perspective."
+        }
+      ]
+    },
+    {
+      "id": "reflecting-aware",
+      "primaryLabel": "aware",
+      "aliases": ["conscious", "mindful", "present", "awakened", "spiritually aware"],
+      "description": "Live in awareness of the All-Seeing",
+      "category": "reflecting",
+      "linkedNames": [
+        {
+          "nameId": "ar-raqeeb",
+          "priority": 1,
+          "rationale": "Ar-Raqīb is the Watchful. Living with awareness that He sees everything transforms how you live. This awareness is a gift."
+        },
+        {
+          "nameId": "al-baseer",
+          "priority": 2,
+          "rationale": "Al-Baṣīr sees all things. When you live aware of His sight, every moment becomes meaningful."
+        },
+        {
+          "nameId": "al-khabeer",
+          "priority": 3,
+          "rationale": "Al-Khabīr is aware of all things hidden and apparent. Your awareness of Him connects you to His awareness of you."
+        }
+      ]
+    },
+    {
+      "id": "reflecting-questioning",
+      "primaryLabel": "questioning",
+      "aliases": ["doubting", "why", "struggling with faith", "seeking answers", "wondering"],
+      "description": "Questions can lead to deeper understanding",
+      "category": "reflecting",
+      "linkedNames": [
+        {
+          "nameId": "al-haqq",
+          "priority": 1,
+          "rationale": "Al-Ḥaqq is the Truth. Sincere questions lead to truth. Don't be afraid to ask—truth stands firm against scrutiny."
+        },
+        {
+          "nameId": "al-aleem",
+          "priority": 2,
+          "rationale": "Al-ʿAlīm knows all answers. Some answers come now, others come later, and some you'll understand only in the Hereafter."
+        },
+        {
+          "nameId": "al-hakim",
+          "priority": 3,
+          "rationale": "Al-Ḥakīm is the Most Wise. Trust that there is wisdom in what you don't yet understand. Keep seeking with a sincere heart."
+        }
+      ]
+    },
+    {
+      "id": "reflecting-mortality",
+      "primaryLabel": "thinking about death",
+      "aliases": ["mortality", "life is short", "what happens when i die", "afterlife", "end of life"],
+      "description": "Life and death are in the hands of the Ever-Living",
+      "category": "reflecting",
+      "linkedNames": [
+        {
+          "nameId": "al-hayy",
+          "priority": 1,
+          "rationale": "Al-Ḥayy is the Ever-Living who never dies. While everything perishes, He remains. Connecting to Him is connecting to eternal life."
+        },
+        {
+          "nameId": "al-baith",
+          "priority": 2,
+          "rationale": "Al-Bāʿith is the Resurrector who will raise all of creation. Death is not the end—it is a transition to standing before Him."
+        },
+        {
+          "nameId": "al-baqi",
+          "priority": 3,
+          "rationale": "Al-Bāqī is the Everlasting. Attach your heart to the Everlasting, not to what will perish."
+        }
+      ]
+    },
+    {
+      "id": "seeking-justice",
+      "primaryLabel": "wronged",
+      "aliases": ["injustice", "unfair", "oppressed", "victimized", "mistreated", "not fair"],
+      "description": "Perfect justice belongs to the Judge",
+      "category": "seeking",
+      "linkedNames": [
+        {
+          "nameId": "al-hakam",
+          "priority": 1,
+          "rationale": "Al-Ḥakam is the Judge whose judgment is perfect. Every wrong will be addressed. Not a single injustice will be forgotten."
+        },
+        {
+          "nameId": "al-adl",
+          "priority": 2,
+          "rationale": "Al-ʿAdl is the Just. His justice is perfect and complete. What seems unjust now will be made right."
+        },
+        {
+          "nameId": "al-muqsit",
+          "priority": 3,
+          "rationale": "Al-Muqsiṭ is the Equitable who will establish perfect equity. Trust that your case is with the fairest of judges."
+        }
+      ]
+    }
+  ]
+}
+
+

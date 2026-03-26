@@ -1,0 +1,12 @@
+/* Color Scheme: Gold (default — Living Light) */
+[data-scheme="gold"] {
+  --color-brand-primary: 184 149 106;
+  --color-brand-secondary: 212 196 160;
+  --color-brand-accent: 91 138 114;
+  --color-interactive-primary: 184 149 106;
+  --color-interactive-hover: 160 126 84;
+  --color-interactive-pressed: 140 108 68;
+  --color-border-focus: 184 149 106;
+  --gradient-brand: linear-gradient(135deg, rgb(240 230 208), rgb(232 212 176));
+  --gradient-brand-strong: linear-gradient(135deg, rgb(184 149 106), rgb(160 126 84));
+}

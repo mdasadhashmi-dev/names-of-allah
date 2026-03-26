@@ -1,0 +1,56 @@
+/* ======================================================================
+   Design Tokens: Typography — "Living Light" Direction
+
+   Font families, sizes, weights, and line heights.
+   Font imports are in globals.css.
+   ====================================================================== */
+
+:root {
+  /* ── Font Families ── */
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-arabic: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
+  --font-ui: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+
+  /* ── Font Sizes (base 16px, scaled by --font-scale) ── */
+  --type-size-xs: calc(0.75rem * var(--font-scale, 1));     /* 12px */
+  --type-size-sm: calc(0.875rem * var(--font-scale, 1));    /* 14px */
+  --type-size-base: calc(1rem * var(--font-scale, 1));      /* 16px */
+  --type-size-lg: calc(1.125rem * var(--font-scale, 1));    /* 18px */
+  --type-size-xl: calc(1.25rem * var(--font-scale, 1));     /* 20px */
+  --type-size-2xl: calc(1.5rem * var(--font-scale, 1));     /* 24px */
+  --type-size-3xl: calc(1.875rem * var(--font-scale, 1));   /* 30px */
+  --type-size-4xl: calc(2.25rem * var(--font-scale, 1));    /* 36px */
+  --type-size-display: calc(3rem * var(--font-scale, 1));   /* 48px */
+  --type-size-hero: calc(4rem * var(--font-scale, 1));      /* 64px */
+
+  /* ── Arabic Font Sizes (separate scale) ── */
+  --type-size-arabic-sm: calc(1rem * var(--font-scale-arabic, 1));
+  --type-size-arabic-base: calc(1.25rem * var(--font-scale-arabic, 1));
+  --type-size-arabic-lg: calc(1.5rem * var(--font-scale-arabic, 1));
+  --type-size-arabic-xl: calc(2rem * var(--font-scale-arabic, 1));
+  --type-size-arabic-display: calc(3rem * var(--font-scale-arabic, 1));
+  --type-size-arabic-hero: calc(4.5rem * var(--font-scale-arabic, 1));
+
+  /* ── Font Weights ── */
+  --type-weight-regular: 400;
+  --type-weight-medium: 500;
+  --type-weight-semibold: 600;
+  --type-weight-bold: 700;
+
+  /* ── Line Heights ── */
+  --type-leading-tight: 1.2;
+  --type-leading-snug: 1.35;
+  --type-leading-normal: 1.5;
+  --type-leading-relaxed: 1.65;
+  --type-leading-loose: 1.8;
+  --type-leading-arabic: 1.9;
+
+  /* ── Letter Spacing ── */
+  --type-tracking-tight: -0.02em;
+  --type-tracking-normal: 0;
+  --type-tracking-wide: 0.02em;
+  --type-tracking-wider: 0.05em;
+  --type-tracking-widest: 0.1em;
+}

@@ -1,0 +1,331 @@
+/* ======================================================================
+   Names of Allah — Global Styles
+   "Living Light" Brand Direction
+
+   Import order matters: fonts → tailwind → tokens → themes → base → utils
+   ====================================================================== */
+
+/* ── Font Imports ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
+
+/* ── Tailwind ── */
+@import "tailwindcss";
+
+/* ── Design Tokens ── */
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/motion.css";
+
+/* ── Theme Variants ── */
+@import "./themes/light.css";
+@import "./themes/dark.css";
+@import "./themes/schemes/gold.css";
+@import "./themes/schemes/blue.css";
+@import "./themes/schemes/green.css";
+@import "./themes/schemes/purple.css";
+
+/* ── Tailwind Theme Extensions ── */
+@theme {
+  --color-gold: rgb(184, 149, 106);
+  --color-gold-soft: rgb(212, 196, 160);
+  --color-gold-dark: rgb(160, 126, 84);
+  --color-dark-bg: rgb(18, 22, 42);
+  --color-dark-card: rgba(255, 255, 255, 0.05);
+  --font-arabic: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
+  --animate-spin-slow: spin 20s linear infinite;
+}
+
+/* ── Legacy Variable Bridge ──
+   Maps old variable names → new token system for backward compat.
+   Remove once all components use tokens directly.                      */
+:root {
+  --color-primary: var(--color-brand-primary);
+  --color-secondary: var(--color-brand-secondary);
+  --bg-dark: 18 22 42;
+  --font-scale: 1;
+  --font-scale-arabic: 1;
+  --text-primary: var(--color-text-heading);
+  --text-secondary: var(--color-text-muted);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.08);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ══════════════════════════════════════════════════════════════════════ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: rgb(var(--color-surface-page));
+  color: rgb(var(--color-text-body));
+  min-height: 100vh;
+  transition: background-color var(--motion-normal) var(--ease-default),
+              color var(--motion-normal) var(--ease-default);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: rgb(var(--color-text-heading));
+  line-height: var(--type-leading-tight);
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-surface-subtle));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--color-brand-primary) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--color-brand-primary) / 0.5);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Glass Morphism ── */
+.glass {
+  background: rgba(var(--color-surface-card) / 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--color-border-default) / 0.3);
+}
+
+[data-theme="dark"] .glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Brand Gradient Text ── */
+.text-gold-gradient {
+  background: var(--gradient-brand-strong);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Brand Button ── */
+.btn-gold {
+  background: var(--gradient-brand-strong);
+  color: rgb(var(--color-text-on-brand));
+  font-family: var(--font-ui);
+  font-weight: 600;
+  border-radius: var(--radius-2xl);
+  padding: 12px 32px;
+  transition: all var(--motion-normal) var(--ease-default);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+/* ── Ghost Button ── */
+.btn-ghost {
+  background: transparent;
+  color: rgb(var(--color-interactive-primary));
+  font-family: var(--font-ui);
+  font-weight: 500;
+  border: 1.5px solid rgba(var(--color-interactive-primary) / 0.3);
+  border-radius: var(--radius-2xl);
+  padding: 12px 32px;
+  transition: all var(--motion-normal) var(--ease-default);
+}
+
+.btn-ghost:hover {
+  background: rgba(var(--color-interactive-primary) / 0.08);
+  border-color: rgba(var(--color-interactive-primary) / 0.5);
+}
+
+/* ── Arabic Text ── */
+.arabic-text {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  line-height: var(--type-leading-arabic);
+}
+
+/* ── Card ── */
+.card {
+  background: rgb(var(--color-surface-card));
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--motion-normal) var(--ease-default);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   LAYOUT UTILITIES
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Sidebar Offset ── */
+@media (min-width: 1024px) {
+  .sidebar-offset {
+    margin-left: var(--sidebar-width, 260px);
+    transition: margin-left var(--motion-normal) var(--ease-default);
+  }
+}
+
+/* ── Content Containers ── */
+.content-max {
+  max-width: var(--layout-content-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .content-max {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+.content-reading {
+  max-width: var(--layout-content-reading);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Legacy Layout Variables ── */
+:root {
+  --mobile-nav-height: 56px;
+  --content-max-width: 1200px;
+  --sidebar-collapsed-width: 64px;
+}
+
+/* ── Story Progress Indicator ── */
+.story-progress-indicator {
+  top: calc(var(--mobile-nav-height) + 8px);
+}
+
+@media (min-width: 1024px) {
+  .story-progress-indicator {
+    top: 24px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ADAPTIVE PANEL LAYOUTS
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Master-Detail (Names List) ── */
+.layout-master-detail {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout-master-detail__list {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.layout-master-detail__detail {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .layout-master-detail__list {
+    width: 380px;
+    min-width: 380px;
+    border-right: 1px solid rgb(var(--color-border-subtle));
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+  }
+
+  .layout-master-detail__detail {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+/* ── Content + Reference Panel (Learning) ── */
+.layout-with-reference {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout-with-reference__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.layout-with-reference__panel {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .layout-with-reference__panel {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    min-width: 320px;
+    border-left: 1px solid rgb(var(--color-border-subtle));
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    padding: var(--space-6);
+  }
+}
+
+/* ── Immersive (Stories) ── */
+.layout-immersive {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Centered (Advisor, Quiz) ── */
+.layout-centered {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+}
+
+.layout-centered__inner {
+  width: 100%;
+  max-width: 640px;
+}
+
+@media (min-width: 1024px) {
+  .layout-centered {
+    padding: var(--space-12) var(--space-8);
+  }
+}

@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+*.swp
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env.production.local
+
+# Vercel
+.vercel/

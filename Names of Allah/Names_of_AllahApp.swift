@@ -11,7 +11,7 @@ import SwiftUI
 struct Names_of_AllahApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
         }
     }
 }

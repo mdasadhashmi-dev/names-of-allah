@@ -1,0 +1,12 @@
+/* Color Scheme: Purple */
+[data-scheme="purple"] {
+  --color-brand-primary: 179 128 230;
+  --color-brand-secondary: 204 153 242;
+  --color-brand-accent: 160 110 210;
+  --color-interactive-primary: 179 128 230;
+  --color-interactive-hover: 159 108 210;
+  --color-interactive-pressed: 139 88 190;
+  --color-border-focus: 179 128 230;
+  --gradient-brand: linear-gradient(135deg, rgb(232 216 248), rgb(220 196 244));
+  --gradient-brand-strong: linear-gradient(135deg, rgb(179 128 230), rgb(159 108 210));
+}
