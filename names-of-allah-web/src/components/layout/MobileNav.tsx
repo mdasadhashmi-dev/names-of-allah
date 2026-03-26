@@ -130,14 +130,13 @@ export function MobileNav() {
                 style={{ borderColor: "rgba(217, 191, 140, 0.1)" }}
               >
                 <div>
-                  <div
-                    className="arabic-text text-xl"
-                    style={{ color: primaryColor }}
-                  >
-                    أسماء الله
-                  </div>
+                  <img
+                    src="/logo.svg"
+                    alt="99 Names of Allah"
+                    className="h-10 w-10 object-contain"
+                  />
                   <div className="text-xs text-white/40 mt-0.5">
-                    99 Beautiful Names
+                    99 Names of Allah
                   </div>
                 </div>
                 <button

@@ -490,7 +490,7 @@ export function MultiScreenStory({
                   <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="hidden lg:flex items-center gap-1 px-4 py-2 rounded-full text-sm text-white/60 hover:text-white/90 transition-colors"
+                    className="flex items-center gap-1 px-4 py-2 rounded-full text-sm text-white/60 hover:text-white/90 transition-colors"
                     style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                     onClick={prevScreen}
                   >

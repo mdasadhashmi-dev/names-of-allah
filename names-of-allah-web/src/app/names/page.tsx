@@ -40,12 +40,11 @@ export default function NamesListPage() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-6 lg:py-10">
         {/* Header */}
         <div className="mb-6 lg:mb-8">
-          <h1
-            className="arabic-text text-3xl lg:text-4xl font-bold mb-1"
-            style={{ color: isPro ? "var(--pro-gold)" : "rgb(217, 191, 140)" }}
-          >
-            أسماء الله الحسنى
-          </h1>
+          <img
+            src="/logo.svg"
+            alt="99 Names of Allah"
+            className="h-16 lg:h-20 w-auto object-contain mb-1"
+          />
           <p className="text-sm" style={styles.textMuted}>
             The 99 Beautiful Names of Allah — click a name to begin its story
           </p>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="a3bg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#141832"/>
+      <stop offset="100%" stop-color="#0A0E1F"/>
+    </radialGradient>
+    <linearGradient id="a3gold1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0E4C8"/>
+      <stop offset="50%" stop-color="#C8A96E"/>
+      <stop offset="100%" stop-color="#8A6D42"/>
+    </linearGradient>
+    <linearGradient id="a3gold2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8D5A8"/>
+      <stop offset="100%" stop-color="#A07E54"/>
+    </linearGradient>
+    <radialGradient id="a3glow" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#D4C4A0" stop-opacity="0.2"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a3center" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E2240"/>
+      <stop offset="100%" stop-color="#0A0E1F"/>
+    </radialGradient>
+    <linearGradient id="a3textGold" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#F0E4C8"/>
+      <stop offset="100%" stop-color="#C8A96E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#a3bg)"/>
+  <circle cx="256" cy="256" r="200" fill="url(#a3glow)"/>
+
+  <!-- Large 8-pointed Islamic star (Rub el Hizb inspired) -->
+  <g transform="translate(256,256)">
+    <!-- Outer star: two overlapping squares -->
+    <g opacity="0.85">
+      <rect x="-120" y="-120" width="240" height="240" rx="4" transform="rotate(0)"
+            fill="none" stroke="url(#a3gold1)" stroke-width="2"/>
+      <rect x="-120" y="-120" width="240" height="240" rx="4" transform="rotate(45)"
+            fill="none" stroke="url(#a3gold2)" stroke-width="2"/>
+    </g>
+
+    <!-- Fill the star points with subtle gold -->
+    <polygon points="0,-170 42,-42 0,-120 -42,-42" fill="url(#a3gold1)" opacity="0.12"/>
+    <polygon points="170,0 42,42 120,0 42,-42" fill="url(#a3gold1)" opacity="0.12"/>
+    <polygon points="0,170 -42,42 0,120 42,42" fill="url(#a3gold1)" opacity="0.12"/>
+    <polygon points="-170,0 -42,-42 -120,0 -42,42" fill="url(#a3gold1)" opacity="0.12"/>
+
+    <!-- Inner geometric pattern (nested star) -->
+    <g opacity="0.6">
+      <rect x="-70" y="-70" width="140" height="140" rx="2" transform="rotate(0)"
+            fill="none" stroke="#D4C4A0" stroke-width="1"/>
+      <rect x="-70" y="-70" width="140" height="140" rx="2" transform="rotate(45)"
+            fill="none" stroke="#D4C4A0" stroke-width="1"/>
+    </g>
+
+    <!-- Connecting lines (geometric web) -->
+    <g stroke="#B8956A" stroke-width="0.5" opacity="0.3">
+      <line x1="0" y1="-170" x2="0" y2="-70"/>
+      <line x1="170" y1="0" x2="70" y2="0"/>
+      <line x1="0" y1="170" x2="0" y2="70"/>
+      <line x1="-170" y1="0" x2="-70" y2="0"/>
+      <line x1="120" y1="-120" x2="50" y2="-50"/>
+      <line x1="120" y1="120" x2="50" y2="50"/>
+      <line x1="-120" y1="120" x2="-50" y2="50"/>
+      <line x1="-120" y1="-120" x2="-50" y2="-50"/>
+    </g>
+
+    <!-- ========== Center text area (replaces flower/circle) ========== -->
+    <!-- Dark background circle for text readability -->
+    <circle r="65" fill="url(#a3center)"/>
+    <circle r="65" fill="none" stroke="#D4C4A0" stroke-width="1" opacity="0.4"/>
+    <circle r="60" fill="none" stroke="#B8956A" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Large "99" — vertically centered text block -->
+    <text x="0" y="-22" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="42" font-weight="700" fill="url(#a3textGold)" opacity="0.9"
+          letter-spacing="2">
+      99
+    </text>
+
+    <!-- Thin divider -->
+    <line x1="-32" y1="-2" x2="32" y2="-2" stroke="#D4C4A0" stroke-width="0.6" opacity="0.4"/>
+    <polygon points="-36,-2 -34,-4.5 -32,-2 -34,0.5" fill="#D4C4A0" opacity="0.35"/>
+    <polygon points="36,-2 34,-4.5 32,-2 34,0.5" fill="#D4C4A0" opacity="0.35"/>
+
+    <!-- "NAMES" -->
+    <text x="0" y="14" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="12" font-weight="600" fill="#D4C4A0" opacity="0.75"
+          letter-spacing="5">
+      NAMES
+    </text>
+
+    <!-- "of" -->
+    <text x="0" y="27" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="9" font-style="italic" font-weight="300" fill="#B8956A" opacity="0.55"
+          letter-spacing="2">
+      of
+    </text>
+
+    <!-- "ALLAH" -->
+    <text x="0" y="42" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="14" font-weight="700" fill="url(#a3textGold)" opacity="0.85"
+          letter-spacing="6">
+      ALLAH
+    </text>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g fill="#B8956A" opacity="0.2">
+    <circle cx="80" cy="80" r="3"/>
+    <circle cx="432" cy="80" r="3"/>
+    <circle cx="80" cy="432" r="3"/>
+    <circle cx="432" cy="432" r="3"/>
+  </g>
+</svg>

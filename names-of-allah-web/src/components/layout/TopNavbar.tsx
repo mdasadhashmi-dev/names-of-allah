@@ -49,20 +49,17 @@ export function TopNavbar() {
         <div className="pro-container h-full flex items-center justify-between">
           {/* Left: Logo */}
           <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
+            <img
+              src="/logo.svg"
+              alt="99 Names of Allah"
+              className="h-8 w-8 object-contain"
+            />
             <span
-              className="arabic-text text-lg leading-tight"
-              style={{ color: "var(--pro-gold)" }}
+              className="text-sm font-semibold"
+              style={{ color: "var(--pro-text)" }}
             >
-              أسماء الله
+              Names of Allah
             </span>
-            <div className="hidden sm:block">
-              <span
-                className="text-sm font-semibold"
-                style={{ color: "var(--pro-text)" }}
-              >
-                Names of Allah
-              </span>
-            </div>
           </Link>
 
           {/* Center: Desktop nav links */}

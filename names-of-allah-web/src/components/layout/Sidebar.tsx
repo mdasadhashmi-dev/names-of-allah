@@ -80,14 +80,13 @@ export function Sidebar() {
             transition={{ duration: 0.2 }}
             className="flex flex-col flex-1 min-w-0"
           >
-            <span
-              className="arabic-text text-xl leading-tight"
-              style={{ color: primaryColor }}
-            >
-              أسماء الله
-            </span>
-            <span className="text-xs mt-0.5 truncate" style={{ color: textMuted }}>
-              99 Beautiful Names
+            <img
+              src="/logo.svg"
+              alt="99 Names of Allah"
+              className="object-contain" style={{ width: 350, height: 350 }}
+            />
+            <span className="text-xs mt-1 truncate" style={{ color: textMuted }}>
+              99 Names of Allah
             </span>
           </motion.div>
         )}

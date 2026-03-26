@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="a8bg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#141832"/>
+      <stop offset="100%" stop-color="#0A0E1F"/>
+    </radialGradient>
+    <linearGradient id="a8gold" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#F0E4C8"/>
+      <stop offset="50%" stop-color="#C8A96E"/>
+      <stop offset="100%" stop-color="#8A6D42"/>
+    </linearGradient>
+    <linearGradient id="a8goldH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8A6D42" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D4C4A0"/>
+      <stop offset="100%" stop-color="#8A6D42" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="a8glow" cx="50%" cy="30%" r="25%">
+      <stop offset="0%" stop-color="#FEFCF8" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#D4C4A0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a8innerGlow" cx="50%" cy="40%" r="30%">
+      <stop offset="0%" stop-color="#D4C4A0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#a8bg)"/>
+
+  <!-- Mihrab (prayer niche) — the most sacred architectural element in a mosque -->
+  <g>
+    <!-- Outermost arch frame -->
+    <path d="M148,430 L148,200 Q148,90 256,65 Q364,90 364,200 L364,430"
+          fill="none" stroke="url(#a8gold)" stroke-width="3" opacity="0.8"/>
+
+    <!-- Second arch (inner frame) -->
+    <path d="M172,430 L172,210 Q172,115 256,92 Q340,115 340,210 L340,430"
+          fill="none" stroke="#D4C4A0" stroke-width="1.5" opacity="0.45"/>
+
+    <!-- Third arch (innermost, the niche) -->
+    <path d="M198,430 L198,220 Q198,140 256,120 Q314,140 314,220 L314,430"
+          fill="url(#a8innerGlow)" stroke="#D4C4A0" stroke-width="1" opacity="0.35"/>
+
+    <!-- Scalloped arch decoration (muqarnas hint) -->
+    <path d="M195,220 Q210,200 225,215 Q240,200 256,215 Q272,200 287,215 Q302,200 317,220"
+          fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.4"/>
+
+    <!-- Inner scallops (smaller) -->
+    <path d="M215,200 Q228,188 240,198 Q248,188 256,198 Q264,188 272,198 Q284,188 297,200"
+          fill="none" stroke="#D4C4A0" stroke-width="0.6" opacity="0.25"/>
+
+    <!-- Hanging lamp (qandil) inside the mihrab -->
+    <g transform="translate(256,190)">
+      <!-- Chain -->
+      <line x1="0" y1="-70" x2="0" y2="-20" stroke="#B8956A" stroke-width="1" opacity="0.4"/>
+      <!-- Small chain links -->
+      <circle cx="0" cy="-55" r="3" fill="none" stroke="#B8956A" stroke-width="0.6" opacity="0.3"/>
+      <circle cx="0" cy="-42" r="3" fill="none" stroke="#B8956A" stroke-width="0.6" opacity="0.3"/>
+      <circle cx="0" cy="-29" r="3" fill="none" stroke="#B8956A" stroke-width="0.6" opacity="0.3"/>
+
+      <!-- Lamp body -->
+      <path d="M-14,-18 Q-18,-8 -16,5 Q-14,15 0,22 Q14,15 16,5 Q18,-8 14,-18 Z"
+            fill="none" stroke="url(#a8gold)" stroke-width="1.5" opacity="0.7"/>
+
+      <!-- Lamp top rim -->
+      <ellipse cx="0" cy="-18" rx="14" ry="4" fill="none" stroke="#D4C4A0" stroke-width="1" opacity="0.5"/>
+
+      <!-- Flame / light -->
+      <ellipse cx="0" cy="0" rx="5" ry="9" fill="#D4C4A0" opacity="0.12"/>
+      <ellipse cx="0" cy="-2" rx="3" ry="6" fill="#E8D5A8" opacity="0.2"/>
+      <ellipse cx="0" cy="-3" rx="1.5" ry="3.5" fill="#FEFCF8" opacity="0.5"/>
+    </g>
+
+    <!-- Light glow from lamp -->
+    <ellipse cx="256" cy="200" rx="50" ry="40" fill="url(#a8glow)"/>
+
+    <!-- Vertical column lines -->
+    <line x1="172" y1="430" x2="172" y2="210" stroke="#B8956A" stroke-width="0.5" opacity="0.15"/>
+    <line x1="340" y1="430" x2="340" y2="210" stroke="#B8956A" stroke-width="0.5" opacity="0.15"/>
+
+    <!-- Column capitals (top decorations) -->
+    <rect x="143" y="195" width="12" height="8" rx="2" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.3"/>
+    <rect x="358" y="195" width="12" height="8" rx="2" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- Column bases -->
+    <rect x="143" y="422" width="12" height="8" rx="1" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.25"/>
+    <rect x="358" y="422" width="12" height="8" rx="1" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.25"/>
+
+    <!-- Keystone ornament -->
+    <g transform="translate(256,72)">
+      <polygon points="0,-10 6,0 0,4 -6,0" fill="#D4C4A0" opacity="0.5"/>
+    </g>
+
+    <!-- Geometric border decoration between outer and middle arch -->
+    <g stroke="#B8956A" stroke-width="0.5" opacity="0.2">
+      <!-- Left side geometric dots -->
+      <circle cx="160" cy="250" r="2"/>
+      <circle cx="160" cy="290" r="2"/>
+      <circle cx="160" cy="330" r="2"/>
+      <circle cx="160" cy="370" r="2"/>
+      <!-- Right side -->
+      <circle cx="352" cy="250" r="2"/>
+      <circle cx="352" cy="290" r="2"/>
+      <circle cx="352" cy="330" r="2"/>
+      <circle cx="352" cy="370" r="2"/>
+    </g>
+
+    <!-- Floor line -->
+    <line x1="120" y1="430" x2="392" y2="430" stroke="url(#a8goldH)" stroke-width="1.5" opacity="0.5"/>
+    <line x1="130" y1="438" x2="382" y2="438" stroke="#B8956A" stroke-width="0.5" opacity="0.15"/>
+
+    <!-- Small 8-pointed star above the arch (finial) -->
+    <g transform="translate(256,52)" opacity="0.65">
+      <g fill="#D4C4A0">
+        <rect x="-6" y="-6" width="12" height="12" rx="0.5" transform="rotate(0)"/>
+        <rect x="-6" y="-6" width="12" height="12" rx="0.5" transform="rotate(45)"/>
+      </g>
+      <circle r="2.5" fill="#0D1430" opacity="0.6"/>
+      <circle r="1.5" fill="#E8D5A8" opacity="0.8"/>
+    </g>
+  </g>
+</svg>

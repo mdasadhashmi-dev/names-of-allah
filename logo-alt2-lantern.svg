@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="a2bg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#141832"/>
+      <stop offset="100%" stop-color="#0A0E1F"/>
+    </radialGradient>
+    <linearGradient id="a2gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8D5A8"/>
+      <stop offset="50%" stop-color="#C8A96E"/>
+      <stop offset="100%" stop-color="#8A6D42"/>
+    </linearGradient>
+    <linearGradient id="a2light" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#F0E4C8" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#D4C4A0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#B8956A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="a2glow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#D4C4A0" stop-opacity="0.25"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a2goldH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A07E54"/>
+      <stop offset="50%" stop-color="#D4C4A0"/>
+      <stop offset="100%" stop-color="#A07E54"/>
+    </linearGradient>
+    <!-- Mashrabiya lattice pattern -->
+    <pattern id="lattice" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <circle cx="10" cy="10" r="6" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.5"/>
+      <line x1="10" y1="0" x2="10" y2="4" stroke="#D4C4A0" stroke-width="0.6" opacity="0.4"/>
+      <line x1="10" y1="16" x2="10" y2="20" stroke="#D4C4A0" stroke-width="0.6" opacity="0.4"/>
+      <line x1="0" y1="10" x2="4" y2="10" stroke="#D4C4A0" stroke-width="0.6" opacity="0.4"/>
+      <line x1="16" y1="10" x2="20" y2="10" stroke="#D4C4A0" stroke-width="0.6" opacity="0.4"/>
+    </pattern>
+    <clipPath id="lanternBody">
+      <path d="M220,160 Q220,140 240,130 L272,130 Q292,140 292,160 L300,300 Q300,340 280,360 L232,360 Q212,340 212,300 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#a2bg)"/>
+
+  <!-- Light glow from lantern -->
+  <ellipse cx="256" cy="320" rx="120" ry="160" fill="url(#a2glow)"/>
+
+  <!-- Light rays emanating downward -->
+  <g opacity="0.15">
+    <polygon points="256,340 200,500 210,500" fill="url(#a2light)"/>
+    <polygon points="256,340 240,500 250,500" fill="url(#a2light)"/>
+    <polygon points="256,340 262,500 272,500" fill="url(#a2light)"/>
+    <polygon points="256,340 302,500 312,500" fill="url(#a2light)"/>
+    <polygon points="256,340 170,480 180,480" fill="url(#a2light)"/>
+    <polygon points="256,340 332,480 342,480" fill="url(#a2light)"/>
+  </g>
+
+  <!-- Lantern -->
+  <g>
+    <!-- Top cap / dome -->
+    <path d="M238,120 Q238,90 256,78 Q274,90 274,120 Z" fill="url(#a2gold)" opacity="0.9"/>
+
+    <!-- Finial at top -->
+    <circle cx="256" cy="72" r="6" fill="#D4C4A0" opacity="0.8"/>
+    <line x1="256" y1="78" x2="256" y2="62" stroke="#D4C4A0" stroke-width="2" opacity="0.7"/>
+    <circle cx="256" cy="60" r="3" fill="#E8D5A8"/>
+
+    <!-- Chain/hook -->
+    <path d="M256,57 Q256,42 256,38" fill="none" stroke="#B8956A" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="256" cy="36" r="4" fill="none" stroke="#B8956A" stroke-width="1" opacity="0.4"/>
+
+    <!-- Main body - Moorish arch shape -->
+    <path d="M228,122 L228,140 Q210,145 206,170 L202,290 Q202,340 226,360 L286,360 Q310,340 310,290 L306,170 Q302,145 284,140 L284,122"
+          fill="none" stroke="url(#a2gold)" stroke-width="2.5" opacity="0.85"/>
+
+    <!-- Glass panels with lattice -->
+    <g clip-path="url(#lanternBody)">
+      <rect x="206" y="140" width="100" height="220" fill="url(#lattice)" opacity="0.4"/>
+    </g>
+
+    <!-- Inner glow (the light inside) -->
+    <ellipse cx="256" cy="260" rx="30" ry="50" fill="#D4C4A0" opacity="0.15"/>
+    <ellipse cx="256" cy="255" rx="15" ry="30" fill="#E8D5A8" opacity="0.2"/>
+    <ellipse cx="256" cy="250" rx="6" ry="12" fill="#FEFCF8" opacity="0.4"/>
+
+    <!-- Horizontal bands -->
+    <line x1="210" y1="180" x2="302" y2="180" stroke="url(#a2goldH)" stroke-width="1.5" opacity="0.6"/>
+    <line x1="206" y1="230" x2="306" y2="230" stroke="url(#a2goldH)" stroke-width="1.5" opacity="0.6"/>
+    <line x1="208" y1="280" x2="304" y2="280" stroke="url(#a2goldH)" stroke-width="1.5" opacity="0.6"/>
+    <line x1="214" y1="330" x2="298" y2="330" stroke="url(#a2goldH)" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Bottom finial -->
+    <path d="M240,360 Q256,380 272,360" fill="none" stroke="url(#a2gold)" stroke-width="2" opacity="0.7"/>
+    <circle cx="256" cy="382" r="4" fill="#D4C4A0" opacity="0.7"/>
+
+    <!-- Arch cutouts on body (Moorish windows) -->
+    <path d="M230,185 Q230,195 240,200 L240,225 L230,225 L230,185 Z" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.35"/>
+    <path d="M282,185 Q282,195 272,200 L272,225 L282,225 L282,185 Z" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.35"/>
+
+    <!-- Small Moorish arch windows -->
+    <path d="M239,240 Q256,232 273,240 L273,270 L239,270 Z" fill="none" stroke="#D4C4A0" stroke-width="1" opacity="0.45"/>
+    <path d="M244,290 Q256,284 268,290 L268,322 L244,322 Z" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.35"/>
+  </g>
+
+  <!-- "99" text below lantern -->
+  <text x="256" y="430" text-anchor="middle" font-family="'Playfair Display','Georgia',serif"
+        font-size="24" font-weight="600" fill="#D4C4A0" opacity="0.5" letter-spacing="6">
+    99
+  </text>
+</svg>

@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Sparkles, BookOpen, Heart, HandHeart, HelpCircle, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { BookOpen, Heart, HandHeart, HelpCircle, ArrowRight } from "lucide-react";
 import { useSemanticColors } from "@/hooks/useSemanticColors";
 import { getNameOfDay } from "@/lib/nameOfDay";
 
@@ -48,20 +49,16 @@ export default function WelcomePage() {
             animate="visible"
             className="max-w-2xl mx-auto"
           >
-            <motion.h1
-              variants={itemVariants}
-              className="arabic-text text-4xl md:text-6xl font-bold mb-4"
-              style={{ color: "#C8A951" }}
-            >
-              أسماء الله الحسنى
-            </motion.h1>
-            <motion.p
-              variants={itemVariants}
-              className="text-xl md:text-2xl font-serif mb-4"
-              style={{ color: "rgba(255,255,255,0.85)" }}
-            >
-              The 99 Beautiful Names of Allah
-            </motion.p>
+            <motion.div variants={itemVariants} className="mb-6">
+              <Image
+                src="/logo.svg"
+                alt="99 Names of Allah"
+                width={400}
+                height={400}
+                priority
+                className="mx-auto drop-shadow-[0_0_40px_rgba(200,169,81,0.35)]"
+              />
+            </motion.div>
             <motion.div
               variants={itemVariants}
               className="w-20 h-px mx-auto mb-6"
@@ -193,57 +190,20 @@ export default function WelcomePage() {
           {/* Logo section */}
           <motion.div variants={itemVariants} className="relative mb-10">
             <motion.div
-              animate={{ scale: [1, 1.05, 1], opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-28 h-28 rounded-full flex items-center justify-center"
-              style={{ border: "2px solid rgba(217,191,140,0.4)" }}
+              animate={{ scale: [1, 1.03, 1], opacity: [0.85, 1, 0.85] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
             >
-              <div
-                className="w-20 h-20 rounded-full flex items-center justify-center"
-                style={{ border: "1px solid rgba(217,191,140,0.3)" }}
-              >
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ border: "1px solid rgba(217,191,140,0.2)" }}
-                >
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Sparkles size={24} className="text-gold" />
-                  </motion.div>
-                </div>
-              </div>
+              <Image
+                src="/logo.svg"
+                alt="99 Names of Allah"
+                width={420}
+                height={420}
+                priority
+                className="drop-shadow-[0_0_50px_rgba(212,196,160,0.35)]"
+              />
             </motion.div>
           </motion.div>
-
-          {/* Title */}
-          <motion.h1
-            variants={itemVariants}
-            className="arabic-text text-4xl md:text-5xl font-bold mb-3"
-            style={{
-              color: "rgb(217, 191, 140)",
-              textShadow: "0 0 20px rgba(217, 191, 140, 0.3)",
-            }}
-          >
-            أسماء الله الحسنى
-          </motion.h1>
-
-          <motion.p
-            variants={itemVariants}
-            className="text-xl md:text-2xl font-serif mb-2"
-            style={{ color: "rgba(255,255,255,0.8)" }}
-          >
-            The 99 Beautiful Names
-          </motion.p>
-
-          <motion.div
-            variants={itemVariants}
-            className="w-16 h-px mb-8"
-            style={{
-              background: "linear-gradient(to right, transparent, rgb(217,191,140), transparent)",
-            }}
-          />
 
           {/* Hadith card */}
           <motion.div

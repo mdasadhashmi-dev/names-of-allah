@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="a4bg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#141832"/>
+      <stop offset="100%" stop-color="#0A0E1F"/>
+    </radialGradient>
+    <linearGradient id="a4gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8D5A8"/>
+      <stop offset="60%" stop-color="#C8A96E"/>
+      <stop offset="100%" stop-color="#8A6D42"/>
+    </linearGradient>
+    <linearGradient id="a4light" x1="0.5" y1="0.3" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FEFCF8" stop-opacity="0.5"/>
+      <stop offset="30%" stop-color="#D4C4A0" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#B8956A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="a4glow" cx="50%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#D4C4A0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a4goldH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8A6D42" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D4C4A0"/>
+      <stop offset="100%" stop-color="#8A6D42" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#a4bg)"/>
+
+  <!-- Light spilling through the door -->
+  <polygon points="256,160 160,450 352,450" fill="url(#a4light)" opacity="0.5"/>
+  <ellipse cx="256" cy="190" rx="70" ry="50" fill="url(#a4glow)"/>
+
+  <!-- The Moorish arch / doorway -->
+  <g>
+    <!-- Outer arch frame -->
+    <path d="M170,420 L170,220 Q170,120 256,90 Q342,120 342,220 L342,420"
+          fill="none" stroke="url(#a4gold)" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Inner arch (slightly smaller, the door opening) -->
+    <path d="M195,420 L195,230 Q195,145 256,118 Q317,145 317,230 L317,420"
+          fill="none" stroke="#D4C4A0" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Keystone at top -->
+    <path d="M248,95 L256,82 L264,95" fill="none" stroke="#D4C4A0" stroke-width="2" opacity="0.7"/>
+
+    <!-- Door panels (slightly ajar - left door closed, right door open) -->
+    <!-- Left door -->
+    <path d="M198,420 L198,232 Q198,150 256,122"
+          fill="none" stroke="#B8956A" stroke-width="1" opacity="0.35"/>
+    <line x1="198" y1="420" x2="198" y2="232" stroke="#B8956A" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Right door (angled open — showing as narrower due to perspective) -->
+    <path d="M314,420 L314,280 Q314,200 290,170"
+          fill="none" stroke="#B8956A" stroke-width="1" opacity="0.35" stroke-dasharray="4 6"/>
+
+    <!-- Decorative elements on arch -->
+    <!-- Scalloped inner edge -->
+    <path d="M210,280 Q220,270 230,280 Q240,270 250,280 Q260,270 270,280 Q280,270 290,280 Q300,270 310,280"
+          fill="none" stroke="#D4C4A0" stroke-width="0.75" opacity="0.35"/>
+
+    <!-- Horizontal threshold -->
+    <line x1="170" y1="420" x2="342" y2="420" stroke="url(#a4goldH)" stroke-width="2" opacity="0.6"/>
+
+    <!-- Steps -->
+    <line x1="160" y1="435" x2="352" y2="435" stroke="#B8956A" stroke-width="1" opacity="0.2"/>
+    <line x1="155" y1="448" x2="357" y2="448" stroke="#B8956A" stroke-width="0.75" opacity="0.12"/>
+
+    <!-- Light source inside (star/sparkle visible through door) -->
+    <g transform="translate(256,200)">
+      <!-- Glowing orb -->
+      <circle r="12" fill="#D4C4A0" opacity="0.15"/>
+      <circle r="6" fill="#E8D5A8" opacity="0.3"/>
+      <circle r="2.5" fill="#FEFCF8" opacity="0.7"/>
+
+      <!-- Small rays from light -->
+      <g stroke="#D4C4A0" stroke-width="0.5" opacity="0.3">
+        <line x1="0" y1="-15" x2="0" y2="-25"/>
+        <line x1="0" y1="15" x2="0" y2="25"/>
+        <line x1="-15" y1="0" x2="-25" y2="0"/>
+        <line x1="15" y1="0" x2="25" y2="0"/>
+        <line x1="-11" y1="-11" x2="-18" y2="-18"/>
+        <line x1="11" y1="-11" x2="18" y2="-18"/>
+        <line x1="-11" y1="11" x2="-18" y2="18"/>
+        <line x1="11" y1="11" x2="18" y2="18"/>
+      </g>
+    </g>
+
+    <!-- Decorative column bases -->
+    <rect x="162" y="400" width="16" height="20" rx="2" fill="none" stroke="#B8956A" stroke-width="1" opacity="0.3"/>
+    <rect x="334" y="400" width="16" height="20" rx="2" fill="none" stroke="#B8956A" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <!-- "99" discreetly at bottom -->
+  <text x="256" y="478" text-anchor="middle" font-family="'Playfair Display','Georgia',serif"
+        font-size="18" font-weight="400" fill="#D4C4A0" opacity="0.3" letter-spacing="4">
+    99
+  </text>
+</svg>

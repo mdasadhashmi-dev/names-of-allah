@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="a8bg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#141832"/>
+      <stop offset="100%" stop-color="#0A0E1F"/>
+    </radialGradient>
+    <linearGradient id="a8gold" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#F0E4C8"/>
+      <stop offset="50%" stop-color="#C8A96E"/>
+      <stop offset="100%" stop-color="#8A6D42"/>
+    </linearGradient>
+    <linearGradient id="a8goldH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8A6D42" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D4C4A0"/>
+      <stop offset="100%" stop-color="#8A6D42" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="a8glow" cx="50%" cy="30%" r="25%">
+      <stop offset="0%" stop-color="#FEFCF8" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#D4C4A0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a8innerGlow" cx="50%" cy="40%" r="30%">
+      <stop offset="0%" stop-color="#D4C4A0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a8textGold" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#F0E4C8"/>
+      <stop offset="100%" stop-color="#C8A96E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#a8bg)"/>
+
+  <!-- Mihrab (prayer niche) -->
+  <g>
+    <!-- Outermost arch frame -->
+    <path d="M148,430 L148,200 Q148,90 256,65 Q364,90 364,200 L364,430"
+          fill="none" stroke="url(#a8gold)" stroke-width="3" opacity="0.8"/>
+
+    <!-- Second arch (inner frame) -->
+    <path d="M172,430 L172,210 Q172,115 256,92 Q340,115 340,210 L340,430"
+          fill="none" stroke="#D4C4A0" stroke-width="1.5" opacity="0.45"/>
+
+    <!-- Third arch (innermost, the niche) -->
+    <path d="M198,430 L198,220 Q198,140 256,120 Q314,140 314,220 L314,430"
+          fill="url(#a8innerGlow)" stroke="#D4C4A0" stroke-width="1" opacity="0.35"/>
+
+    <!-- Scalloped arch decoration (muqarnas hint) -->
+    <path d="M195,220 Q210,200 225,215 Q240,200 256,215 Q272,200 287,215 Q302,200 317,220"
+          fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.4"/>
+
+    <!-- Inner scallops (smaller) -->
+    <path d="M215,200 Q228,188 240,198 Q248,188 256,198 Q264,188 272,198 Q284,188 297,200"
+          fill="none" stroke="#D4C4A0" stroke-width="0.6" opacity="0.25"/>
+
+    <!-- Hanging lamp (qandil) inside the mihrab -->
+    <g transform="translate(256,160)">
+      <!-- Chain -->
+      <line x1="0" y1="-40" x2="0" y2="-16" stroke="#B8956A" stroke-width="1" opacity="0.4"/>
+      <!-- Small chain links -->
+      <circle cx="0" cy="-35" r="2.5" fill="none" stroke="#B8956A" stroke-width="0.6" opacity="0.3"/>
+      <circle cx="0" cy="-25" r="2.5" fill="none" stroke="#B8956A" stroke-width="0.6" opacity="0.3"/>
+
+      <!-- Lamp body -->
+      <path d="M-12,-14 Q-15,-5 -13,4 Q-11,12 0,18 Q11,12 13,4 Q15,-5 12,-14 Z"
+            fill="none" stroke="url(#a8gold)" stroke-width="1.5" opacity="0.7"/>
+
+      <!-- Lamp top rim -->
+      <ellipse cx="0" cy="-14" rx="12" ry="3.5" fill="none" stroke="#D4C4A0" stroke-width="1" opacity="0.5"/>
+
+      <!-- Flame / light -->
+      <ellipse cx="0" cy="0" rx="4" ry="7" fill="#D4C4A0" opacity="0.12"/>
+      <ellipse cx="0" cy="-1" rx="2.5" ry="5" fill="#E8D5A8" opacity="0.2"/>
+      <ellipse cx="0" cy="-2" rx="1.2" ry="3" fill="#FEFCF8" opacity="0.5"/>
+    </g>
+
+    <!-- Light glow from lamp -->
+    <ellipse cx="256" cy="170" rx="45" ry="35" fill="url(#a8glow)"/>
+
+    <!-- ========== TEXT: "99 Names of Allah" inside the arch ========== -->
+
+    <!-- Large "99" number -->
+    <text x="256" y="275" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="72" font-weight="700" fill="url(#a8textGold)" opacity="0.85"
+          letter-spacing="4">
+      99
+    </text>
+
+    <!-- Decorative line above "Names" -->
+    <line x1="214" y1="296" x2="298" y2="296" stroke="#D4C4A0" stroke-width="0.6" opacity="0.35"/>
+
+    <!-- "NAMES" -->
+    <text x="256" y="324" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="22" font-weight="600" fill="#D4C4A0" opacity="0.7"
+          letter-spacing="8">
+      NAMES
+    </text>
+
+    <!-- "of" in italic, smaller -->
+    <text x="256" y="348" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="14" font-style="italic" font-weight="300" fill="#B8956A" opacity="0.55"
+          letter-spacing="3">
+      of
+    </text>
+
+    <!-- "ALLAH" -->
+    <text x="256" y="378" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Playfair Display','Georgia',serif"
+          font-size="26" font-weight="700" fill="url(#a8textGold)" opacity="0.8"
+          letter-spacing="10">
+      ALLAH
+    </text>
+
+    <!-- Decorative line below "Allah" -->
+    <line x1="210" y1="396" x2="302" y2="396" stroke="#D4C4A0" stroke-width="0.6" opacity="0.35"/>
+
+    <!-- Small diamond ornaments flanking the lines -->
+    <polygon points="206,296 208,293 210,296 208,299" fill="#D4C4A0" opacity="0.3"/>
+    <polygon points="302,296 304,293 306,296 304,299" fill="#D4C4A0" opacity="0.3"/>
+    <polygon points="202,396 204,393 206,396 204,399" fill="#D4C4A0" opacity="0.3"/>
+    <polygon points="306,396 308,393 310,396 308,399" fill="#D4C4A0" opacity="0.3"/>
+
+    <!-- Vertical column lines -->
+    <line x1="172" y1="430" x2="172" y2="210" stroke="#B8956A" stroke-width="0.5" opacity="0.15"/>
+    <line x1="340" y1="430" x2="340" y2="210" stroke="#B8956A" stroke-width="0.5" opacity="0.15"/>
+
+    <!-- Column capitals -->
+    <rect x="143" y="195" width="12" height="8" rx="2" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.3"/>
+    <rect x="358" y="195" width="12" height="8" rx="2" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- Column bases -->
+    <rect x="143" y="422" width="12" height="8" rx="1" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.25"/>
+    <rect x="358" y="422" width="12" height="8" rx="1" fill="none" stroke="#D4C4A0" stroke-width="0.8" opacity="0.25"/>
+
+    <!-- Keystone ornament -->
+    <g transform="translate(256,72)">
+      <polygon points="0,-10 6,0 0,4 -6,0" fill="#D4C4A0" opacity="0.5"/>
+    </g>
+
+    <!-- Geometric border decoration between outer and middle arch -->
+    <g stroke="#B8956A" stroke-width="0.5" opacity="0.2">
+      <circle cx="160" cy="250" r="2"/>
+      <circle cx="160" cy="290" r="2"/>
+      <circle cx="160" cy="330" r="2"/>
+      <circle cx="160" cy="370" r="2"/>
+      <circle cx="352" cy="250" r="2"/>
+      <circle cx="352" cy="290" r="2"/>
+      <circle cx="352" cy="330" r="2"/>
+      <circle cx="352" cy="370" r="2"/>
+    </g>
+
+    <!-- Floor line -->
+    <line x1="120" y1="430" x2="392" y2="430" stroke="url(#a8goldH)" stroke-width="1.5" opacity="0.5"/>
+    <line x1="130" y1="438" x2="382" y2="438" stroke="#B8956A" stroke-width="0.5" opacity="0.15"/>
+
+    <!-- Small 8-pointed star above the arch (finial) -->
+    <g transform="translate(256,52)" opacity="0.65">
+      <g fill="#D4C4A0">
+        <rect x="-6" y="-6" width="12" height="12" rx="0.5" transform="rotate(0)"/>
+        <rect x="-6" y="-6" width="12" height="12" rx="0.5" transform="rotate(45)"/>
+      </g>
+      <circle r="2.5" fill="#0D1430" opacity="0.6"/>
+      <circle r="1.5" fill="#E8D5A8" opacity="0.8"/>
+    </g>
+  </g>
+</svg>

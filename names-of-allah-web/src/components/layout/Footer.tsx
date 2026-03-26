@@ -18,11 +18,16 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
+              <img
+                src="/logo.svg"
+                alt="99 Names of Allah"
+                className="h-10 w-10 object-contain"
+              />
               <span
-                className="arabic-text text-xl"
+                className="text-sm font-semibold"
                 style={{ color: "#C8A951" }}
               >
-                أسماء الله
+                Names of Allah
               </span>
             </div>
             <p

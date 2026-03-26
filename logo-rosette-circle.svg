@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="goldRadial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4C4A0"/>
+      <stop offset="70%" stop-color="#B8956A"/>
+      <stop offset="100%" stop-color="#8A6D42"/>
+    </radialGradient>
+
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4C4A0" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#B8956A" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0D1430" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#141832"/>
+      <stop offset="100%" stop-color="#0A0E1F"/>
+    </radialGradient>
+
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4C4A0"/>
+      <stop offset="50%" stop-color="#B8956A"/>
+      <stop offset="100%" stop-color="#A07E54"/>
+    </linearGradient>
+
+    <clipPath id="circleClip">
+      <circle cx="256" cy="256" r="256"/>
+    </clipPath>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="256" cy="256" r="256" fill="url(#bgGrad)"/>
+
+  <!-- Subtle glow -->
+  <circle cx="256" cy="256" r="230" fill="url(#glowGrad)"/>
+
+  <!-- 99 Rosette Rays — slightly more elegant with varying lengths -->
+  <g transform="translate(256,256)" opacity="0.88">
+    <g fill="url(#goldRadial)">
+      <!-- Primary rays (every 3rd ray is taller for a starburst feel) -->
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(0)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(3.636)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(7.273)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(10.909)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(14.545)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(18.182)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(21.818)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(25.455)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(29.091)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(32.727)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(36.364)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(40.0)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(43.636)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(47.273)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(50.909)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(54.545)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(58.182)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(61.818)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(65.455)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(69.091)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(72.727)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(76.364)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(80.0)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(83.636)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(87.273)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(90.909)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(94.545)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(98.182)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(101.818)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(105.455)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(109.091)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(112.727)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(116.364)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(120.0)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(123.636)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(127.273)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(130.909)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(134.545)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(138.182)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(141.818)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(145.455)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(149.091)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(152.727)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(156.364)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(160.0)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(163.636)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(167.273)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(170.909)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(174.545)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(178.182)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(181.818)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(185.455)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(189.091)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(192.727)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(196.364)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(200.0)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(203.636)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(207.273)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(210.909)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(214.545)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(218.182)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(221.818)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(225.455)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(229.091)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(232.727)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(236.364)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(240.0)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(243.636)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(247.273)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(250.909)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(254.545)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(258.182)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(261.818)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(265.455)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(269.091)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(272.727)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(276.364)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(280.0)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(283.636)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(287.273)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(290.909)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(294.545)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(298.182)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(301.818)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(305.455)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(309.091)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(312.727)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(316.364)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(320.0)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(323.636)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(327.273)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(330.909)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(334.545)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(338.182)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(341.818)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(345.455)"/>
+      <polygon points="0,-190 2.5,-65 0,-58 -2.5,-65" transform="rotate(349.091)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(352.727)"/>
+      <polygon points="0,-170 2,-65 0,-58 -2,-65" transform="rotate(356.364)"/>
+    </g>
+  </g>
+
+  <!-- Outer decorative rings -->
+  <circle cx="256" cy="256" r="192" fill="none" stroke="url(#ringGrad)" stroke-width="0.75" opacity="0.35"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#B8956A" stroke-width="0.5" opacity="0.15" stroke-dasharray="3 6"/>
+
+  <!-- Inner circle -->
+  <circle cx="256" cy="256" r="62" fill="#0A0E1F"/>
+  <circle cx="256" cy="256" r="62" fill="none" stroke="url(#ringGrad)" stroke-width="1.5" opacity="0.75"/>
+  <circle cx="256" cy="256" r="56" fill="none" stroke="#B8956A" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- Arabic text -->
+  <text x="256" y="250" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Scheherazade New', 'Amiri', 'Traditional Arabic', serif"
+        font-size="30" font-weight="bold" fill="#FEFCF8" opacity="0.95"
+        direction="rtl" unicode-bidi="bidi-override">
+    أسماء الله
+  </text>
+
+  <!-- Arabic 99 -->
+  <text x="256" y="282" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Scheherazade New', 'Amiri', serif"
+        font-size="16" fill="#D4C4A0" opacity="0.65"
+        letter-spacing="2">
+    ٩٩
+  </text>
+
+  <!-- Outer edge ring -->
+  <circle cx="256" cy="256" r="252" fill="none" stroke="#B8956A" stroke-width="0.75" opacity="0.15"/>
+</svg>
