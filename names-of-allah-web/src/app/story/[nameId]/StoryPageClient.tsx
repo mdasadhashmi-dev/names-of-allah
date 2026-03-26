@@ -18,6 +18,26 @@ import { ZakariyaStory } from "@/components/stories/ZakariyaStory";
 import { AlWadudStory } from "@/components/stories/AlWadudStory";
 import { IbrahimFireStory } from "@/components/stories/IbrahimFireStory";
 import { AlHayyStory } from "@/components/stories/AlHayyStory";
+import { AlQuddusStory } from "@/components/stories/AlQuddusStory";
+import { AlMuminStory } from "@/components/stories/AlMuminStory";
+import { AlMuhayminStory } from "@/components/stories/AlMuhayminStory";
+import { AlMutakabbirStory } from "@/components/stories/AlMutakabbirStory";
+import { AlQahharStory } from "@/components/stories/AlQahharStory";
+import { AlQabidStory } from "@/components/stories/AlQabidStory";
+import { AlBasitStory } from "@/components/stories/AlBasitStory";
+import { AsSameeStory } from "@/components/stories/AsSameeStory";
+import { AlBaseerStory } from "@/components/stories/AlBaseerStory";
+import { AlHaleemStory } from "@/components/stories/AlHaleemStory";
+import { AlGhafoorStory } from "@/components/stories/AlGhafoorStory";
+import { AshShakurStory } from "@/components/stories/AshShakurStory";
+import { AlHafeezStory } from "@/components/stories/AlHafeezStory";
+import { AlKareemStory } from "@/components/stories/AlKareemStory";
+import { AlHaqqStory } from "@/components/stories/AlHaqqStory";
+import { AlQawiyyStory } from "@/components/stories/AlQawiyyStory";
+import { AlWaliStory } from "@/components/stories/AlWaliStory";
+import { AlQayyumStory } from "@/components/stories/AlQayyumStory";
+import { AtTawwabStory } from "@/components/stories/AtTawwabStory";
+import { AlAfuwStory } from "@/components/stories/AlAfuwStory";
 
 export default function StoryPageClient({ nameId }: { nameId: string }) {
   switch (nameId) {
@@ -55,6 +75,46 @@ export default function StoryPageClient({ nameId }: { nameId: string }) {
       return <IbrahimFireStory nameId={nameId} />;
     case "al-hayy":
       return <AlHayyStory nameId={nameId} />;
+    case "al-quddus":
+      return <AlQuddusStory nameId={nameId} />;
+    case "al-mumin":
+      return <AlMuminStory nameId={nameId} />;
+    case "al-muhaymin":
+      return <AlMuhayminStory nameId={nameId} />;
+    case "al-mutakabbir":
+      return <AlMutakabbirStory nameId={nameId} />;
+    case "al-qahhar":
+      return <AlQahharStory nameId={nameId} />;
+    case "al-qabid":
+      return <AlQabidStory nameId={nameId} />;
+    case "al-basit":
+      return <AlBasitStory nameId={nameId} />;
+    case "as-samee":
+      return <AsSameeStory nameId={nameId} />;
+    case "al-baseer":
+      return <AlBaseerStory nameId={nameId} />;
+    case "al-haleem":
+      return <AlHaleemStory nameId={nameId} />;
+    case "al-ghafoor":
+      return <AlGhafoorStory nameId={nameId} />;
+    case "ash-shakur":
+      return <AshShakurStory nameId={nameId} />;
+    case "al-hafeez":
+      return <AlHafeezStory nameId={nameId} />;
+    case "al-kareem":
+      return <AlKareemStory nameId={nameId} />;
+    case "al-haqq":
+      return <AlHaqqStory nameId={nameId} />;
+    case "al-qawiyy":
+      return <AlQawiyyStory nameId={nameId} />;
+    case "al-wali":
+      return <AlWaliStory nameId={nameId} />;
+    case "al-qayyum":
+      return <AlQayyumStory nameId={nameId} />;
+    case "at-tawwab":
+      return <AtTawwabStory nameId={nameId} />;
+    case "al-afuw":
+      return <AlAfuwStory nameId={nameId} />;
     default:
       return <BaseStory nameId={nameId} />;
   }
