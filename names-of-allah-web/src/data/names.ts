@@ -231,7 +231,7 @@ export const allNames: AllahName[] = [
     approved: true,
     storyTitle: "Musa and the Parting of the Sea",
     quranicReference: "Surah Ash-Shu'ara 26:63",
-    audioFileName: undefined,
+    audioFileName: "al-fath-48-1",
     reflectionQuestion: "Where did you feel Allah opening a door for you recently?"
   },
   {

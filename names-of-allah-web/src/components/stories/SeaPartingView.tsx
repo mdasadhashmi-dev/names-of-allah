@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { ContinueToReflectButton } from "@/components/shared/ContinueToReflectButton";
 import { ExplanationPoint } from "@/components/shared/ExplanationPoint";
+import { AyahAudioButton } from "@/components/shared/AyahAudioButton";
+import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 
 interface SeaPartingViewProps {
   nameId: string;
@@ -16,6 +18,8 @@ export function SeaPartingView({ nameId }: SeaPartingViewProps) {
   const router = useRouter();
   const { setIsFullscreen } = useLayout();
   const [phase, setPhase] = useState(0);
+  const { play: playAudio, stop: stopAudio } = useAudioPlayer();
+  const audioFileName = "al-fath-48-1";
   // Phases: 0=sky, 1=sea, 2=staffRaised, 3=seaParted, 4=walking, 5=textOverlay, 6=finalReveal
 
   // Hide sidebar while cinematic story plays
@@ -31,6 +35,19 @@ export function SeaPartingView({ nameId }: SeaPartingViewProps) {
     );
     return () => timeouts.forEach(clearTimeout);
   }, []);
+
+  // Auto-play audio when final reveal phase starts
+  useEffect(() => {
+    if (phase >= 6) {
+      const t = setTimeout(() => {
+        playAudio(audioFileName);
+      }, 800);
+      return () => {
+        clearTimeout(t);
+        stopAudio();
+      };
+    }
+  }, [phase, playAudio, stopAudio]);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -323,6 +340,11 @@ export function SeaPartingView({ nameId }: SeaPartingViewProps) {
                   <p className="text-sm font-serif text-white/85 leading-relaxed whitespace-pre-line mt-4">
                     {"When you feel trapped,\nremember the sea that parted.\n\nAl-Fattah opens ways\nwhere none exist.\n\nHe is the Opener of hearts,\nof doors, of paths,\nof victory."}
                   </p>
+
+                  {/* Audio button */}
+                  <div className="flex justify-center mt-6">
+                    <AyahAudioButton audioFileName={audioFileName} />
+                  </div>
                 </motion.div>
 
                 <motion.div

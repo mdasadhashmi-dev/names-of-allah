@@ -9,6 +9,8 @@ import { ProgressIndicator } from "@/components/shared/ProgressIndicator";
 import { StoryTextBox } from "@/components/shared/StoryTextBox";
 import { ExplanationPoint } from "@/components/shared/ExplanationPoint";
 import { ContinueToReflectButton } from "@/components/shared/ContinueToReflectButton";
+import { AyahAudioButton } from "@/components/shared/AyahAudioButton";
+import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 
 export interface StoryScreen {
   text: string;
@@ -244,6 +246,7 @@ export function MultiScreenStory({
   const [showArabic, setShowArabic] = useState(false);
   const [showTranslation, setShowTranslation] = useState(false);
   const [showName, setShowName] = useState(false);
+  const { play: playAudio, stop: stopAudio } = useAudioPlayer();
 
   const isFinalScreen = currentScreen === screens.length;
   const progress = (currentScreen + 1) / totalScreens;
@@ -262,6 +265,19 @@ export function MultiScreenStory({
       return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
     }
   }, [isFinalScreen]);
+
+  // Auto-play audio when final reveal screen shows
+  useEffect(() => {
+    if (isFinalScreen && finalReveal.audioFileName) {
+      const t = setTimeout(() => {
+        playAudio(finalReveal.audioFileName!);
+      }, 800);
+      return () => {
+        clearTimeout(t);
+        stopAudio();
+      };
+    }
+  }, [isFinalScreen, finalReveal.audioFileName, playAudio, stopAudio]);
 
   const nextScreen = useCallback(() => {
     if (isTransitioning || isFinalScreen) return;
@@ -464,6 +480,13 @@ export function MultiScreenStory({
                         <p className="text-sm lg:text-base font-serif text-white/85 leading-relaxed whitespace-pre-line mt-4">
                           {finalReveal.closingText}
                         </p>
+
+                        {/* Audio button */}
+                        {finalReveal.audioFileName && (
+                          <div className="flex justify-center mt-6">
+                            <AyahAudioButton audioFileName={finalReveal.audioFileName} />
+                          </div>
+                        )}
                       </motion.div>
                     )}
 
