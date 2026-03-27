@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getNameById, allNames } from "@/data/names";
-import { getExtendedLearning } from "@/data/extended-learning";
-import { getDuaForName } from "@/data/duas";
+import { getNameById, allNames, type AllahName } from "@/data/names";
+import {
+  getExtendedLearning,
+  type ExtendedLearning,
+} from "@/data/extended-learning";
+import { getDuaForName, type NameDua } from "@/data/duas";
+import { getScholarlyExplanation } from "@/data/scholarly-explanations";
 import {
   BookOpen,
   Star,
@@ -15,7 +19,40 @@ import {
   HandHeart,
   Heart,
   Sparkles,
+  Clock,
+  ScrollText,
 } from "lucide-react";
+import { ScrollProgressBar } from "@/components/shared/ScrollProgressBar";
+
+function estimateReadingTime(
+  name: AllahName,
+  learning: ExtendedLearning | undefined,
+  dua: NameDua | null
+): number {
+  let wordCount = 0;
+  wordCount += name.meaning?.split(/\s+/).length || 0;
+  wordCount += name.reflectionQuestion?.split(/\s+/).length || 0;
+  wordCount += name.storyTitle?.split(/\s+/).length || 0;
+
+  if (learning) {
+    for (const h of learning.hadiths) {
+      wordCount += h.translation.split(/\s+/).length;
+      wordCount += h.context.split(/\s+/).length;
+    }
+    for (const i of learning.scholarlyInsights) {
+      wordCount += i.insight.split(/\s+/).length;
+    }
+    for (const a of learning.realLifeApplications) {
+      wordCount += a.split(/\s+/).length;
+    }
+  }
+
+  if (dua) {
+    wordCount += dua.translation.split(/\s+/).length;
+  }
+
+  return Math.max(1, Math.ceil(wordCount / 200));
+}
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://namesofallah.app";
@@ -101,6 +138,8 @@ export default async function NameSEOPage({
 
   const learning = getExtendedLearning(nameId);
   const dua = getDuaForName(nameId);
+  const scholarly = getScholarlyExplanation(nameId);
+  const readingTime = estimateReadingTime(name, learning, dua);
   const approvedNames = allNames.filter((n) => n.approved);
   const currentIndex = approvedNames.findIndex((n) => n.nameId === nameId);
   const prevName = currentIndex > 0 ? approvedNames[currentIndex - 1] : null;
@@ -172,6 +211,7 @@ export default async function NameSEOPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
+      <ScrollProgressBar />
       <div className="min-h-screen relative">
         <div className="fixed inset-0 bg-gradient-to-b from-[#030510] via-[#0a1028] to-black dark-bg-overlay" />
 
@@ -245,7 +285,47 @@ export default async function NameSEOPage({
                 <span className="text-white/60">{name.quranicReference}</span>
               </p>
             )}
+
+            {/* Reading time */}
+            <div className="inline-flex items-center gap-1.5 text-xs text-white/35 mt-4">
+              <Clock size={12} />
+              <span>{readingTime} min read</span>
+            </div>
           </header>
+
+          {/* Compact TOC */}
+          <nav className="mb-12 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-white/30">
+            {scholarly && (
+              <a href="#scholarly" className="hover:text-white/60 transition-colors">
+                Scholarly Explanation
+              </a>
+            )}
+            {name.reflectionQuestion && (
+              <a href="#reflection" className="hover:text-white/60 transition-colors">
+                Reflection
+              </a>
+            )}
+            {learning && learning.hadiths.length > 0 && (
+              <a href="#hadiths" className="hover:text-white/60 transition-colors">
+                Hadiths
+              </a>
+            )}
+            {learning && learning.scholarlyInsights.length > 0 && (
+              <a href="#scholars" className="hover:text-white/60 transition-colors">
+                Scholars
+              </a>
+            )}
+            {dua && (
+              <a href="#dua" className="hover:text-white/60 transition-colors">
+                Dua
+              </a>
+            )}
+            {learning && learning.realLifeApplications.length > 0 && (
+              <a href="#applications" className="hover:text-white/60 transition-colors">
+                Applications
+              </a>
+            )}
+          </nav>
 
           {/* ── CTA: Enter the Story ── */}
           {name.hasContent && (
@@ -290,9 +370,76 @@ export default async function NameSEOPage({
             </section>
           )}
 
+          {/* ══════════════════════════════════════════
+              SCHOLARLY EXPLANATION (as-Sa'di)
+          ══════════════════════════════════════════ */}
+          {scholarly && (
+            <section id="scholarly" className="mb-12 lg:mb-16">
+              <div className="flex items-center gap-2 mb-6">
+                <ScrollText size={16} style={{ color: "rgb(217,191,140)" }} />
+                <h2
+                  className="text-xs font-semibold uppercase tracking-wider"
+                  style={{ color: "rgb(217,191,140)" }}
+                >
+                  Scholarly Explanation
+                </h2>
+              </div>
+
+              <article
+                className="rounded-2xl p-6 lg:p-8"
+                style={{
+                  background: "rgba(217,191,140,0.04)",
+                  border: "1px solid rgba(217,191,140,0.12)",
+                }}
+              >
+                {/* Main explanation */}
+                <p className="text-sm lg:text-base text-white/80 font-serif leading-relaxed mb-6">
+                  {scholarly.explanation}
+                </p>
+
+                {/* Quranic verses */}
+                {scholarly.quranicVerses.length > 0 && (
+                  <div className="space-y-4">
+                    {scholarly.quranicVerses.map((verse, idx) => (
+                      <div
+                        key={idx}
+                        className="rounded-xl p-4 lg:p-5"
+                        style={{
+                          background: "rgba(217,191,140,0.06)",
+                          border: "1px solid rgba(217,191,140,0.08)",
+                        }}
+                      >
+                        <p className="text-sm text-white/70 font-serif italic leading-relaxed mb-2">
+                          &ldquo;{verse.text}&rdquo;
+                        </p>
+                        <p
+                          className="text-xs font-medium"
+                          style={{ color: "rgba(217,191,140,0.7)" }}
+                        >
+                          [{verse.reference}]
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Source attribution */}
+                <div
+                  className="mt-6 pt-4 text-xs text-white/30 italic"
+                  style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                >
+                  <p>
+                    From &ldquo;Explanation to the Beautiful and Perfect Names of
+                    Allah&rdquo; — Shaykh as-Sa&rsquo;di (d.1376H)
+                  </p>
+                </div>
+              </article>
+            </section>
+          )}
+
           {/* ── Reflection Question ── */}
           {name.reflectionQuestion && (
-            <section className="mb-12 lg:mb-16">
+            <section id="reflection" className="mb-12 lg:mb-16">
               <div
                 className="rounded-2xl p-8 text-center"
                 style={{
@@ -326,7 +473,7 @@ export default async function NameSEOPage({
               HADITHS SECTION
           ══════════════════════════════════════════ */}
           {learning && learning.hadiths.length > 0 && (
-            <section className="mb-12 lg:mb-16">
+            <section id="hadiths" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
                 <Quote size={16} style={{ color: "rgb(217,191,140)" }} />
                 <h2
@@ -393,7 +540,7 @@ export default async function NameSEOPage({
               SCHOLARLY INSIGHTS
           ══════════════════════════════════════════ */}
           {learning && learning.scholarlyInsights.length > 0 && (
-            <section className="mb-12 lg:mb-16">
+            <section id="scholars" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
                 <Lightbulb size={16} style={{ color: "rgb(217,191,140)" }} />
                 <h2
@@ -437,11 +584,64 @@ export default async function NameSEOPage({
             </section>
           )}
 
+          {/* ── Mid-article Story CTA ── */}
+          {name.hasContent && (
+            <section className="my-16">
+              <div
+                className="relative rounded-2xl overflow-hidden p-10 lg:p-12 text-center"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(217,191,140,0.12) 0%, rgba(217,191,140,0.04) 100%)",
+                  border: "1px solid rgba(217,191,140,0.25)",
+                }}
+              >
+                <div className="absolute top-4 right-4 flex gap-1 opacity-30">
+                  {[...Array(3)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ background: "rgb(217,191,140)" }}
+                    />
+                  ))}
+                </div>
+
+                <p
+                  className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+                  style={{ color: "rgb(217,191,140)" }}
+                >
+                  Experience This Name
+                </p>
+                <h3 className="text-xl lg:text-2xl font-serif text-white/90 mb-3">
+                  {name.storyTitle ||
+                    `The Story of ${name.transliteration}`}
+                </h3>
+                <p className="text-sm text-white/45 max-w-lg mx-auto mb-8 leading-relaxed">
+                  Continue your journey with an immersive interactive
+                  narrative, complete with Quranic recitation, animations, and
+                  guided reflection.
+                </p>
+                <Link
+                  href={`/story/${nameId}`}
+                  className="inline-flex items-center gap-2 px-10 py-3.5 rounded-full text-sm font-medium transition-all hover:scale-105"
+                  style={{
+                    background: "rgba(217,191,140,0.2)",
+                    border: "1px solid rgba(217,191,140,0.35)",
+                    color: "rgb(217,191,140)",
+                  }}
+                >
+                  <Star size={16} />
+                  Begin the Story
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </section>
+          )}
+
           {/* ══════════════════════════════════════════
               DUA SECTION
           ══════════════════════════════════════════ */}
           {dua && (
-            <section className="mb-12 lg:mb-16">
+            <section id="dua" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
                 <HandHeart size={16} style={{ color: "rgb(217,191,140)" }} />
                 <h2
@@ -495,7 +695,7 @@ export default async function NameSEOPage({
               REAL-LIFE APPLICATIONS
           ══════════════════════════════════════════ */}
           {learning && learning.realLifeApplications.length > 0 && (
-            <section className="mb-12 lg:mb-16">
+            <section id="applications" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
                 <Heart size={16} style={{ color: "rgb(217,191,140)" }} />
                 <h2

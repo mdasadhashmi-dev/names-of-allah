@@ -3,16 +3,24 @@
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ChevronDown, ChevronUp } from "lucide-react";
+import { Search, ChevronDown, ChevronUp, BookOpen, Play } from "lucide-react";
 import { allNames, getApprovedNames, getUnapprovedNames } from "@/data/names";
 import { NameCard } from "@/components/shared/NameCard";
 import { useSemanticColors } from "@/hooks/useSemanticColors";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export default function NamesListPage() {
   const router = useRouter();
   const [searchText, setSearchText] = useState("");
   const [showUnapproved, setShowUnapproved] = useState(false);
   const { isPro, styles } = useSemanticColors();
+  const [browseMode, setBrowseMode] = useLocalStorage<"story" | "text">(
+    "browse_mode",
+    "story"
+  );
+
+  const getNameUrl = (nameId: string) =>
+    browseMode === "story" ? `/story/${nameId}` : `/name/${nameId}`;
 
   const filteredNames = useMemo(() => {
     const approved = getApprovedNames();
@@ -39,15 +47,70 @@ export default function NamesListPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-6 lg:py-10">
         {/* Header */}
-        <div className="mb-6 lg:mb-8">
-          <img
-            src="/logo.svg"
-            alt="99 Names of Allah"
-            className="h-16 lg:h-20 w-auto object-contain mb-1"
-          />
-          <p className="text-sm" style={styles.textMuted}>
-            The 99 Beautiful Names of Allah — click a name to begin its story
-          </p>
+        <div className="mb-6 lg:mb-8 flex items-start justify-between gap-4">
+          <div>
+            <img
+              src="/logo.svg"
+              alt="99 Names of Allah"
+              className="h-16 lg:h-20 w-auto object-contain mb-1"
+            />
+            <p className="text-sm" style={styles.textMuted}>
+              The 99 Beautiful Names of Allah — click a name to begin{" "}
+              {browseMode === "story" ? "its story" : "reading"}
+            </p>
+          </div>
+
+          {/* Pill toggle (segmented control) */}
+          <div
+            className="flex items-center rounded-full p-1 flex-shrink-0"
+            style={{
+              background: isPro
+                ? "var(--pro-surface)"
+                : "rgba(255,255,255,0.05)",
+              border: isPro
+                ? "1px solid var(--pro-border)"
+                : "1px solid rgba(255,255,255,0.1)",
+            }}
+          >
+            {(["text", "story"] as const).map((mode) => {
+              const isActive = browseMode === mode;
+              return (
+                <button
+                  key={mode}
+                  onClick={() => setBrowseMode(mode)}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium transition-all duration-200"
+                  style={
+                    isActive
+                      ? {
+                          background: isPro
+                            ? "var(--pro-accent-light)"
+                            : "rgba(217,191,140,0.15)",
+                          color: isPro
+                            ? "var(--pro-accent)"
+                            : "rgb(217,191,140)",
+                          border: isPro
+                            ? "1px solid rgba(44,110,73,0.2)"
+                            : "1px solid rgba(217,191,140,0.3)",
+                        }
+                      : {
+                          background: "transparent",
+                          color: isPro
+                            ? "var(--pro-text-muted)"
+                            : "rgba(255,255,255,0.45)",
+                          border: "1px solid transparent",
+                        }
+                  }
+                >
+                  {mode === "text" ? (
+                    <BookOpen size={13} />
+                  ) : (
+                    <Play size={13} />
+                  )}
+                  {mode === "text" ? "Text" : "Story"}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Search bar */}
@@ -87,7 +150,7 @@ export default function NamesListPage() {
               name={name}
               index={index}
               onClick={() => {
-                if (name.hasContent) router.push(`/story/${name.nameId}`);
+                if (name.hasContent) router.push(getNameUrl(name.nameId));
               }}
             />
           ))}
@@ -133,7 +196,7 @@ export default function NamesListPage() {
                       index={index}
                       dim
                       onClick={() => {
-                        if (name.hasContent) router.push(`/story/${name.nameId}`);
+                        if (name.hasContent) router.push(getNameUrl(name.nameId));
                       }}
                     />
                   ))}
