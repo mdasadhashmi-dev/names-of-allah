@@ -13,7 +13,7 @@ export function useAudioPlayer() {
       audioRef.current = null;
     }
 
-    const audio = new Audio(`/audio/${fileName}`);
+    const audio = new Audio(`/audio/${fileName}.mp3`);
     audioRef.current = audio;
     setCurrentFile(fileName);
 
