@@ -764,13 +764,13 @@ export default async function NameSEOPage({
                 href={`/learn/${nameId}`}
                 className="flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02]"
                 style={{
-                  background: "rgba(102,153,230,0.06)",
-                  border: "1px solid rgba(102,153,230,0.15)",
+                  background: "var(--article-secondary-bg)",
+                  border: "1px solid var(--article-secondary-border)",
                 }}
               >
                 <BookOpen
                   size={18}
-                  style={{ color: "rgb(102,153,230)" }}
+                  style={{ color: "var(--article-accent-secondary)" }}
                 />
                 <div>
                   <p className="text-sm font-medium text-white/85">

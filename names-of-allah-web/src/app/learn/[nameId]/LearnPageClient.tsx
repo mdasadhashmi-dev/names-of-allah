@@ -36,8 +36,8 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
             <p className="text-sm text-white/40">Extended Learning</p>
           </div>
           <div className="glass rounded-2xl p-10 text-center">
-            <BookOpen size={48} className="mx-auto mb-4 opacity-40" style={{ color: "rgb(217,191,140)" }} />
-            <h2 className="text-xl font-serif mb-2" style={{ color: "rgb(217,191,140)" }}>Coming Soon</h2>
+            <BookOpen size={48} className="mx-auto mb-4 opacity-40" style={{ color: "var(--article-accent)" }} />
+            <h2 className="text-xl font-serif mb-2" style={{ color: "var(--article-accent)" }}>Coming Soon</h2>
             <p className="text-sm text-white/45 max-w-xs mx-auto leading-relaxed">
               Extended learning content for {name.transliteration} — including hadiths,
               scholarly insights, and duas — will be available soon.
@@ -76,7 +76,7 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
           <div className="flex items-end gap-4 flex-wrap">
             <div
               className="arabic-text text-4xl lg:text-5xl font-bold"
-              style={{ color: "rgb(217, 191, 140)" }}
+              style={{ color: "var(--article-accent)" }}
             >
               {name.arabic}
             </div>
@@ -89,7 +89,7 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
           </div>
           <div
             className="mt-4 h-px"
-            style={{ background: "rgba(217,191,140,0.15)" }}
+            style={{ background: "var(--article-badge-bg)" }}
           />
         </motion.div>
 
@@ -114,15 +114,15 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                       key={idx}
                       className="rounded-2xl p-6"
                       style={{
-                        background: "rgba(217,191,140,0.04)",
-                        border: "1px solid rgba(217,191,140,0.1)",
+                        background: "var(--article-card-bg)",
+                        border: "1px solid var(--article-card-border-med)",
                       }}
                     >
                       <p
                         className="arabic-text text-xl lg:text-2xl leading-loose text-center mb-4 pb-4"
                         style={{
-                          color: "rgb(217,191,140)",
-                          borderBottom: "1px solid rgba(217,191,140,0.1)",
+                          color: "var(--article-accent)",
+                          borderBottom: "1px solid var(--article-card-border-med)",
                         }}
                       >
                         {hadith.arabicText}
@@ -133,7 +133,7 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                       <p className="text-sm text-white/50 mb-4 leading-relaxed">{hadith.context}</p>
                       <div
                         className="flex items-center justify-between text-xs text-white/35 pt-3"
-                        style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                        style={{ borderTop: "1px solid var(--article-divider)" }}
                       >
                         <div>
                           <span className="text-white/50">{hadith.narrator}</span>
@@ -174,14 +174,14 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                       key={idx}
                       className="rounded-2xl p-5"
                       style={{
-                        background: "rgba(255,255,255,0.03)",
-                        border: "1px solid rgba(255,255,255,0.07)",
+                        background: "var(--article-surface-alt)",
+                        border: "1px solid var(--article-divider-alt)",
                       }}
                     >
                       {insight.arabicQuote && (
                         <p
                           className="arabic-text text-lg leading-loose mb-3 text-right"
-                          style={{ color: "rgba(217,191,140,0.75)" }}
+                          style={{ color: "var(--article-accent-muted)" }}
                         >
                           {insight.arabicQuote}
                         </p>
@@ -215,13 +215,13 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                       key={idx}
                       className="rounded-2xl p-6"
                       style={{
-                        background: "rgba(217,191,140,0.04)",
-                        border: "1px solid rgba(217,191,140,0.12)",
+                        background: "var(--article-card-bg)",
+                        border: "1px solid var(--article-card-border)",
                       }}
                     >
                       <p
                         className="arabic-text text-xl leading-loose text-center mb-3"
-                        style={{ color: "rgb(217,191,140)" }}
+                        style={{ color: "var(--article-accent)" }}
                       >
                         {dua.arabicText}
                       </p>
@@ -233,7 +233,7 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                       </p>
                       <div
                         className="flex items-center justify-between text-xs text-white/35 pt-3"
-                        style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                        style={{ borderTop: "1px solid var(--article-divider)" }}
                       >
                         <span>{dua.occasion}</span>
                         <span>{dua.source}</span>
@@ -257,8 +257,8 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                 <div
                   className="mt-4 rounded-2xl p-6"
                   style={{
-                    background: "rgba(255,255,255,0.02)",
-                    border: "1px solid rgba(255,255,255,0.07)",
+                    background: "var(--article-surface)",
+                    border: "1px solid var(--article-divider-alt)",
                   }}
                 >
                   <ul className="space-y-4">
@@ -267,8 +267,8 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                         <span
                           className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                           style={{
-                            background: "rgba(217,191,140,0.12)",
-                            color: "rgb(217,191,140)",
+                            background: "var(--article-num-bg)",
+                            color: "var(--article-accent)",
                           }}
                         >
                           {idx + 1}
@@ -299,7 +299,7 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
                       href={`#${section.id}`}
                       className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-white/40 hover:text-white/70 hover:bg-white/5 transition-all group"
                     >
-                      <Icon size={14} className="flex-shrink-0 group-hover:text-gold" style={{ color: "rgba(217,191,140,0.5)" }} />
+                      <Icon size={14} className="flex-shrink-0 group-hover:text-gold" style={{ color: "var(--article-accent-dim)" }} />
                       {section.label}
                     </a>
                   );
@@ -309,7 +309,7 @@ export default function LearnPageClient({ nameId }: { nameId: string }) {
               {/* Reflect link */}
               <div
                 className="mt-6 pt-6"
-                style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+                style={{ borderTop: "1px solid var(--article-divider-alt)" }}
               >
                 <a
                   href={`/reflect/${nameId}`}
@@ -336,10 +336,10 @@ function SectionHeader({
 }) {
   return (
     <div className="flex items-center gap-2">
-      <Icon size={16} style={{ color: "rgb(217,191,140)" }} />
+      <Icon size={16} style={{ color: "var(--article-accent)" }} />
       <h2
         className="text-xs font-semibold uppercase tracking-wider"
-        style={{ color: "rgb(217,191,140)" }}
+        style={{ color: "var(--article-accent)" }}
       >
         {label}
       </h2>

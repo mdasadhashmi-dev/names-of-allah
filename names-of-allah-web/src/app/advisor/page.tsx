@@ -145,7 +145,7 @@ export default function AdvisorPage() {
         <div
           className="w-full lg:w-[380px] lg:flex-shrink-0 px-6 py-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto"
           style={{
-            borderRight: isPro ? "1px solid var(--pro-border)" : "1px solid rgba(255,255,255,0.05)",
+            borderRight: "1px solid var(--article-divider)",
           }}
         >
           {/* Header */}
@@ -153,9 +153,9 @@ export default function AdvisorPage() {
             <div className="flex items-center gap-3 mb-1">
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{ background: isPro ? "var(--pro-accent-light)" : "rgba(217,191,140,0.1)" }}
+                style={{ background: "var(--article-btn-bg)" }}
               >
-                <Heart size={18} style={{ color: isPro ? "var(--pro-accent)" : "rgb(217,191,140)" }} />
+                <Heart size={18} style={{ color: "var(--article-accent)" }} />
               </div>
               <div>
                 <h1 className="text-lg font-semibold" style={styles.text}>Feeling Advisor</h1>
@@ -180,25 +180,25 @@ export default function AdvisorPage() {
               placeholder="How are you feeling today?"
               className="w-full py-3 px-4 pr-12 rounded-xl outline-none focus:ring-1"
               style={{
-                background: isPro ? "var(--pro-surface)" : "rgba(255,255,255,0.05)",
-                border: isPro ? "1px solid var(--pro-border)" : "1px solid rgba(255,255,255,0.1)",
-                color: isPro ? "var(--pro-text)" : "white",
+                background: "var(--article-interactive-bg)",
+                border: "1px solid var(--article-interactive-border)",
+                color: "var(--article-text-inline-muted)",
               }}
             />
             <button
               onClick={handleSearch}
               className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-              style={{ background: "rgba(217,191,140,0.2)" }}
+              style={{ background: "var(--article-btn-bg-strong)" }}
             >
-              <Search size={16} style={{ color: "rgb(217,191,140)" }} />
+              <Search size={16} style={{ color: "var(--article-accent)" }} />
             </button>
           </div>
 
           {/* Divider */}
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+            <div className="flex-1 h-px" style={{ background: "var(--article-divider-alt)" }} />
             <span className="text-xs text-white/25">or browse</span>
-            <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+            <div className="flex-1 h-px" style={{ background: "var(--article-divider-alt)" }} />
           </div>
 
           {/* Category chips */}
@@ -213,16 +213,16 @@ export default function AdvisorPage() {
                 style={{
                   background:
                     selectedCategory === cat.key
-                      ? "rgba(217,191,140,0.1)"
-                      : "rgba(255,255,255,0.03)",
+                      ? "var(--article-card-bg-alt)"
+                      : "var(--article-surface-alt)",
                   border:
                     selectedCategory === cat.key
-                      ? "1px solid rgba(217,191,140,0.25)"
-                      : "1px solid rgba(255,255,255,0.06)",
+                      ? "1px solid var(--article-cta-border-strong)"
+                      : "1px solid var(--article-divider)",
                   color:
                     selectedCategory === cat.key
-                      ? "rgb(217,191,140)"
-                      : "rgba(255,255,255,0.6)",
+                      ? "var(--article-accent)"
+                      : "var(--article-text-inline)",
                 }}
               >
                 <span className="text-base">{cat.icon}</span>
@@ -246,8 +246,8 @@ export default function AdvisorPage() {
                     onClick={() => handleFeelingClick(f)}
                     className="px-3 py-1.5 rounded-lg text-sm text-white/65 hover:text-white/90 transition-all"
                     style={{
-                      background: "rgba(255,255,255,0.05)",
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      background: "var(--article-interactive-bg)",
+                      border: "1px solid var(--article-interactive-border)",
                     }}
                   >
                     {f.primaryLabel}
@@ -282,9 +282,9 @@ export default function AdvisorPage() {
               >
                 <div
                   className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ background: "rgba(217,191,140,0.07)", border: "1px solid rgba(217,191,140,0.12)" }}
+                  style={{ background: "var(--article-card-bg-alt)", border: "1px solid var(--article-card-border)" }}
                 >
-                  <Heart size={32} style={{ color: "rgba(217,191,140,0.6)" }} />
+                  <Heart size={32} style={{ color: "var(--article-accent-dim)" }} />
                 </div>
                 <h2 className="text-xl font-serif text-white/60 mb-3">
                   Your guidance will appear here
@@ -307,9 +307,9 @@ export default function AdvisorPage() {
                       }}
                       className="px-3 py-1.5 rounded-full text-xs transition-all"
                       style={{
-                        background: "rgba(217,191,140,0.06)",
-                        border: "1px solid rgba(217,191,140,0.12)",
-                        color: "rgba(217,191,140,0.7)",
+                        background: "var(--article-card-bg-alt)",
+                        border: "1px solid var(--article-card-border)",
+                        color: "var(--article-accent-muted)",
                       }}
                     >
                       {word}
@@ -350,17 +350,17 @@ export default function AdvisorPage() {
                           className={`rounded-2xl overflow-hidden ${isPrimary ? "p-6" : "p-5"}`}
                           style={{
                             background: isPrimary
-                              ? "rgba(217,191,140,0.06)"
-                              : "rgba(255,255,255,0.03)",
+                              ? "var(--article-card-bg-alt)"
+                              : "var(--article-surface-alt)",
                             border: isPrimary
-                              ? "1px solid rgba(217,191,140,0.2)"
-                              : "1px solid rgba(255,255,255,0.07)",
+                              ? "1px solid var(--article-cta-border)"
+                              : "1px solid var(--article-divider-alt)",
                           }}
                         >
                           {isPrimary && (
                             <div className="flex items-center gap-1.5 mb-4">
-                              <Sparkles size={12} style={{ color: "rgb(217,191,140)" }} />
-                              <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "rgb(217,191,140)" }}>
+                              <Sparkles size={12} style={{ color: "var(--article-accent)" }} />
+                              <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--article-accent)" }}>
                                 Primary Guidance
                               </span>
                             </div>
@@ -370,7 +370,7 @@ export default function AdvisorPage() {
                             <div>
                               <div
                                 className={`arabic-text font-bold ${isPrimary ? "text-3xl" : "text-2xl"} mb-1`}
-                                style={{ color: "rgb(217,191,140)" }}
+                                style={{ color: "var(--article-accent)" }}
                               >
                                 {name.arabic}
                               </div>
@@ -382,9 +382,9 @@ export default function AdvisorPage() {
                             <div
                               className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
                               style={{
-                                background: "rgba(217,191,140,0.1)",
-                                color: "rgba(217,191,140,0.7)",
-                                border: "1px solid rgba(217,191,140,0.2)",
+                                background: "var(--article-badge-bg)",
+                                color: "var(--article-accent-muted)",
+                                border: "1px solid var(--article-cta-border)",
                               }}
                             >
                               {getDisplayNumber(name.nameId) || name.number}
@@ -401,9 +401,9 @@ export default function AdvisorPage() {
                                 onClick={() => router.push(`/story/${name.nameId}`)}
                                 className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all"
                                 style={{
-                                  background: "rgba(217,191,140,0.15)",
-                                  color: "rgb(217,191,140)",
-                                  border: "1px solid rgba(217,191,140,0.2)",
+                                  background: "var(--article-badge-bg)",
+                                  color: "var(--article-accent)",
+                                  border: "1px solid var(--article-cta-border)",
                                 }}
                               >
                                 <Star size={13} /> Read Story
@@ -412,8 +412,8 @@ export default function AdvisorPage() {
                                 onClick={() => router.push(`/learn/${name.nameId}`)}
                                 className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-all text-white/50 hover:text-white/75"
                                 style={{
-                                  background: "rgba(255,255,255,0.04)",
-                                  border: "1px solid rgba(255,255,255,0.08)",
+                                  background: "var(--article-interactive-bg)",
+                                  border: "1px solid var(--article-interactive-border)",
                                 }}
                               >
                                 <BookOpen size={13} /> Deep Learning

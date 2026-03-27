@@ -67,11 +67,11 @@ export default function WelcomePage() {
             <motion.p
               variants={itemVariants}
               className="text-sm font-serif italic max-w-md mx-auto mb-8"
-              style={{ color: "rgba(255,255,255,0.5)" }}
+              style={{ color: "var(--article-text-inline)" }}
             >
               &ldquo;Allah has ninety-nine names, one hundred minus one. Whoever
               counts them will enter Paradise.&rdquo;
-              <span className="block mt-2 not-italic" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <span className="block mt-2 not-italic" style={{ color: "var(--article-text-inline)" }}>
                 — Sahih al-Bukhari 7392
               </span>
             </motion.p>
@@ -161,19 +161,19 @@ export default function WelcomePage() {
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
           className="absolute w-64 h-64 rounded-full blur-3xl"
-          style={{ top: "10%", left: "20%", background: "rgba(217,191,140,0.05)" }}
+          style={{ top: "10%", left: "20%", background: "var(--article-card-bg)" }}
           animate={{ opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute w-48 h-48 rounded-full blur-3xl"
-          style={{ top: "50%", right: "15%", background: "rgba(217,191,140,0.05)" }}
+          style={{ top: "50%", right: "15%", background: "var(--article-card-bg)" }}
           animate={{ opacity: [0.2, 0.5, 0.2] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
         <motion.div
           className="absolute w-56 h-56 rounded-full blur-3xl"
-          style={{ bottom: "20%", left: "10%", background: "rgba(217,191,140,0.03)" }}
+          style={{ bottom: "20%", left: "10%", background: "var(--article-surface-alt)" }}
           animate={{ opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
@@ -210,11 +210,11 @@ export default function WelcomePage() {
             variants={itemVariants}
             className="glass rounded-2xl p-6 mb-8 max-w-sm"
           >
-            <p className="font-serif text-base leading-relaxed italic" style={{ color: "rgba(255,255,255,0.8)" }}>
+            <p className="font-serif text-base leading-relaxed italic" style={{ color: "var(--article-text-inline-muted)" }}>
               &ldquo;Allah has ninety-nine names, one hundred minus one. Whoever
               counts them will enter Paradise.&rdquo;
             </p>
-            <p className="text-sm mt-3 font-serif" style={{ color: "rgba(217,191,140,0.6)" }}>
+            <p className="text-sm mt-3 font-serif" style={{ color: "var(--article-accent-dim)" }}>
               — Sahih al-Bukhari 7392
             </p>
           </motion.div>
@@ -223,7 +223,7 @@ export default function WelcomePage() {
           <motion.p
             variants={itemVariants}
             className="text-sm mb-8 max-w-xs"
-            style={{ color: "rgba(255,255,255,0.5)" }}
+            style={{ color: "var(--article-text-inline)" }}
           >
             A journey through the divine names — through stories, reflection,
             and understanding.
@@ -244,7 +244,7 @@ export default function WelcomePage() {
           <motion.p
             variants={itemVariants}
             className="text-xs mt-12"
-            style={{ color: "rgba(255,255,255,0.2)" }}
+            style={{ color: "var(--article-text-inline)" }}
           >
             Names of Allah
           </motion.p>

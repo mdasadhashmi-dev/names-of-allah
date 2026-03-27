@@ -48,14 +48,14 @@ export default function ReflectPageClient({ nameId }: { nameId: string }) {
         >
           <h1
             className="arabic-text text-5xl lg:text-6xl font-bold mb-2"
-            style={{ color: "rgb(217, 191, 140)" }}
+            style={{ color: "var(--article-accent)" }}
           >
             {name.arabic}
           </h1>
-          <p className="text-xl font-serif mb-1" style={{ color: "rgb(217,191,140)" }}>
+          <p className="text-xl font-serif mb-1" style={{ color: "var(--article-accent)" }}>
             {name.transliteration}
           </p>
-          <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <p className="text-sm" style={{ color: "var(--article-text-inline)" }}>
             {name.meaning}
           </p>
         </motion.div>
@@ -64,7 +64,7 @@ export default function ReflectPageClient({ nameId }: { nameId: string }) {
         <div
           className="w-20 h-px mx-auto mb-8 lg:mb-10"
           style={{
-            background: "linear-gradient(to right, transparent, rgb(217,191,140), transparent)",
+            background: "var(--article-gradient-divider)",
           }}
         />
 
@@ -77,7 +77,7 @@ export default function ReflectPageClient({ nameId }: { nameId: string }) {
           {name.reflectionQuestion && (
             <p
               className="font-serif text-lg lg:text-xl italic text-center mb-8 leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.75)" }}
+              style={{ color: "var(--article-text-inline-muted)" }}
             >
               &ldquo;{name.reflectionQuestion}&rdquo;
             </p>
@@ -91,8 +91,8 @@ export default function ReflectPageClient({ nameId }: { nameId: string }) {
               placeholder="Write your reflection here... What does this name mean to you? How have you seen it in your life?"
               className="w-full min-h-[220px] lg:min-h-[300px] p-5 rounded-2xl resize-y outline-none text-white placeholder-white/25 font-serif text-base lg:text-lg leading-relaxed"
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "var(--article-interactive-bg)",
+                border: "1px solid var(--article-interactive-border)",
               }}
             />
             {/* Word count */}
@@ -133,7 +133,7 @@ export default function ReflectPageClient({ nameId }: { nameId: string }) {
         <div
           className="w-20 h-px mx-auto my-8 lg:my-10"
           style={{
-            background: "linear-gradient(to right, transparent, rgb(217,191,140), transparent)",
+            background: "var(--article-gradient-divider)",
           }}
         />
 
@@ -142,12 +142,12 @@ export default function ReflectPageClient({ nameId }: { nameId: string }) {
           onClick={() => router.push(`/learn/${nameId}`)}
           className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl transition-colors"
           style={{
-            background: "rgba(102,153,230,0.08)",
-            border: "1px solid rgba(102,153,230,0.18)",
+            background: "var(--article-secondary-bg)",
+            border: "1px solid var(--article-secondary-border)",
           }}
         >
-          <BookOpen size={18} style={{ color: "rgb(102,153,230)" }} />
-          <span style={{ color: "rgb(102,153,230)" }}>Dive Deeper into Scholarly Content</span>
+          <BookOpen size={18} style={{ color: "var(--article-accent-secondary)" }} />
+          <span style={{ color: "var(--article-accent-secondary)" }}>Dive Deeper into Scholarly Content</span>
         </button>
       </div>
     </div>

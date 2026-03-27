@@ -225,15 +225,15 @@ export default function DuaPage() {
         {/* ── LEFT PANEL ── */}
         <div
           className="w-full lg:w-[400px] lg:flex-shrink-0 px-6 py-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto"
-          style={{ borderRight: isPro ? "1px solid var(--pro-border)" : "1px solid rgba(255,255,255,0.05)" }}
+          style={{ borderRight: "1px solid var(--article-divider)" }}
         >
           {/* Header */}
           <div className="flex items-center gap-3 mb-2">
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center"
-              style={{ background: isPro ? "var(--pro-accent-light)" : "rgba(217,191,140,0.1)" }}
+              style={{ background: "var(--article-btn-bg)" }}
             >
-              <HandHeart size={20} style={{ color: isPro ? "var(--pro-accent)" : "rgb(217,191,140)" }} />
+              <HandHeart size={20} style={{ color: "var(--article-accent)" }} />
             </div>
             <div>
               <h1 className="text-lg font-semibold" style={styles.text}>Dua Builder</h1>
@@ -249,9 +249,9 @@ export default function DuaPage() {
           {/* Arabic opener */}
           <div
             className="text-center py-4 mb-5 rounded-xl"
-            style={{ background: "rgba(217,191,140,0.04)", border: "1px solid rgba(217,191,140,0.1)" }}
+            style={{ background: "var(--article-card-bg)", border: "1px solid var(--article-card-border-med)" }}
           >
-            <p className="arabic-text text-xl" style={{ color: "rgb(217,191,140)" }}>
+            <p className="arabic-text text-xl" style={{ color: "var(--article-accent)" }}>
               وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَى فَادْعُوهُ بِهَا
             </p>
             <p className="text-xs text-white/35 mt-2 font-serif italic">
@@ -269,8 +269,8 @@ export default function DuaPage() {
             placeholder="What's in your heart? Describe your situation, need, or feeling..."
             className="w-full min-h-[140px] p-4 rounded-xl resize-none outline-none text-white placeholder-white/25 font-serif text-sm leading-relaxed mb-3"
             style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.1)",
+              background: "var(--article-interactive-bg)",
+              border: "1px solid var(--article-interactive-border)",
             }}
           />
 
@@ -280,9 +280,9 @@ export default function DuaPage() {
               disabled={!input.trim()}
               className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-medium text-sm transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               style={{
-                background: "rgba(217,191,140,0.18)",
-                border: "1px solid rgba(217,191,140,0.3)",
-                color: "rgb(217,191,140)",
+                background: "var(--article-btn-bg)",
+                border: "1px solid var(--article-btn-border)",
+                color: "var(--article-accent)",
               }}
             >
               <Sparkles size={16} />
@@ -293,8 +293,8 @@ export default function DuaPage() {
                 onClick={handleReset}
                 className="p-3 rounded-xl transition-all text-white/35 hover:text-white/60"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "var(--article-surface-alt)",
+                  border: "1px solid var(--article-interactive-border)",
                 }}
                 title="Start over"
               >
@@ -314,8 +314,8 @@ export default function DuaPage() {
                     onClick={() => handlePrompt(prompt)}
                     className="text-left text-sm text-white/45 hover:text-white/70 py-2 px-3 rounded-lg transition-all"
                     style={{
-                      background: "rgba(255,255,255,0.02)",
-                      border: "1px solid rgba(255,255,255,0.06)",
+                      background: "var(--article-surface)",
+                      border: "1px solid var(--article-divider)",
                     }}
                   >
                     {prompt}
@@ -340,11 +340,11 @@ export default function DuaPage() {
               >
                 <div
                   className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ background: "rgba(217,191,140,0.06)", border: "1px solid rgba(217,191,140,0.12)" }}
+                  style={{ background: "var(--article-card-bg-alt)", border: "1px solid var(--article-card-border)" }}
                 >
-                  <HandHeart size={36} style={{ color: "rgba(217,191,140,0.5)" }} />
+                  <HandHeart size={36} style={{ color: "var(--article-accent-dim)" }} />
                 </div>
-                <h2 className="text-xl font-serif mb-3" style={{ color: "rgba(217,191,140,0.7)" }}>
+                <h2 className="text-xl font-serif mb-3" style={{ color: "var(--article-accent-muted)" }}>
                   Your personalised duas will appear here
                 </h2>
                 <p className="text-sm text-white/30 max-w-sm leading-relaxed font-serif">
@@ -367,7 +367,7 @@ export default function DuaPage() {
                 <div className="text-center mb-8">
                   <p
                     className="arabic-text text-3xl lg:text-4xl mb-2"
-                    style={{ color: "rgb(217,191,140)" }}
+                    style={{ color: "var(--article-accent)" }}
                   >
                     بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                   </p>
@@ -387,23 +387,23 @@ export default function DuaPage() {
                       className="rounded-2xl overflow-hidden"
                       style={{
                         background: idx === 0
-                          ? "rgba(217,191,140,0.05)"
-                          : "rgba(255,255,255,0.03)",
+                          ? "var(--article-card-bg)"
+                          : "var(--article-surface-alt)",
                         border: idx === 0
-                          ? "1px solid rgba(217,191,140,0.18)"
-                          : "1px solid rgba(255,255,255,0.07)",
+                          ? "1px solid var(--article-badge-border)"
+                          : "1px solid var(--article-divider-alt)",
                       }}
                     >
                       {/* Name header */}
                       <div
                         className="px-6 pt-5 pb-4"
-                        style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+                        style={{ borderBottom: "1px solid var(--article-divider)" }}
                       >
                         <div className="flex items-center justify-between mb-1">
                           <div>
                             <span
                               className="arabic-text text-2xl lg:text-3xl font-bold"
-                              style={{ color: "rgb(217,191,140)" }}
+                              style={{ color: "var(--article-accent)" }}
                             >
                               {dua.nameArabic}
                             </span>
@@ -425,7 +425,7 @@ export default function DuaPage() {
                         {/* Arabic */}
                         <p
                           className="arabic-text text-lg lg:text-xl leading-loose text-center mb-4"
-                          style={{ color: "rgb(217,191,140)" }}
+                          style={{ color: "var(--article-accent)" }}
                         >
                           {dua.arabicText}
                         </p>
@@ -439,7 +439,7 @@ export default function DuaPage() {
                         <p
                           className="text-sm font-serif text-white/80 text-center leading-relaxed mb-4"
                           style={{
-                            borderTop: "1px solid rgba(255,255,255,0.06)",
+                            borderTop: "1px solid var(--article-divider)",
                             paddingTop: "1rem",
                           }}
                         >
@@ -449,7 +449,7 @@ export default function DuaPage() {
                         {/* Source + connection */}
                         <div
                           className="flex flex-col gap-1 pt-3"
-                          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                          style={{ borderTop: "1px solid var(--article-divider)" }}
                         >
                           <span className="text-xs text-white/35">{dua.source}</span>
                           <span className="text-xs text-white/50 font-serif italic">{dua.connection}</span>
@@ -463,7 +463,7 @@ export default function DuaPage() {
                 <div className="text-center mb-6">
                   <p
                     className="arabic-text text-2xl"
-                    style={{ color: "rgba(217,191,140,0.6)" }}
+                    style={{ color: "var(--article-accent-dim)" }}
                   >
                     آمِين
                   </p>
@@ -475,9 +475,9 @@ export default function DuaPage() {
                     onClick={handleCopy}
                     className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all"
                     style={{
-                      background: copied ? "rgba(34,197,94,0.12)" : "rgba(217,191,140,0.1)",
-                      border: copied ? "1px solid rgba(34,197,94,0.25)" : "1px solid rgba(217,191,140,0.2)",
-                      color: copied ? "rgb(34,197,94)" : "rgb(217,191,140)",
+                      background: copied ? "rgba(34,197,94,0.12)" : "var(--article-btn-bg)",
+                      border: copied ? "1px solid rgba(34,197,94,0.25)" : "1px solid var(--article-btn-border)",
+                      color: copied ? "rgb(34,197,94)" : "var(--article-accent)",
                     }}
                   >
                     {copied ? <CheckCheck size={15} /> : <Copy size={15} />}
@@ -488,8 +488,8 @@ export default function DuaPage() {
                     onClick={handleReset}
                     className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm transition-all text-white/40 hover:text-white/70"
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      background: "var(--article-surface-alt)",
+                      border: "1px solid var(--article-interactive-border)",
                     }}
                   >
                     <RotateCcw size={15} />

@@ -190,6 +190,17 @@
   --article-divider: rgba(255, 255, 255, 0.06);
   --article-divider-alt: rgba(255, 255, 255, 0.07);
 
+  --article-interactive-bg: rgba(255, 255, 255, 0.05);
+  --article-interactive-border: rgba(255, 255, 255, 0.1);
+  --article-interactive-bg-hover: rgba(255, 255, 255, 0.1);
+  --article-text-inline: rgba(255, 255, 255, 0.5);
+  --article-text-inline-muted: rgba(255, 255, 255, 0.75);
+
+  --article-accent-secondary: rgb(102, 153, 230);
+  --article-secondary-bg: rgba(102, 153, 230, 0.08);
+  --article-secondary-bg-strong: rgba(102, 153, 230, 0.15);
+  --article-secondary-border: rgba(102, 153, 230, 0.18);
+
   --article-gradient-cta: linear-gradient(135deg, rgba(217,191,140,0.08), rgba(217,191,140,0.03));
   --article-gradient-mid: linear-gradient(135deg, rgba(217,191,140,0.12) 0%, rgba(217,191,140,0.04) 100%);
   --article-gradient-divider: linear-gradient(to right, transparent, rgb(217,191,140), transparent);
@@ -221,6 +232,17 @@
   --article-surface-alt: var(--pro-surface);
   --article-divider: var(--pro-border);
   --article-divider-alt: var(--pro-border);
+
+  --article-interactive-bg: rgba(0, 0, 0, 0.03);
+  --article-interactive-border: var(--pro-border);
+  --article-interactive-bg-hover: rgba(0, 0, 0, 0.05);
+  --article-text-inline: var(--pro-text-muted);
+  --article-text-inline-muted: rgba(26, 26, 46, 0.75);
+
+  --article-accent-secondary: var(--pro-accent);
+  --article-secondary-bg: var(--pro-accent-light);
+  --article-secondary-bg-strong: var(--pro-accent-light);
+  --article-secondary-border: var(--pro-border);
 
   --article-gradient-cta: linear-gradient(135deg, var(--pro-accent-light), var(--pro-surface));
   --article-gradient-mid: linear-gradient(135deg, var(--pro-accent-light) 0%, var(--pro-surface) 100%);
@@ -308,10 +330,19 @@
 /* ---- Background overrides for professional mode ----
    Dark gradient backgrounds become light professional surfaces.  */
 
-[data-layout="professional"] .bg-gradient-to-b.from-\[\#030510\] {
+[data-layout="professional"] .bg-gradient-to-b.from-\[\#030510\],
+[data-layout="professional"] .bg-gradient-to-b.from-\[\#0a1030\],
+[data-layout="professional"] .bg-gradient-to-b.from-\[\#0a1028\],
+[data-layout="professional"] .bg-gradient-to-b.from-dark-bg {
   background: var(--pro-bg) !important;
+  background-image: none !important;
 }
 
 [data-layout="professional"] .from-dark-bg {
-  background: var(--pro-bg) !important;
+  --tw-gradient-from: var(--pro-bg) !important;
+}
+
+/* ---- Placeholder text override ---- */
+[data-layout="professional"] .placeholder-white\/25::placeholder {
+  color: rgba(107, 114, 128, 0.6) !important;
 }

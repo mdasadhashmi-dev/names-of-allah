@@ -67,7 +67,7 @@ export default function SettingsPage() {
                     <button
                       onClick={() => setActiveCategory(cat.key)}
                       className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl text-sm text-left transition-all"
-                      style={isActive ? styles.activeBg : { background: "transparent", border: "1px solid transparent", color: isPro ? "var(--pro-text-muted)" : "rgba(255,255,255,0.5)" }}
+                      style={isActive ? styles.activeBg : { background: "transparent", border: "1px solid transparent", color: "var(--article-text-inline)" }}
                     >
                       <Icon size={16} className="flex-shrink-0" />
                       {cat.label}
@@ -81,7 +81,7 @@ export default function SettingsPage() {
           {/* Divider — desktop only */}
           <div
             className="hidden lg:block w-px self-stretch"
-            style={{ background: isPro ? "var(--pro-border)" : "rgba(255,255,255,0.07)" }}
+            style={{ background: "var(--article-divider-alt)" }}
           />
 
           {/* Content panel — right column */}
@@ -109,11 +109,11 @@ export default function SettingsPage() {
                         className="flex items-center gap-3 px-5 py-4 rounded-xl text-left transition-all flex-1 min-w-[200px]"
                         style={layoutMode === opt.key ? styles.activeBg : styles.inactiveBg}
                       >
-                        <div style={{ color: layoutMode === opt.key ? (isPro ? "var(--pro-accent)" : "rgb(217,191,140)") : (isPro ? "var(--pro-text-muted)" : "rgba(255,255,255,0.5)") }}>
+                        <div style={{ color: layoutMode === opt.key ? "var(--article-accent)" : "var(--article-text-inline)" }}>
                           {opt.icon}
                         </div>
                         <div>
-                          <span className="text-sm font-medium block" style={{ color: layoutMode === opt.key ? (isPro ? "var(--pro-accent)" : "rgb(217,191,140)") : (isPro ? "var(--pro-text)" : "rgba(255,255,255,0.8)") }}>
+                          <span className="text-sm font-medium block" style={{ color: layoutMode === opt.key ? "var(--article-accent)" : "var(--article-text-inline-muted)" }}>
                             {opt.label}
                           </span>
                           <span className="text-xs mt-0.5 block" style={styles.textSubtle}>{opt.description}</span>
@@ -135,10 +135,10 @@ export default function SettingsPage() {
                         onClick={() => setColorScheme(opt.key)}
                         className="flex flex-col items-center gap-2 p-4 rounded-2xl transition-all"
                         style={{
-                          background: colorScheme === opt.key ? (isPro ? "rgba(0,0,0,0.04)" : "rgba(255,255,255,0.08)") : (isPro ? "#FFFFFF" : "rgba(255,255,255,0.03)"),
+                          background: colorScheme === opt.key ? "var(--article-interactive-bg-hover)" : "var(--article-surface-alt)",
                           border: colorScheme === opt.key
                             ? `2px solid ${opt.color}`
-                            : `2px solid ${isPro ? "var(--pro-border)" : "rgba(255,255,255,0.06)"}`,
+                            : "2px solid var(--article-divider)",
                           minWidth: 80,
                         }}
                       >
@@ -202,7 +202,7 @@ export default function SettingsPage() {
                       <div>
                         <span
                           className="font-medium"
-                          style={{ color: fontSize === opt.key ? (isPro ? "var(--pro-accent)" : "rgb(217,191,140)") : (isPro ? "var(--pro-text)" : "rgba(255,255,255,0.8)") }}
+                          style={{ color: fontSize === opt.key ? "var(--article-accent)" : "var(--article-text-inline-muted)" }}
                         >
                           {opt.label}
                         </span>
@@ -211,7 +211,7 @@ export default function SettingsPage() {
                       {fontSize === opt.key && (
                         <div
                           className="w-4 h-4 rounded-full"
-                          style={{ background: isPro ? "var(--pro-accent)" : "rgb(217,191,140)" }}
+                          style={{ background: "var(--article-accent)" }}
                         />
                       )}
                     </button>

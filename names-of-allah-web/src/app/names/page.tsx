@@ -58,12 +58,8 @@ export default function NamesListPage() {
           <div
             className="flex items-center rounded-full p-1 flex-shrink-0"
             style={{
-              background: isPro
-                ? "var(--pro-surface)"
-                : "rgba(255,255,255,0.05)",
-              border: isPro
-                ? "1px solid var(--pro-border)"
-                : "1px solid rgba(255,255,255,0.1)",
+              background: "var(--article-interactive-bg)",
+              border: "1px solid var(--article-interactive-border)",
             }}
           >
             {(["text", "story"] as const).map((mode) => {
@@ -76,21 +72,13 @@ export default function NamesListPage() {
                   style={
                     isActive
                       ? {
-                          background: isPro
-                            ? "var(--pro-accent-light)"
-                            : "rgba(217,191,140,0.15)",
-                          color: isPro
-                            ? "var(--pro-accent)"
-                            : "rgb(217,191,140)",
-                          border: isPro
-                            ? "1px solid rgba(44,110,73,0.2)"
-                            : "1px solid rgba(217,191,140,0.3)",
+                          background: "var(--article-btn-bg)",
+                          color: "var(--article-accent)",
+                          border: "1px solid var(--article-btn-border)",
                         }
                       : {
                           background: "transparent",
-                          color: isPro
-                            ? "var(--pro-text-muted)"
-                            : "rgba(255,255,255,0.45)",
+                          color: "var(--article-text-inline)",
                           border: "1px solid transparent",
                         }
                   }
@@ -112,7 +100,7 @@ export default function NamesListPage() {
           <Search
             size={18}
             className="absolute left-3 top-1/2 -translate-y-1/2"
-            style={{ color: isPro ? "var(--pro-text-muted)" : "rgba(255,255,255,0.4)" }}
+            style={{ color: "var(--article-text-inline)" }}
           />
           <input
             type="text"
@@ -121,9 +109,9 @@ export default function NamesListPage() {
             onChange={(e) => setSearchText(e.target.value)}
             className="w-full pl-10 pr-4 py-3 rounded-xl outline-none focus:ring-1"
             style={{
-              background: isPro ? "var(--pro-surface)" : "rgba(255,255,255,0.05)",
-              border: isPro ? "1px solid var(--pro-border)" : "1px solid rgba(255,255,255,0.1)",
-              color: isPro ? "var(--pro-text)" : "white",
+              background: "var(--article-interactive-bg)",
+              border: "1px solid var(--article-interactive-border)",
+              color: "var(--article-text-inline-muted)",
             }}
           />
         </div>

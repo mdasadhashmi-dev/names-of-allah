@@ -155,8 +155,8 @@ function QuizGame() {
             animate={{ scale: 1, opacity: 1 }}
             className="text-center"
           >
-            <Trophy size={48} className="mx-auto mb-4" style={{ color: "rgb(217,191,140)" }} />
-            <h1 className="text-3xl font-bold mb-2" style={{ color: "rgb(217,191,140)" }}>
+            <Trophy size={48} className="mx-auto mb-4" style={{ color: "var(--article-accent)" }} />
+            <h1 className="text-3xl font-bold mb-2" style={{ color: "var(--article-accent)" }}>
               {scorePercent}%
             </h1>
             <p className="text-white/70 mb-2">
@@ -172,8 +172,8 @@ function QuizGame() {
                 onClick={() => router.push("/quiz")}
                 className="px-6 py-2 rounded-full text-sm text-white/70 transition-all"
                 style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "var(--article-interactive-bg)",
+                  border: "1px solid var(--article-interactive-border)",
                 }}
               >
                 Back to Quiz
@@ -195,7 +195,7 @@ function QuizGame() {
           <button
             onClick={() => router.push("/quiz")}
             className="w-10 h-10 rounded-full flex items-center justify-center"
-            style={{ background: "rgba(255,255,255,0.1)" }}
+            style={{ background: "var(--article-interactive-bg-hover)" }}
           >
             <ArrowLeft size={20} className="text-white/70" />
           </button>
@@ -212,10 +212,10 @@ function QuizGame() {
         </div>
 
         {/* Progress bar */}
-        <div className="h-1 rounded-full mb-8 overflow-hidden" style={{ background: "rgba(255,255,255,0.1)" }}>
+        <div className="h-1 rounded-full mb-8 overflow-hidden" style={{ background: "var(--article-interactive-bg-hover)" }}>
           <motion.div
             className="h-full rounded-full"
-            style={{ background: "rgb(217,191,140)" }}
+            style={{ background: "var(--article-accent)" }}
             animate={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
             transition={{ type: "spring", stiffness: 200 }}
           />
@@ -254,12 +254,12 @@ function QuizGame() {
                         ? "rgba(34,197,94,0.15)"
                         : showWrong
                         ? "rgba(239,68,68,0.15)"
-                        : "rgba(255,255,255,0.05)",
+                        : "var(--article-interactive-bg)",
                       border: showCorrect
                         ? "1px solid rgba(34,197,94,0.4)"
                         : showWrong
                         ? "1px solid rgba(239,68,68,0.4)"
-                        : "1px solid rgba(255,255,255,0.1)",
+                        : "1px solid var(--article-interactive-border)",
                     }}
                   >
                     <span
@@ -269,12 +269,12 @@ function QuizGame() {
                           ? "rgba(34,197,94,0.3)"
                           : showWrong
                           ? "rgba(239,68,68,0.3)"
-                          : "rgba(255,255,255,0.1)",
+                          : "var(--article-interactive-bg-hover)",
                         color: showCorrect
                           ? "rgb(34,197,94)"
                           : showWrong
                           ? "rgb(239,68,68)"
-                          : "rgba(255,255,255,0.6)",
+                          : "var(--article-text-inline)",
                       }}
                     >
                       {labels[idx]}
@@ -300,7 +300,7 @@ function QuizGame() {
             >
               <div
                 className="glass rounded-xl p-4 mb-4"
-                style={{ border: "1px solid rgba(255,255,255,0.06)" }}
+                style={{ border: "1px solid var(--article-divider)" }}
               >
                 <p className="text-sm text-white/60 font-serif">
                   {currentQuestion.explanation}

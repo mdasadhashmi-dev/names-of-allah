@@ -34,7 +34,7 @@ export default function QuizPage() {
           <button
             onClick={() => router.back()}
             className="w-10 h-10 rounded-full flex items-center justify-center"
-            style={{ background: "rgba(255,255,255,0.1)" }}
+            style={{ background: "var(--article-interactive-bg-hover)" }}
           >
             <ArrowLeft size={20} className="text-white/70" />
           </button>
@@ -51,10 +51,10 @@ export default function QuizPage() {
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
                 <div className="flex items-center justify-center gap-1 mb-1">
-                  <Trophy size={14} style={{ color: "rgb(217,191,140)" }} />
+                  <Trophy size={14} style={{ color: "var(--article-accent)" }} />
                   <span className="text-xs text-white/50">Best</span>
                 </div>
-                <p className="text-lg font-semibold" style={{ color: "rgb(217,191,140)" }}>
+                <p className="text-lg font-semibold" style={{ color: "var(--article-accent)" }}>
                   {highScore}%
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function QuizPage() {
         )}
 
         {/* Mode Selection */}
-        <h2 className="text-sm font-medium mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>
+        <h2 className="text-sm font-medium mb-4" style={{ color: "var(--article-text-inline)" }}>
           CHOOSE A MODE
         </h2>
 
@@ -92,14 +92,14 @@ export default function QuizPage() {
             transition={{ delay: 0.1 }}
             onClick={() => startQuiz("nameFromMeaning")}
             className="w-full glass rounded-2xl p-6 text-left transition-all hover:border-gold/30"
-            style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+            style={{ border: "1px solid var(--article-interactive-border)" }}
           >
             <div className="flex items-center gap-4">
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={{ background: "rgba(217,191,140,0.15)" }}
+                style={{ background: "var(--article-badge-bg)" }}
               >
-                <Brain size={24} style={{ color: "rgb(217,191,140)" }} />
+                <Brain size={24} style={{ color: "var(--article-accent)" }} />
               </div>
               <div>
                 <h3 className="text-white font-medium mb-1">Name from Meaning</h3>
@@ -116,14 +116,14 @@ export default function QuizPage() {
             transition={{ delay: 0.2 }}
             onClick={() => startQuiz("meaningFromName")}
             className="w-full glass rounded-2xl p-6 text-left transition-all hover:border-gold/30"
-            style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+            style={{ border: "1px solid var(--article-interactive-border)" }}
           >
             <div className="flex items-center gap-4">
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={{ background: "rgba(102,153,230,0.15)" }}
+                style={{ background: "var(--article-secondary-bg-strong)" }}
               >
-                <Languages size={24} style={{ color: "rgb(102,153,230)" }} />
+                <Languages size={24} style={{ color: "var(--article-accent-secondary)" }} />
               </div>
               <div>
                 <h3 className="text-white font-medium mb-1">Meaning from Name</h3>
