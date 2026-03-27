@@ -2,9 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, ChevronDown, ChevronUp, BookOpen, Play } from "lucide-react";
-import { allNames, getApprovedNames, getUnapprovedNames } from "@/data/names";
+import { Search, BookOpen, Play } from "lucide-react";
+import { getApprovedNames } from "@/data/names";
 import { NameCard } from "@/components/shared/NameCard";
 import { useSemanticColors } from "@/hooks/useSemanticColors";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
@@ -12,7 +11,6 @@ import { useLocalStorage } from "@/hooks/useLocalStorage";
 export default function NamesListPage() {
   const router = useRouter();
   const [searchText, setSearchText] = useState("");
-  const [showUnapproved, setShowUnapproved] = useState(false);
   const { isPro, styles } = useSemanticColors();
   const [browseMode, setBrowseMode] = useLocalStorage<"story" | "text">(
     "browse_mode",
@@ -24,8 +22,7 @@ export default function NamesListPage() {
 
   const filteredNames = useMemo(() => {
     const approved = getApprovedNames();
-    const unapproved = getUnapprovedNames();
-    const filterFn = (name: (typeof allNames)[0]) => {
+    const filterFn = (name: (typeof approved)[0]) => {
       if (!searchText.trim()) return true;
       const query = searchText.toLowerCase();
       return (
@@ -35,10 +32,7 @@ export default function NamesListPage() {
         String(name.number).includes(query)
       );
     };
-    return {
-      approved: approved.filter(filterFn),
-      unapproved: unapproved.filter(filterFn),
-    };
+    return approved.filter(filterFn);
   }, [searchText]);
 
   return (
@@ -137,14 +131,14 @@ export default function NamesListPage() {
         {/* Results count when searching */}
         {searchText && (
           <p className="text-sm mb-4" style={styles.textSubtle}>
-            {filteredNames.approved.length} name
-            {filteredNames.approved.length !== 1 ? "s" : ""} found
+            {filteredNames.length} name
+            {filteredNames.length !== 1 ? "s" : ""} found
           </p>
         )}
 
         {/* Approved names grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 pb-8">
-          {filteredNames.approved.map((name, index) => (
+          {filteredNames.map((name, index) => (
             <NameCard
               key={name.nameId}
               name={name}
@@ -157,55 +151,8 @@ export default function NamesListPage() {
           ))}
         </div>
 
-        {/* Unapproved names section */}
-        {filteredNames.unapproved.length > 0 && (
-          <div className="mt-4 pb-20">
-            <button
-              onClick={() => setShowUnapproved(!showUnapproved)}
-              className="flex items-center gap-2 mb-4 text-sm transition-colors"
-              style={styles.textSubtle}
-            >
-              {showUnapproved ? (
-                <ChevronUp size={16} />
-              ) : (
-                <ChevronDown size={16} />
-              )}
-              <span>Other Names ({filteredNames.unapproved.length})</span>
-              <span
-                className="text-xs px-2 py-0.5 rounded-full"
-                style={{
-                  background: isPro ? "var(--pro-accent-light)" : "rgba(255,255,255,0.06)",
-                  color: isPro ? "var(--pro-accent)" : "rgba(255,255,255,0.35)",
-                }}
-              >
-                Unverified
-              </span>
-            </button>
-
-            <AnimatePresence>
-              {showUnapproved && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 overflow-hidden"
-                >
-                  {filteredNames.unapproved.map((name, index) => (
-                    <NameCard
-                      key={name.nameId}
-                      name={name}
-                      index={index}
-                      dim
-                      onClick={() => {
-                        if (name.hasContent) router.push(getNameUrl(name.nameId));
-                      }}
-                    />
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        )}
+        {/* Bottom spacing */}
+        <div className="pb-20" />
       </div>
     </div>
   );
