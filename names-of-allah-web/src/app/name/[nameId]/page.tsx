@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getNameById, allNames, type AllahName } from "@/data/names";
+import { getNameById, allNames, getDisplayNumber, type AllahName } from "@/data/names";
 import {
   getExtendedLearning,
   type ExtendedLearning,
@@ -67,7 +67,8 @@ export async function generateMetadata({
 
   if (!name) return { title: "Name Not Found" };
 
-  const title = `${name.transliteration} (${name.arabic}) — ${name.meaning} | Name #${name.number} of 99`;
+  const displayNum = getDisplayNumber(nameId);
+  const title = `${name.transliteration} (${name.arabic}) — ${name.meaning} | Name #${displayNum} of 99`;
   const description = [
     `${name.transliteration} (${name.arabic}) is one of the 99 Beautiful Names of Allah (Asma ul Husna), meaning "${name.meaning}".`,
     name.storyTitle ? `Story: "${name.storyTitle}".` : "",
@@ -90,7 +91,7 @@ export async function generateMetadata({
       name.arabic,
       name.meaning,
       `name of Allah ${name.transliteration}`,
-      `Allah name #${name.number}`,
+      `Allah name #${displayNum}`,
       "99 names of Allah",
       "Asma ul Husna",
       "beautiful names of Allah",
@@ -142,6 +143,7 @@ export default async function NameSEOPage({
   const readingTime = estimateReadingTime(name, learning, dua);
   const approvedNames = allNames.filter((n) => n.approved);
   const currentIndex = approvedNames.findIndex((n) => n.nameId === nameId);
+  const displayNum = currentIndex + 1;
   const prevName = currentIndex > 0 ? approvedNames[currentIndex - 1] : null;
   const nextName =
     currentIndex < approvedNames.length - 1
@@ -174,7 +176,7 @@ export default async function NameSEOPage({
         name: `What does ${name.transliteration} mean?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${name.transliteration} (${name.arabic}) means "${name.meaning}". It is name #${name.number} of the 99 Beautiful Names of Allah (Asma ul Husna).`,
+          text: `${name.transliteration} (${name.arabic}) means "${name.meaning}". It is name #${displayNum} of the 99 Beautiful Names of Allah (Asma ul Husna).`,
         },
       },
       name.quranicReference
@@ -239,21 +241,21 @@ export default async function NameSEOPage({
             <div
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-8"
               style={{
-                background: "rgba(217,191,140,0.08)",
-                border: "1px solid rgba(217,191,140,0.18)",
-                color: "rgb(217,191,140)",
+                background: "var(--article-badge-bg)",
+                border: "1px solid var(--article-badge-border)",
+                color: "var(--article-accent)",
               }}
             >
               <Sparkles size={12} />
-              Name #{name.number} of 99
+              Name #{displayNum} of 99
             </div>
 
             {/* Arabic name — large */}
             <h1
               className="arabic-text text-6xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
               style={{
-                color: "rgb(217, 191, 140)",
-                textShadow: "0 0 40px rgba(217, 191, 140, 0.2)",
+                color: "var(--article-accent)",
+                textShadow: "var(--article-glow)",
               }}
             >
               {name.arabic}
@@ -273,8 +275,7 @@ export default async function NameSEOPage({
             <div
               className="w-24 h-px mx-auto mb-8"
               style={{
-                background:
-                  "linear-gradient(to right, transparent, rgb(217,191,140), transparent)",
+                background: "var(--article-gradient-divider)",
               }}
             />
 
@@ -334,15 +335,14 @@ export default async function NameSEOPage({
                 href={`/story/${nameId}`}
                 className="block rounded-2xl p-8 lg:p-10 text-center transition-all hover:scale-[1.01]"
                 style={{
-                  background:
-                    "linear-gradient(135deg, rgba(217,191,140,0.08), rgba(217,191,140,0.03))",
-                  border: "1px solid rgba(217,191,140,0.2)",
+                  background: "var(--article-gradient-cta)",
+                  border: "1px solid var(--article-cta-border)",
                 }}
               >
                 {name.storyTitle && (
                   <p
                     className="text-xs font-medium uppercase tracking-widest mb-3"
-                    style={{ color: "rgb(217,191,140)" }}
+                    style={{ color: "var(--article-accent)" }}
                   >
                     Interactive Story
                   </p>
@@ -357,9 +357,9 @@ export default async function NameSEOPage({
                 <span
                   className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-medium transition-all"
                   style={{
-                    background: "rgba(217,191,140,0.18)",
-                    border: "1px solid rgba(217,191,140,0.3)",
-                    color: "rgb(217,191,140)",
+                    background: "var(--article-btn-bg)",
+                    border: "1px solid var(--article-btn-border)",
+                    color: "var(--article-accent)",
                   }}
                 >
                   <Star size={16} />
@@ -376,10 +376,10 @@ export default async function NameSEOPage({
           {scholarly && (
             <section id="scholarly" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
-                <ScrollText size={16} style={{ color: "rgb(217,191,140)" }} />
+                <ScrollText size={16} style={{ color: "var(--article-accent)" }} />
                 <h2
                   className="text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: "rgb(217,191,140)" }}
+                  style={{ color: "var(--article-accent)" }}
                 >
                   Scholarly Explanation
                 </h2>
@@ -388,8 +388,8 @@ export default async function NameSEOPage({
               <article
                 className="rounded-2xl p-6 lg:p-8"
                 style={{
-                  background: "rgba(217,191,140,0.04)",
-                  border: "1px solid rgba(217,191,140,0.12)",
+                  background: "var(--article-card-bg)",
+                  border: "1px solid var(--article-card-border)",
                 }}
               >
                 {/* Main explanation */}
@@ -405,8 +405,8 @@ export default async function NameSEOPage({
                         key={idx}
                         className="rounded-xl p-4 lg:p-5"
                         style={{
-                          background: "rgba(217,191,140,0.06)",
-                          border: "1px solid rgba(217,191,140,0.08)",
+                          background: "var(--article-card-bg-alt)",
+                          border: "1px solid var(--article-card-border-light)",
                         }}
                       >
                         <p className="text-sm text-white/70 font-serif italic leading-relaxed mb-2">
@@ -414,7 +414,7 @@ export default async function NameSEOPage({
                         </p>
                         <p
                           className="text-xs font-medium"
-                          style={{ color: "rgba(217,191,140,0.7)" }}
+                          style={{ color: "var(--article-accent-muted)" }}
                         >
                           [{verse.reference}]
                         </p>
@@ -426,7 +426,7 @@ export default async function NameSEOPage({
                 {/* Source attribution */}
                 <div
                   className="mt-6 pt-4 text-xs text-white/30 italic"
-                  style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                  style={{ borderTop: "1px solid var(--article-divider)" }}
                 >
                   <p>
                     From &ldquo;Explanation to the Beautiful and Perfect Names of
@@ -443,16 +443,16 @@ export default async function NameSEOPage({
               <div
                 className="rounded-2xl p-8 text-center"
                 style={{
-                  background: "rgba(255,255,255,0.02)",
-                  border: "1px solid rgba(255,255,255,0.06)",
+                  background: "var(--article-surface)",
+                  border: "1px solid var(--article-divider)",
                 }}
               >
                 <PenLine
                   size={20}
                   className="mx-auto mb-4"
-                  style={{ color: "rgba(217,191,140,0.6)" }}
+                  style={{ color: "var(--article-accent-dim)" }}
                 />
-                <h2 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "rgb(217,191,140)" }}>
+                <h2 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "var(--article-accent)" }}>
                   Reflect on This Name
                 </h2>
                 <blockquote className="font-serif text-lg lg:text-xl italic text-white/75 leading-relaxed max-w-2xl mx-auto mb-6">
@@ -475,10 +475,10 @@ export default async function NameSEOPage({
           {learning && learning.hadiths.length > 0 && (
             <section id="hadiths" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
-                <Quote size={16} style={{ color: "rgb(217,191,140)" }} />
+                <Quote size={16} style={{ color: "var(--article-accent)" }} />
                 <h2
                   className="text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: "rgb(217,191,140)" }}
+                  style={{ color: "var(--article-accent)" }}
                 >
                   Prophetic Traditions
                 </h2>
@@ -490,15 +490,15 @@ export default async function NameSEOPage({
                     key={idx}
                     className="rounded-2xl p-6 lg:p-8"
                     style={{
-                      background: "rgba(217,191,140,0.04)",
-                      border: "1px solid rgba(217,191,140,0.1)",
+                      background: "var(--article-card-bg)",
+                      border: "1px solid var(--article-card-border-med)",
                     }}
                   >
                     <p
                       className="arabic-text text-xl lg:text-2xl leading-loose text-center mb-4 pb-4"
                       style={{
-                        color: "rgb(217,191,140)",
-                        borderBottom: "1px solid rgba(217,191,140,0.1)",
+                        color: "var(--article-accent)",
+                        borderBottom: "1px solid var(--article-card-border-med)",
                       }}
                     >
                       {hadith.arabicText}
@@ -512,7 +512,7 @@ export default async function NameSEOPage({
                     <div
                       className="flex items-center justify-between text-xs text-white/35 pt-3 flex-wrap gap-2"
                       style={{
-                        borderTop: "1px solid rgba(255,255,255,0.06)",
+                        borderTop: "1px solid var(--article-divider)",
                       }}
                     >
                       <div>
@@ -542,10 +542,10 @@ export default async function NameSEOPage({
           {learning && learning.scholarlyInsights.length > 0 && (
             <section id="scholars" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
-                <Lightbulb size={16} style={{ color: "rgb(217,191,140)" }} />
+                <Lightbulb size={16} style={{ color: "var(--article-accent)" }} />
                 <h2
                   className="text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: "rgb(217,191,140)" }}
+                  style={{ color: "var(--article-accent)" }}
                 >
                   Scholarly Insights
                 </h2>
@@ -557,14 +557,14 @@ export default async function NameSEOPage({
                     key={idx}
                     className="rounded-2xl p-6"
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.07)",
+                      background: "var(--article-surface-alt)",
+                      border: "1px solid var(--article-divider-alt)",
                     }}
                   >
                     {insight.arabicQuote && (
                       <p
                         className="arabic-text text-lg leading-loose mb-3 text-right"
-                        style={{ color: "rgba(217,191,140,0.75)" }}
+                        style={{ color: "var(--article-accent-muted)" }}
                       >
                         {insight.arabicQuote}
                       </p>
@@ -590,9 +590,8 @@ export default async function NameSEOPage({
               <div
                 className="relative rounded-2xl overflow-hidden p-10 lg:p-12 text-center"
                 style={{
-                  background:
-                    "linear-gradient(135deg, rgba(217,191,140,0.12) 0%, rgba(217,191,140,0.04) 100%)",
-                  border: "1px solid rgba(217,191,140,0.25)",
+                  background: "var(--article-gradient-mid)",
+                  border: "1px solid var(--article-cta-border-strong)",
                 }}
               >
                 <div className="absolute top-4 right-4 flex gap-1 opacity-30">
@@ -600,14 +599,14 @@ export default async function NameSEOPage({
                     <div
                       key={i}
                       className="w-1.5 h-1.5 rounded-full"
-                      style={{ background: "rgb(217,191,140)" }}
+                      style={{ background: "var(--article-accent)" }}
                     />
                   ))}
                 </div>
 
                 <p
                   className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
-                  style={{ color: "rgb(217,191,140)" }}
+                  style={{ color: "var(--article-accent)" }}
                 >
                   Experience This Name
                 </p>
@@ -624,9 +623,9 @@ export default async function NameSEOPage({
                   href={`/story/${nameId}`}
                   className="inline-flex items-center gap-2 px-10 py-3.5 rounded-full text-sm font-medium transition-all hover:scale-105"
                   style={{
-                    background: "rgba(217,191,140,0.2)",
-                    border: "1px solid rgba(217,191,140,0.35)",
-                    color: "rgb(217,191,140)",
+                    background: "var(--article-btn-bg-strong)",
+                    border: "1px solid var(--article-btn-border-strong)",
+                    color: "var(--article-accent)",
                   }}
                 >
                   <Star size={16} />
@@ -643,10 +642,10 @@ export default async function NameSEOPage({
           {dua && (
             <section id="dua" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
-                <HandHeart size={16} style={{ color: "rgb(217,191,140)" }} />
+                <HandHeart size={16} style={{ color: "var(--article-accent)" }} />
                 <h2
                   className="text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: "rgb(217,191,140)" }}
+                  style={{ color: "var(--article-accent)" }}
                 >
                   Supplication
                 </h2>
@@ -655,13 +654,13 @@ export default async function NameSEOPage({
               <article
                 className="rounded-2xl p-6 lg:p-8"
                 style={{
-                  background: "rgba(217,191,140,0.04)",
-                  border: "1px solid rgba(217,191,140,0.12)",
+                  background: "var(--article-card-bg)",
+                  border: "1px solid var(--article-card-border)",
                 }}
               >
                 <p
                   className="arabic-text text-xl lg:text-2xl leading-loose text-center mb-4"
-                  style={{ color: "rgb(217,191,140)" }}
+                  style={{ color: "var(--article-accent)" }}
                 >
                   {dua.arabicText}
                 </p>
@@ -671,7 +670,7 @@ export default async function NameSEOPage({
                 <p
                   className="text-sm lg:text-base font-serif text-white/80 text-center leading-relaxed mb-4 pt-4"
                   style={{
-                    borderTop: "1px solid rgba(255,255,255,0.06)",
+                    borderTop: "1px solid var(--article-divider)",
                   }}
                 >
                   &ldquo;{dua.translation}&rdquo;
@@ -679,7 +678,7 @@ export default async function NameSEOPage({
                 <div
                   className="flex flex-col gap-1 text-xs text-white/35 pt-3 text-center"
                   style={{
-                    borderTop: "1px solid rgba(255,255,255,0.06)",
+                    borderTop: "1px solid var(--article-divider)",
                   }}
                 >
                   <span>{dua.source}</span>
@@ -697,10 +696,10 @@ export default async function NameSEOPage({
           {learning && learning.realLifeApplications.length > 0 && (
             <section id="applications" className="mb-12 lg:mb-16">
               <div className="flex items-center gap-2 mb-6">
-                <Heart size={16} style={{ color: "rgb(217,191,140)" }} />
+                <Heart size={16} style={{ color: "var(--article-accent)" }} />
                 <h2
                   className="text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: "rgb(217,191,140)" }}
+                  style={{ color: "var(--article-accent)" }}
                 >
                   Living With {name.transliteration}
                 </h2>
@@ -709,8 +708,8 @@ export default async function NameSEOPage({
               <div
                 className="rounded-2xl p-6 lg:p-8"
                 style={{
-                  background: "rgba(255,255,255,0.02)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "var(--article-surface)",
+                  border: "1px solid var(--article-divider-alt)",
                 }}
               >
                 <ul className="space-y-4">
@@ -719,8 +718,8 @@ export default async function NameSEOPage({
                       <span
                         className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                         style={{
-                          background: "rgba(217,191,140,0.12)",
-                          color: "rgb(217,191,140)",
+                          background: "var(--article-num-bg)",
+                          color: "var(--article-accent)",
                         }}
                       >
                         {idx + 1}
@@ -743,13 +742,13 @@ export default async function NameSEOPage({
                   href={`/story/${nameId}`}
                   className="flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02]"
                   style={{
-                    background: "rgba(217,191,140,0.06)",
-                    border: "1px solid rgba(217,191,140,0.15)",
+                    background: "var(--article-card-bg-alt)",
+                    border: "1px solid var(--article-link-border)",
                   }}
                 >
                   <Star
                     size={18}
-                    style={{ color: "rgb(217,191,140)" }}
+                    style={{ color: "var(--article-accent)" }}
                   />
                   <div>
                     <p className="text-sm font-medium text-white/85">
@@ -810,7 +809,7 @@ export default async function NameSEOPage({
           <nav className="pb-16 lg:pb-20">
             <div
               className="h-px mb-8"
-              style={{ background: "rgba(255,255,255,0.06)" }}
+              style={{ background: "var(--article-divider)" }}
             />
             <div className="flex items-center justify-between">
               {prevName ? (

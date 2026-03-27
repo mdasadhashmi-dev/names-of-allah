@@ -9,11 +9,12 @@ import { useLayout } from "@/providers/LayoutProvider";
 interface NameCardProps {
   name: AllahName;
   index?: number;
+  displayNumber?: number;
   dim?: boolean;
   onClick?: () => void;
 }
 
-export function NameCard({ name, index = 0, dim = false, onClick }: NameCardProps) {
+export function NameCard({ name, index = 0, displayNumber, dim = false, onClick }: NameCardProps) {
   const { primaryColor } = useTheme();
   const { layoutMode } = useLayout();
   const isPro = layoutMode === "professional";
@@ -65,7 +66,7 @@ export function NameCard({ name, index = 0, dim = false, onClick }: NameCardProp
                 : isPro ? "1px solid #E5E7EB" : "1px solid rgba(255,255,255,0.08)",
             }}
           >
-            {name.hasContent ? name.number : <Lock size={12} />}
+            {name.hasContent ? (displayNumber ?? name.number) : <Lock size={12} />}
           </div>
 
           {/* Arrow shown on hover */}

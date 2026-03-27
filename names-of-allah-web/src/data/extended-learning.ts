@@ -352,6 +352,152 @@ export const extendedLearningDb: Record<string, ExtendedLearning> = {
       },
     ],
   },
+  "al-haafiz": {
+    nameId: "al-haafiz",
+    hadiths: [
+      {
+        arabicText: "احْفَظِ اللَّهَ يَحْفَظْكَ احْفَظِ اللَّهَ تَجِدْهُ تُجَاهَكَ",
+        transliteration: "Ihfadhillaha yahfadhk, ihfadhillaha tajidhu tujahak",
+        translation: "Be mindful of Allah and He will protect you. Be mindful of Allah and you will find Him before you.",
+        reference: "Jami' at-Tirmidhi 2516",
+        narrator: "Abdullah ibn Abbas رضي الله عنهما",
+        source: "sunnah.com/tirmidhi:2516",
+        grading: "Sahih",
+        context: "The Prophet ﷺ gave this advice to the young Ibn Abbas, teaching that Allah's preservation comes to those who preserve His commands.",
+      },
+    ],
+    scholarlyInsights: [
+      {
+        scholar: "Ibn al-Qayyim",
+        insight: "Allah preserves His servant in two ways: He preserves his worldly affairs — his body, family, wealth, and children. And He preserves his religious affairs — his faith and his religion — protecting him from doubts and desires.",
+        source: "Al-Fawaid",
+      },
+    ],
+    realLifeApplications: [
+      "Be mindful of Allah's commands and He will preserve you in ways you cannot imagine.",
+      "Trust that Al-Haafiz is guarding your good deeds — nothing sincere is ever wasted.",
+      "Remember that the Quran's perfect preservation for 1,400+ years is proof of Al-Haafiz's power.",
+      "When you feel exposed or vulnerable, seek refuge in Al-Haafiz, the ultimate Protector.",
+    ],
+    duas: [
+      {
+        arabicText: "اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي",
+        transliteration: "Allahumma ihfadhni min bayni yadayya wa min khalfi wa 'an yameeni wa 'an shimali wa min fawqi",
+        translation: "O Allah, protect me from in front of me, from behind me, from my right, from my left, and from above me.",
+        occasion: "Morning and evening protection",
+        source: "Sunan Abu Dawud 5074 (Sahih)",
+      },
+    ],
+  },
+  "al-mubeen": {
+    nameId: "al-mubeen",
+    hadiths: [
+      {
+        arabicText: "إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
+        transliteration: "Inna Allaha la yandhuru ila suwarikum wa amwalikum wa lakin yandhuru ila quloobikum wa a'malikum",
+        translation: "Indeed Allah does not look at your forms and your wealth, but He looks at your hearts and your deeds.",
+        reference: "Sahih Muslim 2564",
+        narrator: "Abu Hurairah رضي الله عنه",
+        source: "sunnah.com/muslim:2564",
+        grading: "Sahih",
+        context: "Allah's knowledge is clear and manifest — He sees through all outward appearances to the reality within.",
+      },
+    ],
+    scholarlyInsights: [
+      {
+        scholar: "Ibn Kathir",
+        insight: "Al-Mubeen means that He is manifest and clear in His existence, His oneness, and His perfect attributes. His signs in creation are clear evidence for those who reflect, and on the Day of Judgment, His truth will be made manifest to all.",
+        source: "Tafsir Ibn Kathir — Surah An-Nur 24:25",
+      },
+    ],
+    realLifeApplications: [
+      "Seek clarity from Al-Mubeen when you feel confused about life decisions.",
+      "Study the Quran — it is the 'Kitab Mubeen' (Clear Book) sent to remove all confusion.",
+      "Live with transparency and honesty, reflecting the attribute of clarity.",
+      "Trust that Al-Mubeen will make the truth manifest even when it seems buried.",
+    ],
+    duas: [
+      {
+        arabicText: "اللَّهُمَّ أَرِنِي الْحَقَّ حَقًّا وَارْزُقْنِي اتِّبَاعَهُ وَأَرِنِي الْبَاطِلَ بَاطِلاً وَارْزُقْنِي اجْتِنَابَهُ",
+        transliteration: "Allahumma arini al-haqqa haqqan warzuqni ittiba'ah, wa arini al-batila batilan warzuqni ijtinabah",
+        translation: "O Allah, show me the truth as truth and grant me the ability to follow it, and show me falsehood as falsehood and grant me the ability to avoid it.",
+        occasion: "When seeking clarity and guidance",
+        source: "Attributed to the Prophet ﷺ — referenced by scholars including Ibn Taymiyyah",
+      },
+    ],
+  },
+  "al-qaahir": {
+    nameId: "al-qaahir",
+    hadiths: [
+      {
+        arabicText: "مَا مِنْ مَلِكٍ إِلاَّ وَاللَّهُ عَزَّ وَجَلَّ أَعَزُّ مِنْهُ",
+        translation: "There is no king except that Allah, the Mighty and Majestic, is mightier than him.",
+        reference: "Related meaning from Sahih Muslim 2788",
+        narrator: "Abu Hurairah رضي الله عنه",
+        source: "sunnah.com/muslim:2788",
+        grading: "Sahih",
+        context: "Allah is Al-Qaahir — He subdues and overpowers all creation, and no ruler or tyrant can escape His grasp.",
+      },
+    ],
+    scholarlyInsights: [
+      {
+        scholar: "Imam al-Ghazali",
+        insight: "Al-Qaahir is the one who subdues all of creation. Every created being is subdued before Him — compelled, yielding, unable to resist His decree. The heavens, the earth, the stars, the mountains — all are subdued before His majesty.",
+        source: "Al-Maqsad al-Asna fi Sharh Asma Allah al-Husna",
+      },
+    ],
+    realLifeApplications: [
+      "When you see oppression, remember that Al-Qaahir will subdue every tyrant.",
+      "Never be arrogant — Al-Qaahir humbles whoever rises against His decree.",
+      "Find comfort in knowing that no enemy or difficulty is beyond Al-Qaahir's power to subdue.",
+      "Submit willingly to Allah before you are subdued — the wise servant surrenders with love.",
+    ],
+    duas: [
+      {
+        arabicText: "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+        transliteration: "Hasbuna Allahu wa ni'ma al-wakeel",
+        translation: "Allah is sufficient for us, and He is the best Disposer of affairs.",
+        occasion: "When facing oppression or overwhelming difficulty",
+        source: "Qur'an 3:173 — said by the believers when told that a great army had gathered against them",
+      },
+    ],
+  },
+  "al-qadeer": {
+    nameId: "al-qadeer",
+    hadiths: [
+      {
+        arabicText: "إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+        translation: "Indeed, Allah is over all things Qadeer (All-Powerful).",
+        reference: "Qur'an — appears over 30 times",
+        narrator: "Direct Quranic statement",
+        source: "Multiple surahs including Al-Baqarah 2:20, Al-Baqarah 2:109, Aal-Imran 3:29",
+        grading: "Quranic",
+        context: "This phrase is repeated extensively throughout the Quran as a constant reminder that nothing is beyond Allah's power.",
+      },
+    ],
+    scholarlyInsights: [
+      {
+        scholar: "Shaykh as-Sa'di",
+        insight: "Al-Qadeer is the One whose power is perfect and complete. By His power He brought everything into existence, by it He arranges all affairs, by it He fashioned and perfected creation. The One who, when He wills a thing, merely says 'Be!' and it is.",
+        source: "Explanation to the Beautiful and Perfect Names of Allah",
+      },
+    ],
+    realLifeApplications: [
+      "Never say 'impossible' — Al-Qadeer has power over all things.",
+      "Ask Al-Qadeer for what you need, no matter how difficult it seems — He gave a child to the barren and made fire cool.",
+      "Reflect on creation as a sign of His limitless power — every leaf, star, and heartbeat is by His Qudrah.",
+      "When making dua, have certainty that Al-Qadeer can answer — doubting His power limits your own supplication.",
+    ],
+    duas: [
+      {
+        arabicText: "اللَّهُمَّ إِنَّكَ تَقْدِرُ وَلَا أَقْدِرُ وَتَعْلَمُ وَلَا أَعْلَمُ وَأَنْتَ عَلَّامُ الْغُيُوبِ",
+        transliteration: "Allahumma innaka taqdiru wa la aqdiru wa ta'lamu wa la a'lamu wa anta 'allamul-ghuyoob",
+        translation: "O Allah, You have power and I have no power, You know and I do not know, and You are the Knower of the unseen.",
+        occasion: "When entrusting your affairs to Allah's power and knowledge",
+        source: "Part of Salat al-Istikhara — Sahih al-Bukhari 1166",
+      },
+    ],
+  },
 };
 
 export function getExtendedLearning(nameId: string): ExtendedLearning | undefined {

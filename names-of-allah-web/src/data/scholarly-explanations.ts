@@ -1518,6 +1518,71 @@ export const scholarlyExplanationsDb: Record<string, ScholarlyExplanation> = {
     ],
     source: SOURCE + " (Additional Names from ibn 'Uthaymin)",
   },
+  "al-haafiz": {
+    nameId: "al-haafiz",
+    explanation:
+      "Al-Haafiz is the one who preserves and protects all that He has created. He preserves the heavens and the earth and all that is between them. He preserves His servant from destruction and calamity, and He preserves the deeds of His servants — nothing is lost with Him. He sent down the Quran and took upon Himself to preserve it, and so it has remained unchanged for over fourteen centuries, letter by letter, exactly as it was revealed.",
+    quranicVerses: [
+      {
+        text: "Indeed, it is We who sent down the Reminder, and indeed, We will be its Guardian.",
+        reference: "al-Hijr (15): 9",
+      },
+      {
+        text: "For him [each person] there are angels in succession, before and behind him. They guard him by the Command of Allah.",
+        reference: "ar-Ra'd (13): 11",
+      },
+    ],
+    source: SOURCE,
+  },
+  "al-mubeen": {
+    nameId: "al-mubeen",
+    explanation:
+      "Al-Mubeen is the one who is manifest and clear in His existence, His oneness, and His perfect attributes. His proofs and evidences are clear, His religion is clear, and His judgement is clear. He makes the truth manifest and distinguishes it from falsehood. On the Day of Judgement, He will pay every soul its just recompense, and they will know that Allah — He is the Clear Truth.",
+    quranicVerses: [
+      {
+        text: "On that Day, Allah will pay them their just due, and they will know that Allah — He is the Clear Truth (al-Haqq al-Mubeen).",
+        reference: "an-Nur (24): 25",
+      },
+      {
+        text: "Alif Lam Ra. These are the verses of the Clear Book (al-Kitab al-Mubeen).",
+        reference: "Yusuf (12): 1",
+      },
+    ],
+    source: SOURCE,
+  },
+  "al-qaahir": {
+    nameId: "al-qaahir",
+    explanation:
+      "Al-Qaahir is the one before whom all of creation is subdued. He is above His servants, and all things are subject to His authority. No creature can resist His will, no tyrant can escape His grasp, and no power in the heavens or the earth can challenge His dominion. He subdues the arrogant, humbles the oppressors, and executes His decree upon all of creation without resistance.",
+    quranicVerses: [
+      {
+        text: "And He is al-Qaahir above His servants. And He is the Wise, the Acquainted.",
+        reference: "al-An'am (6): 18",
+      },
+      {
+        text: "And He is al-Qaahir above His servants, and He sends guardians over you.",
+        reference: "al-An'am (6): 61",
+      },
+    ],
+    source: SOURCE,
+  },
+  "al-qadeer": {
+    nameId: "al-qadeer",
+    groupedWith: ["al-qadir"],
+    explanation:
+      "Al-Qadeer is the one whose power is perfect and complete, who is able to do all things. By His power He brought everything into existence, by it He arranges all the affairs, by it He fashioned and perfected the creation, by it He brings to life and causes to die. The one who, when He wills a thing to be, merely says 'Be!' and it is. He gave a child to Maryam without a father, made the fire cool for Ibrahim, and split the sea for Musa — nothing is beyond His perfect power.",
+    quranicVerses: [
+      {
+        text: "Is not He who created the heavens and the earth able to create the likes of them? Yes indeed! He is al-Khallaaq, al-Aleem.",
+        reference: "Ya Sin (36): 81",
+      },
+      {
+        text: "Does man think that We cannot assemble his bones? Yes indeed, We are Qadir to put together in perfect order the tips of his fingers.",
+        reference: "al-Qiyamah (75): 3-4",
+      },
+    ],
+    source: SOURCE,
+  },
 };
 
 export function getScholarlyExplanation(

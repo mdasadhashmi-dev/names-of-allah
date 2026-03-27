@@ -157,3 +157,161 @@
 [data-layout="professional"] .dark-bg-overlay {
   display: none !important;
 }
+
+/* ======================================================================
+   Article Page Tokens
+   CSS custom properties for name/article pages. Defaults are cinematic
+   (dark bg, gold accent). Professional mode overrides below.
+   ====================================================================== */
+:root {
+  --article-accent: rgb(217, 191, 140);
+  --article-accent-muted: rgba(217, 191, 140, 0.7);
+  --article-accent-dim: rgba(217, 191, 140, 0.6);
+  --article-glow: 0 0 40px rgba(217, 191, 140, 0.2);
+
+  --article-card-bg: rgba(217, 191, 140, 0.04);
+  --article-card-bg-alt: rgba(217, 191, 140, 0.06);
+  --article-card-border: rgba(217, 191, 140, 0.12);
+  --article-card-border-light: rgba(217, 191, 140, 0.08);
+  --article-card-border-med: rgba(217, 191, 140, 0.1);
+  --article-badge-bg: rgba(217, 191, 140, 0.08);
+  --article-badge-border: rgba(217, 191, 140, 0.18);
+  --article-num-bg: rgba(217, 191, 140, 0.12);
+  --article-btn-bg: rgba(217, 191, 140, 0.18);
+  --article-btn-bg-strong: rgba(217, 191, 140, 0.2);
+  --article-btn-border: rgba(217, 191, 140, 0.3);
+  --article-btn-border-strong: rgba(217, 191, 140, 0.35);
+  --article-cta-border: rgba(217, 191, 140, 0.2);
+  --article-cta-border-strong: rgba(217, 191, 140, 0.25);
+  --article-link-border: rgba(217, 191, 140, 0.15);
+
+  --article-surface: rgba(255, 255, 255, 0.02);
+  --article-surface-alt: rgba(255, 255, 255, 0.03);
+  --article-divider: rgba(255, 255, 255, 0.06);
+  --article-divider-alt: rgba(255, 255, 255, 0.07);
+
+  --article-gradient-cta: linear-gradient(135deg, rgba(217,191,140,0.08), rgba(217,191,140,0.03));
+  --article-gradient-mid: linear-gradient(135deg, rgba(217,191,140,0.12) 0%, rgba(217,191,140,0.04) 100%);
+  --article-gradient-divider: linear-gradient(to right, transparent, rgb(217,191,140), transparent);
+}
+
+[data-layout="professional"] {
+  --article-accent: var(--pro-accent);
+  --article-accent-muted: rgba(44, 110, 73, 0.7);
+  --article-accent-dim: rgba(44, 110, 73, 0.5);
+  --article-glow: none;
+
+  --article-card-bg: var(--pro-surface);
+  --article-card-bg-alt: #F8F8F5;
+  --article-card-border: var(--pro-border);
+  --article-card-border-light: var(--pro-border);
+  --article-card-border-med: var(--pro-border);
+  --article-badge-bg: var(--pro-accent-light);
+  --article-badge-border: var(--pro-border);
+  --article-num-bg: var(--pro-accent-light);
+  --article-btn-bg: var(--pro-accent-light);
+  --article-btn-bg-strong: var(--pro-accent-light);
+  --article-btn-border: var(--pro-accent);
+  --article-btn-border-strong: var(--pro-accent);
+  --article-cta-border: var(--pro-border);
+  --article-cta-border-strong: var(--pro-border);
+  --article-link-border: var(--pro-border);
+
+  --article-surface: #F5F5F0;
+  --article-surface-alt: var(--pro-surface);
+  --article-divider: var(--pro-border);
+  --article-divider-alt: var(--pro-border);
+
+  --article-gradient-cta: linear-gradient(135deg, var(--pro-accent-light), var(--pro-surface));
+  --article-gradient-mid: linear-gradient(135deg, var(--pro-accent-light) 0%, var(--pro-surface) 100%);
+  --article-gradient-divider: linear-gradient(to right, transparent, var(--pro-accent), transparent);
+}
+
+/* ---- Text color overrides for professional (light) mode ----
+   Tailwind text-white/opacity utilities are invisible on light bg.
+   Map them to dark text with equivalent visual weight.             */
+
+[data-layout="professional"] :is(
+  .text-white\/90,
+  .text-white\/85
+) {
+  color: var(--pro-text) !important;
+}
+
+[data-layout="professional"] :is(
+  .text-white\/80,
+  .text-white\/75
+) {
+  color: rgba(26, 26, 46, 0.85) !important;
+}
+
+[data-layout="professional"] .text-white\/70 {
+  color: rgba(26, 26, 46, 0.75) !important;
+}
+
+[data-layout="professional"] .text-white\/60 {
+  color: rgba(26, 26, 46, 0.65) !important;
+}
+
+[data-layout="professional"] .text-white\/50 {
+  color: var(--pro-text-muted) !important;
+}
+
+[data-layout="professional"] :is(
+  .text-white\/45,
+  .text-white\/40
+) {
+  color: rgba(107, 114, 128, 0.9) !important;
+}
+
+[data-layout="professional"] :is(
+  .text-white\/35,
+  .text-white\/30
+) {
+  color: rgba(107, 114, 128, 0.75) !important;
+}
+
+[data-layout="professional"] .text-white\/25 {
+  color: rgba(107, 114, 128, 0.6) !important;
+}
+
+[data-layout="professional"] .text-white {
+  color: var(--pro-text) !important;
+}
+
+/* Hover text color overrides */
+[data-layout="professional"] .hover\:text-white\/60:hover {
+  color: rgba(26, 26, 46, 0.65) !important;
+}
+
+[data-layout="professional"] .hover\:text-white\/70:hover {
+  color: rgba(26, 26, 46, 0.75) !important;
+}
+
+[data-layout="professional"] .hover\:text-white\/90:hover {
+  color: var(--pro-text) !important;
+}
+
+[data-layout="professional"] .hover\:text-white\/50:hover {
+  color: var(--pro-text-muted) !important;
+}
+
+/* Group-hover text overrides */
+[data-layout="professional"] .group:hover .group-hover\:text-white\/60 {
+  color: rgba(26, 26, 46, 0.65) !important;
+}
+
+[data-layout="professional"] .group:hover .group-hover\:text-white\/90 {
+  color: var(--pro-text) !important;
+}
+
+/* ---- Background overrides for professional mode ----
+   Dark gradient backgrounds become light professional surfaces.  */
+
+[data-layout="professional"] .bg-gradient-to-b.from-\[\#030510\] {
+  background: var(--pro-bg) !important;
+}
+
+[data-layout="professional"] .from-dark-bg {
+  background: var(--pro-bg) !important;
+}

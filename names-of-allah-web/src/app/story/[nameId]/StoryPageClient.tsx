@@ -98,6 +98,10 @@ import { AlMuhsinStory } from "@/components/stories/AlMuhsinStory";
 import { AlMuteeStory } from "@/components/stories/AlMuteeStory";
 import { AlMannaanStory } from "@/components/stories/AlMannaanStory";
 import { AlWitrStory } from "@/components/stories/AlWitrStory";
+import { AlHaafizStory } from "@/components/stories/AlHaafizStory";
+import { AlMubeenStory } from "@/components/stories/AlMubeenStory";
+import { AlQaahirStory } from "@/components/stories/AlQaahirStory";
+import { AlQadeerStory } from "@/components/stories/AlQadeerStory";
 
 export default function StoryPageClient({ nameId }: { nameId: string }) {
   switch (nameId) {
@@ -295,6 +299,14 @@ export default function StoryPageClient({ nameId }: { nameId: string }) {
       return <AlMannaanStory nameId={nameId} />;
     case "al-witr":
       return <AlWitrStory nameId={nameId} />;
+    case "al-haafiz":
+      return <AlHaafizStory nameId={nameId} />;
+    case "al-mubeen":
+      return <AlMubeenStory nameId={nameId} />;
+    case "al-qaahir":
+      return <AlQaahirStory nameId={nameId} />;
+    case "al-qadeer":
+      return <AlQadeerStory nameId={nameId} />;
     default:
       return <BaseStory nameId={nameId} />;
   }

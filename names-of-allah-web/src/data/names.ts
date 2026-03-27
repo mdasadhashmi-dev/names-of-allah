@@ -995,7 +995,7 @@ export const allNames: AllahName[] = [
     meaning: "The Governor",
     nameId: "al-wali-alt",
     hasContent: true,
-    approved: true,
+    approved: false,
     storyTitle: "The Supreme Governor",
     quranicReference: "Surah Ash-Shura 42:9",
     audioFileName: "ash-shura-42-9",
@@ -1294,7 +1294,7 @@ export const allNames: AllahName[] = [
     meaning: "The Most Appreciative",
     nameId: "ash-shakoor",
     hasContent: true,
-    approved: true,
+    approved: false,
     storyTitle: "The Grateful One",
     quranicReference: "Surah Fatir 35:30",
     audioFileName: "fatir-35-30",
@@ -1650,6 +1650,58 @@ export const allNames: AllahName[] = [
     quranicReference: "Sahih Al-Bukhari 6410",
     audioFileName: "al-witr-hadith",
     reflectionQuestion: "Al-Witr is One and loves the odd number. How does His absolute oneness shape your understanding of tawheed?"
+  },
+  {
+    number: 127,
+    arabic: "ٱلْحَافِظُ",
+    transliteration: "Al-Haafiz",
+    meaning: "The Preserver",
+    nameId: "al-haafiz",
+    hasContent: true,
+    approved: true,
+    storyTitle: "The Preserver of the Quran",
+    quranicReference: "Surah Al-Hijr 15:9",
+    audioFileName: "al-hijr-15-9",
+    reflectionQuestion: "Al-Haafiz preserves what He wills — what in your life has He been quietly guarding all along?"
+  },
+  {
+    number: 128,
+    arabic: "ٱلْمُبِينُ",
+    transliteration: "Al-Mubeen",
+    meaning: "The Clear, The Manifest",
+    nameId: "al-mubeen",
+    hasContent: true,
+    approved: true,
+    storyTitle: "The Manifest Truth",
+    quranicReference: "Surah An-Nur 24:25",
+    audioFileName: "an-nur-24-25",
+    reflectionQuestion: "Al-Mubeen makes everything clear — what truth is He making clear to you that you have been avoiding?"
+  },
+  {
+    number: 129,
+    arabic: "ٱلْقَاهِرُ",
+    transliteration: "Al-Qaahir",
+    meaning: "The Irresistible Subduer",
+    nameId: "al-qaahir",
+    hasContent: true,
+    approved: true,
+    storyTitle: "The Fall of Fir'awn",
+    quranicReference: "Surah Al-An'am 6:18",
+    audioFileName: "al-anam-6-18",
+    reflectionQuestion: "Al-Qaahir subdues every tyrant — how does this comfort you when you see injustice in the world?"
+  },
+  {
+    number: 130,
+    arabic: "ٱلْقَدِيرُ",
+    transliteration: "Al-Qadeer",
+    meaning: "The All-Powerful",
+    nameId: "al-qadeer",
+    hasContent: true,
+    approved: true,
+    storyTitle: "The Impossible Made Easy",
+    quranicReference: "Surah Al-Qiyamah 75:40",
+    audioFileName: "al-qiyamah-75-40",
+    reflectionQuestion: "Al-Qadeer has power over all things — what 'impossible' situation are you bringing to Him today?"
   }
 ];
 
@@ -1667,6 +1719,12 @@ export function getApprovedNames(): AllahName[] {
 
 export function getUnapprovedNames(): AllahName[] {
   return allNames.filter(name => !name.approved);
+}
+
+export function getDisplayNumber(nameId: string): number {
+  const approved = getApprovedNames();
+  const idx = approved.findIndex(n => n.nameId === nameId);
+  return idx >= 0 ? idx + 1 : 0;
 }
 
 export function getComingSoonNames(): AllahName[] {

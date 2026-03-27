@@ -149,6 +149,7 @@ export default function NamesListPage() {
               key={name.nameId}
               name={name}
               index={index}
+              displayNumber={index + 1}
               onClick={() => {
                 if (name.hasContent) router.push(getNameUrl(name.nameId));
               }}

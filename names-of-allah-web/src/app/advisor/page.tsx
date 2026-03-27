@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Search, Sparkles, BookOpen, Star } from "lucide-react";
-import { getNameById } from "@/data/names";
+import { getNameById, getDisplayNumber } from "@/data/names";
 import feelingsData from "@/data/feelings.json";
 import { useSemanticColors } from "@/hooks/useSemanticColors";
 
@@ -387,7 +387,7 @@ export default function AdvisorPage() {
                                 border: "1px solid rgba(217,191,140,0.2)",
                               }}
                             >
-                              {name.number}
+                              {getDisplayNumber(name.nameId) || name.number}
                             </div>
                           </div>
 
