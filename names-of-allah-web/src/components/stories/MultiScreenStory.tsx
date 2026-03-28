@@ -97,6 +97,7 @@ function GeometricRing({ radius, progress, delay }: { radius: number; progress: 
 function DesktopVisualPanel({
   nameArabic,
   nameTransliteration,
+  nameSubtitle,
   progress,
   currentScreen,
   totalScreens,
@@ -104,6 +105,7 @@ function DesktopVisualPanel({
 }: {
   nameArabic: string;
   nameTransliteration: string;
+  nameSubtitle: string;
   progress: number;
   currentScreen: number;
   totalScreens: number;
@@ -163,13 +165,22 @@ function DesktopVisualPanel({
           {nameArabic}
         </motion.p>
         <motion.p
-          className="text-lg font-serif mt-4"
+          className="text-2xl font-serif mt-4"
           style={{ color: "rgba(217,191,140,0.6)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
           {nameTransliteration}
+        </motion.p>
+        <motion.p
+          className="text-sm font-serif mt-2"
+          style={{ color: "rgba(217,191,140,0.4)" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+        >
+          {nameSubtitle}
         </motion.p>
       </motion.div>
 
@@ -339,6 +350,7 @@ export function MultiScreenStory({
           <DesktopVisualPanel
             nameArabic={finalReveal.nameArabic}
             nameTransliteration={finalReveal.nameTransliteration}
+            nameSubtitle={finalReveal.nameSubtitle}
             progress={progress}
             currentScreen={currentScreen}
             totalScreens={totalScreens}
