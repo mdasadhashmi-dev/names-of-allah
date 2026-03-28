@@ -174,7 +174,7 @@ function DesktopVisualPanel({
           {nameTransliteration}
         </motion.p>
         <motion.p
-          className="text-sm font-serif mt-2"
+          className="text-6xl xl:text-7xl font-serif mt-2"
           style={{ color: "rgba(217,191,140,0.4)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
