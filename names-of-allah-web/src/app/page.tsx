@@ -69,8 +69,10 @@ export default function WelcomePage() {
               className="text-sm font-serif italic max-w-md mx-auto mb-8"
               style={{ color: "var(--article-text-inline)" }}
             >
-              &ldquo;Allah has ninety-nine names, one hundred minus one. Whoever
-              counts them will enter Paradise.&rdquo;
+              <span className="block not-italic text-xs mb-1" style={{ color: "var(--article-text-inline)" }}>
+                Narrated Abu Huraira:
+              </span>
+              &ldquo;Allah&apos;s Messenger (ﷺ) said, &lsquo;Allah has ninety-nine Names, one-hundred less one; and he who memorized them all by heart will enter Paradise.&rsquo; To count something means to know it by heart.&rdquo;
               <span className="block mt-2 not-italic" style={{ color: "var(--article-text-inline)" }}>
                 — Sahih al-Bukhari 7392
               </span>
@@ -210,9 +212,11 @@ export default function WelcomePage() {
             variants={itemVariants}
             className="glass rounded-2xl p-6 mb-8 max-w-sm"
           >
+            <p className="text-xs font-serif mb-1" style={{ color: "var(--article-text-inline-muted)" }}>
+              Narrated Abu Huraira:
+            </p>
             <p className="font-serif text-base leading-relaxed italic" style={{ color: "var(--article-text-inline-muted)" }}>
-              &ldquo;Allah has ninety-nine names, one hundred minus one. Whoever
-              counts them will enter Paradise.&rdquo;
+              &ldquo;Allah&apos;s Messenger (ﷺ) said, &lsquo;Allah has ninety-nine Names, one-hundred less one; and he who memorized them all by heart will enter Paradise.&rsquo; To count something means to know it by heart.&rdquo;
             </p>
             <p className="text-sm mt-3 font-serif" style={{ color: "var(--article-accent-dim)" }}>
               — Sahih al-Bukhari 7392
