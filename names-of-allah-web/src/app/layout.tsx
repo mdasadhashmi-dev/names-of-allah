@@ -52,6 +52,13 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/icons/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -60,12 +67,21 @@ export const metadata: Metadata = {
     title: "Names of Allah — Learn the 99 Beautiful Names (Asma ul Husna)",
     description:
       "Discover the 99 Beautiful Names of Allah through interactive Quranic stories, authentic hadiths, personalised duas, and guided reflections.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Names of Allah — Learn the 99 Beautiful Names",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Names of Allah — Learn the 99 Beautiful Names (Asma ul Husna)",
     description:
       "Discover the 99 Beautiful Names of Allah through interactive Quranic stories, authentic hadiths, personalised duas, and guided reflections.",
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: SITE_URL,

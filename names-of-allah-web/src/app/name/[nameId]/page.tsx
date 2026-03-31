@@ -104,11 +104,20 @@ export async function generateMetadata({
       url: `${SITE_URL}/name/${nameId}`,
       type: "article",
       siteName: "Names of Allah",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${name.transliteration} (${name.arabic}) — ${name.meaning}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${name.transliteration} (${name.arabic}) — ${name.meaning}`,
       description,
+      images: ["/og-image.png"],
     },
     alternates: {
       canonical: `/name/${nameId}`,
@@ -295,8 +304,8 @@ export default async function NameSEOPage({
                 <span>{readingTime} min read</span>
               </div>
               <ShareButton
-                title={`${name.transliteration} — ${name.meaning}`}
-                text={`${name.transliteration} (${name.arabic}) — "${name.meaning}" | One of the 99 Beautiful Names of Allah`}
+                title={`${name.transliteration} (${name.arabic}) — ${name.meaning}`}
+                text={`${name.transliteration} (${name.arabic}) means "${name.meaning}" — Name #${displayNum} of the 99 Beautiful Names of Allah (Asma ul Husna).${name.quranicReference ? `\n\nQuranic reference: ${name.quranicReference}` : ""}\n\nLearn through interactive stories, authentic hadiths, and guided reflections.`}
                 url={`${SITE_URL}/name/${nameId}`}
               />
             </div>
