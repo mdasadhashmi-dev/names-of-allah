@@ -23,6 +23,7 @@ import {
   ScrollText,
 } from "lucide-react";
 import { ScrollProgressBar } from "@/components/shared/ScrollProgressBar";
+import { ShareButton } from "@/components/shared/ShareButton";
 
 function estimateReadingTime(
   name: AllahName,
@@ -287,10 +288,17 @@ export default async function NameSEOPage({
               </p>
             )}
 
-            {/* Reading time */}
-            <div className="inline-flex items-center gap-1.5 text-xs text-white/35 mt-4">
-              <Clock size={12} />
-              <span>{readingTime} min read</span>
+            {/* Reading time & Share */}
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <div className="inline-flex items-center gap-1.5 text-xs text-white/35">
+                <Clock size={12} />
+                <span>{readingTime} min read</span>
+              </div>
+              <ShareButton
+                title={`${name.transliteration} — ${name.meaning}`}
+                text={`${name.transliteration} (${name.arabic}) — "${name.meaning}" | One of the 99 Beautiful Names of Allah`}
+                url={`${SITE_URL}/name/${nameId}`}
+              />
             </div>
           </header>
 
