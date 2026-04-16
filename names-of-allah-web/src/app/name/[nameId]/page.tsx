@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getNameById, allNames, getDisplayNumber, type AllahName } from "@/data/names";
-import {
-  getExtendedLearning,
-  type ExtendedLearning,
-} from "@/data/extended-learning";
+import { type ExtendedLearning } from "@/data/extended-learning";
+import { getExtendedLearningAll as getExtendedLearning } from "@/data/extended-learning-all";
 import { getDuaForName, type NameDua } from "@/data/duas";
 import { getScholarlyExplanation } from "@/data/scholarly-explanations";
 import {

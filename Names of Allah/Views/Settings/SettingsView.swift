@@ -334,9 +334,9 @@ struct SettingsView: View {
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                InfoRow(label: "Total Names", value: "99", theme: themeManager)
-                InfoRow(label: "Stories", value: "99", theme: themeManager)
-                InfoRow(label: "Version", value: "1.0", theme: themeManager)
+                InfoRow(label: "Total Names", value: "\(AllahNamesDatabase.all.count)", theme: themeManager)
+                InfoRow(label: "Stories", value: "\(AllahNamesDatabase.activeNames.count)", theme: themeManager)
+                InfoRow(label: "Version", value: "1.1", theme: themeManager)
             }
             
             Divider()

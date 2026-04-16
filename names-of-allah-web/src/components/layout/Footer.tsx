@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { APP_VERSION, APP_STAGE, FEEDBACK_EMAIL } from "@/lib/constants";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -79,13 +80,22 @@ export function Footer() {
               attributes of Allah through Quranic stories, hadiths, and
               personal reflection.
             </p>
-            <Link
-              href="/settings"
-              className="text-sm"
-              style={{ color: "#C8A951" }}
-            >
-              Settings
-            </Link>
+            <div className="flex flex-col gap-2">
+              <Link
+                href="/settings"
+                className="text-sm"
+                style={{ color: "#C8A951" }}
+              >
+                Settings
+              </Link>
+              <a
+                href={`mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent("Feedback — Names of Allah App")}`}
+                className="text-sm"
+                style={{ color: "#C8A951" }}
+              >
+                Send Feedback
+              </a>
+            </div>
           </div>
         </div>
 
@@ -102,10 +112,22 @@ export function Footer() {
             reserved.
           </p>
           <p
-            className="text-xs"
+            className="text-xs flex items-center gap-2"
             style={{ color: "rgba(255,255,255,0.3)" }}
           >
-            Made with love for the Ummah
+            <span>Made with love for the Ummah</span>
+            <span style={{ color: "rgba(255,255,255,0.15)" }}>&middot;</span>
+            <span>v{APP_VERSION}</span>
+            <span
+              className="px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
+              style={{
+                background: "rgba(200, 169, 81, 0.15)",
+                color: "#C8A951",
+                border: "1px solid rgba(200, 169, 81, 0.25)",
+              }}
+            >
+              {APP_STAGE}
+            </span>
           </p>
         </div>
       </div>

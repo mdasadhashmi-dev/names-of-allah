@@ -223,19 +223,28 @@ struct WelcomeView: View {
                 .font(.system(size: 24))
                 .foregroundColor(goldColor.opacity(0.5))
             
+            Text("Narrated Abu Huraira:")
+                .font(.system(size: 12, weight: .regular, design: .serif))
+                .foregroundColor(goldColor.opacity(0.8))
+
             Text("The Prophet ﷺ said:")
                 .font(.system(size: 14, weight: .semibold, design: .serif))
                 .foregroundColor(goldColor)
                 .tracking(2)
-            
-            Text("\"Indeed, Allah has ninety-nine names; whoever ḥaṣiyahā (memorizes, learns, understands, and acts upon them) will enter Jannah.\"")
+
+            Text("\"Allah has ninety-nine Names, one-hundred less one; and he who memorized them all by heart will enter Paradise.\"")
                 .font(.system(size: 17, weight: .regular, design: .serif))
                 .foregroundColor(.white.opacity(0.9))
                 .multilineTextAlignment(.center)
                 .lineSpacing(8)
                 .fixedSize(horizontal: false, vertical: true)
-            
-            Text("— Sahih al-Bukhari & Muslim")
+
+            Text("To count something means to know it by heart.")
+                .font(.system(size: 14, weight: .light, design: .serif))
+                .foregroundColor(.white.opacity(0.7))
+                .italic()
+
+            Text("— Sahih al-Bukhari 7392")
                 .font(.system(size: 12, weight: .light, design: .serif))
                 .foregroundColor(.white.opacity(0.5))
                 .italic()

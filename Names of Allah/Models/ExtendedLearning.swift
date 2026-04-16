@@ -42,10 +42,13 @@ struct DuaReference: Identifiable {
 class ExtendedLearningDatabase {
     static let shared = ExtendedLearningDatabase()
     
-    private var learningContent: [String: ExtendedLearning] = [:]
+    var learningContent: [String: ExtendedLearning] = [:]
     
     init() {
         populateContent()
+        populateBatch1()
+        populateBatch2()
+        populateBatch3()
     }
     
     func getContent(for nameId: String) -> ExtendedLearning? {

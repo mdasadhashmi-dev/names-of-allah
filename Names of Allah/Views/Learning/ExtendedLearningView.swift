@@ -14,6 +14,7 @@ struct ExtendedLearningView: View {
     enum LearningTab: String, CaseIterable {
         case hadiths = "Hadiths"
         case insights = "Scholars"
+        case scholarly = "as-Sa'di"
         case practical = "Practice"
         case duas = "Du'as"
     }
@@ -44,6 +45,8 @@ struct ExtendedLearningView: View {
                                 hadithsSection(content.hadiths)
                             case .insights:
                                 insightsSection(content.scholarlyInsights)
+                            case .scholarly:
+                                scholarlySection
                             case .practical:
                                 practicalSection(content.realLifeApplications)
                             case .duas:
@@ -274,6 +277,86 @@ struct ExtendedLearningView: View {
         }
     }
     
+    // MARK: - Scholarly Section (as-Sa'di)
+    @ViewBuilder
+    private var scholarlySection: some View {
+        if let explanation = ScholarlyExplanationsDatabase.getExplanation(for: nameId) {
+            VStack(alignment: .leading, spacing: 16) {
+                HStack(spacing: 8) {
+                    Image(systemName: "book.closed.fill")
+                        .font(.system(size: 16))
+                        .foregroundColor(.appGold)
+                    Text("Shaykh as-Sa'di (d.1376H)")
+                        .font(.system(size: 18, weight: .semibold, design: .serif))
+                        .foregroundColor(.white)
+                }
+
+                Divider().background(Color.white.opacity(0.2))
+
+                Text(explanation.explanation)
+                    .font(.system(size: 15, weight: .regular, design: .serif))
+                    .foregroundColor(.white.opacity(0.9))
+                    .lineSpacing(7)
+
+                if !explanation.quranicVerses.isEmpty {
+                    ForEach(Array(explanation.quranicVerses.enumerated()), id: \.offset) { _, verse in
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("\"\(verse.text)\"")
+                                .font(.system(size: 14, weight: .regular, design: .serif))
+                                .foregroundColor(.white.opacity(0.85))
+                                .lineSpacing(5)
+                                .italic()
+                            Text("— \(verse.reference)")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.appGold.opacity(0.7))
+                        }
+                        .padding(14)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.appGold.opacity(0.08))
+                        )
+                    }
+                }
+
+                if let grouped = explanation.groupedWith, !grouped.isEmpty {
+                    HStack(spacing: 6) {
+                        Image(systemName: "link")
+                            .font(.system(size: 11))
+                        Text("Also see: \(grouped.joined(separator: ", "))")
+                            .font(.system(size: 12, weight: .light))
+                    }
+                    .foregroundColor(.white.opacity(0.5))
+                }
+
+                Text(explanation.source)
+                    .font(.system(size: 11, weight: .light))
+                    .foregroundColor(.white.opacity(0.4))
+                    .padding(.top, 4)
+            }
+            .padding(20)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.white.opacity(0.05))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.appGold.opacity(0.2), lineWidth: 1)
+                    )
+            )
+        } else {
+            VStack(spacing: 12) {
+                Image(systemName: "book.closed")
+                    .font(.system(size: 40))
+                    .foregroundColor(.white.opacity(0.3))
+                Text("Scholarly explanation\nnot yet available for this name")
+                    .font(.system(size: 14, weight: .light))
+                    .foregroundColor(.white.opacity(0.5))
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 40)
+        }
+    }
+
     // MARK: - Practical Section
     @ViewBuilder
     private func practicalSection(_ applications: [String]) -> some View {

@@ -112,6 +112,10 @@ struct CinematicView: View {
             case "al-afuw": AlAfuwStoryView()
             case "al-mujeeb": AlMujeebStoryView()
             case "as-sabur": AsSaburStoryView()
+            case "al-haafiz": AlHaafizStoryView()
+            case "al-mubeen": AlMubeenStoryView()
+            case "al-qaahir": AlQaahirStoryView()
+            case "al-qadeer": AlQadeerStoryView()
             case "al-fattah": SeaPartingView()
                 
                 // Skip button overlay (only for continuous animations)
@@ -166,8 +170,20 @@ struct CinematicView: View {
                 AlHakimReflectionView()
             case "al-fattah":
                 ReflectionView()
+            case "al-haafiz":
+                if let name = AllahNamesDatabase.getName(byId: "al-haafiz") { BaseReflectionView(allahName: name) }
+            case "al-mubeen":
+                if let name = AllahNamesDatabase.getName(byId: "al-mubeen") { BaseReflectionView(allahName: name) }
+            case "al-qaahir":
+                if let name = AllahNamesDatabase.getName(byId: "al-qaahir") { BaseReflectionView(allahName: name) }
+            case "al-qadeer":
+                if let name = AllahNamesDatabase.getName(byId: "al-qadeer") { BaseReflectionView(allahName: name) }
             default:
-                Text("Reflection not found")
+                if let name = AllahNamesDatabase.getName(byId: nameId) {
+                    BaseReflectionView(allahName: name)
+                } else {
+                    Text("Reflection not found")
+                }
             }
         }
     }

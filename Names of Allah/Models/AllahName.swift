@@ -1240,8 +1240,57 @@ struct AllahNamesDatabase {
             audioFileName: "fatir-35-30",
             reflectionQuestion: "What small act of worship did Ash-Shakoor multiply beyond measure?"
         ),
+        // Additional verified names
+        AllahName(
+            number: 100,
+            arabic: "ٱلْحَافِظُ",
+            transliteration: "Al-Haafiz",
+            meaning: "The Preserver",
+            nameId: "al-haafiz",
+            hasContent: true,
+            storyTitle: "The Preserver of the Quran",
+            quranicReference: "Surah Al-Hijr 15:9",
+            audioFileName: "al-hijr-15-9",
+            reflectionQuestion: "Al-Haafiz preserves what He wills — what in your life has He been quietly guarding all along?"
+        ),
+        AllahName(
+            number: 101,
+            arabic: "ٱلْمُبِينُ",
+            transliteration: "Al-Mubeen",
+            meaning: "The Clear, The Manifest",
+            nameId: "al-mubeen",
+            hasContent: true,
+            storyTitle: "The Manifest Truth",
+            quranicReference: "Surah An-Nur 24:25",
+            audioFileName: "an-nur-24-25",
+            reflectionQuestion: "Al-Mubeen makes everything clear — what truth is He making clear to you that you have been avoiding?"
+        ),
+        AllahName(
+            number: 102,
+            arabic: "ٱلْقَاهِرُ",
+            transliteration: "Al-Qaahir",
+            meaning: "The Irresistible Subduer",
+            nameId: "al-qaahir",
+            hasContent: true,
+            storyTitle: "The Fall of Fir'awn",
+            quranicReference: "Surah Al-An'am 6:18",
+            audioFileName: "al-anam-6-18",
+            reflectionQuestion: "Al-Qaahir subdues every tyrant — how does this comfort you when you see injustice in the world?"
+        ),
+        AllahName(
+            number: 103,
+            arabic: "ٱلْقَدِيرُ",
+            transliteration: "Al-Qadeer",
+            meaning: "The All-Powerful",
+            nameId: "al-qadeer",
+            hasContent: true,
+            storyTitle: "The Impossible Made Easy",
+            quranicReference: "Surah Al-Qiyamah 75:40",
+            audioFileName: "al-qiyamah-75-40",
+            reflectionQuestion: "Al-Qadeer has power over all things — what 'impossible' situation are you bringing to Him today?"
+        ),
     ]
-    
+
     // Helper methods
     static func getName(byId id: String) -> AllahName? {
         return all.first { $0.nameId == id }

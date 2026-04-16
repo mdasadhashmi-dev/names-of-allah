@@ -17,6 +17,7 @@ struct NamesListView: View {
     @State private var searchText = ""
     @State private var showOnboarding = false
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+    @AppStorage("nameViewMode") private var nameViewMode: String = "story" // "story" or "text"
     
     // Onboarding highlight frames
     @State private var highlightFrames: [OnboardingHighlightTarget: CGRect] = [:]
@@ -97,6 +98,47 @@ struct NamesListView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 20)
                 
+                // Story/Text toggle
+                HStack(spacing: 0) {
+                    Button(action: { withAnimation(.easeInOut(duration: 0.2)) { nameViewMode = "story" } }) {
+                        HStack(spacing: 6) {
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 14))
+                            Text("Story")
+                                .font(.system(size: 14, weight: .medium))
+                        }
+                        .foregroundColor(nameViewMode == "story" ? Color(red: 0.05, green: 0.05, blue: 0.1) : .white.opacity(0.6))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(nameViewMode == "story" ? Color.appGold : Color.clear)
+                        )
+                    }
+
+                    Button(action: { withAnimation(.easeInOut(duration: 0.2)) { nameViewMode = "text" } }) {
+                        HStack(spacing: 6) {
+                            Image(systemName: "doc.text.fill")
+                                .font(.system(size: 14))
+                            Text("Text")
+                                .font(.system(size: 14, weight: .medium))
+                        }
+                        .foregroundColor(nameViewMode == "text" ? Color(red: 0.05, green: 0.05, blue: 0.1) : .white.opacity(0.6))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(nameViewMode == "text" ? Color.appGold : Color.clear)
+                        )
+                    }
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.white.opacity(0.08))
+                )
+                .padding(.horizontal, 20)
+                .padding(.bottom, 8)
+
                 ScrollView {
                     LazyVStack(spacing: 12) {
                         ForEach(Array(filteredNames.enumerated()), id: \.element.id) { index, name in
@@ -144,13 +186,19 @@ struct NamesListView: View {
                                 }) {
                                     Label("View Calligraphy", systemImage: "paintbrush.pointed.fill")
                                 }
-                                
+
                                 if name.hasContent {
                                     Button(action: {
                                         selectedNameId = name.nameId
                                     }) {
                                         Label("Learn Story", systemImage: "book.fill")
                                     }
+                                }
+
+                                Button(action: {
+                                    shareNameText(name)
+                                }) {
+                                    Label("Share", systemImage: "square.and.arrow.up")
                                 }
                             }
                             .opacity(name.hasContent ? 1.0 : 0.6)
@@ -216,7 +264,11 @@ struct NamesListView: View {
             view.searchable(text: $searchText, prompt: "Search by name or meaning")
         }
         .navigationDestination(item: $selectedNameId) { nameId in
-            CinematicView(nameId: nameId)
+            if nameViewMode == "text" {
+                NameDetailView(nameId: nameId)
+            } else {
+                CinematicView(nameId: nameId)
+            }
         }
         .sheet(isPresented: $showingSettings) {
             NavigationStack {
@@ -234,6 +286,24 @@ struct NamesListView: View {
                 CalligraphyView(name: name)
             }
         }
+    }
+
+    private func shareNameText(_ name: AllahName) {
+        var text = "\(name.arabic) — \(name.transliteration)\n"
+        text += "\"\(name.meaning)\"\n\n"
+        if let ref = name.quranicReference { text += "\(ref)\n\n" }
+        if let question = name.reflectionQuestion { text += "Reflect: \(question)\n\n" }
+        text += "From the 99 Names of Allah app"
+
+        let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootVC = windowScene.windows.first?.rootViewController else { return }
+        if let popover = activityVC.popoverPresentationController {
+            popover.sourceView = rootVC.view
+            popover.sourceRect = CGRect(x: rootVC.view.bounds.midX, y: rootVC.view.bounds.midY, width: 0, height: 0)
+            popover.permittedArrowDirections = []
+        }
+        rootVC.present(activityVC, animated: true)
     }
 }
 

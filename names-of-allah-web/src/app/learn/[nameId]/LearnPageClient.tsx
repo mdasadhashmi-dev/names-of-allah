@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { BookOpen, Quote, Lightbulb, Heart, HandHeart, ExternalLink } from "lucide-react";
 import { getNameById } from "@/data/names";
-import { getExtendedLearning } from "@/data/extended-learning";
+import { getExtendedLearningAll as getExtendedLearning } from "@/data/extended-learning-all";
 
 const SECTIONS = [
   { id: "hadiths", label: "Prophetic Traditions", icon: Quote },

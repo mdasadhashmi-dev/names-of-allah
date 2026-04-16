@@ -14,6 +14,11 @@ export {
   type FontSize,
 } from "./tokens";
 
+/* ---- App metadata ---- */
+export const APP_VERSION = "0.1.0";
+export const APP_STAGE = "BETA";
+export const FEEDBACK_EMAIL = "feedback@namesofallah.app";
+
 /** @deprecated Use token system instead. Kept for backward compat. */
 export const colors = {
   appGold: "rgb(184, 149, 106)",

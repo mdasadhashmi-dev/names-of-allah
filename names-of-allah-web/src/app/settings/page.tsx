@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Sun, Moon, Monitor, Palette, Type, Database, Layout, Sparkles } from "lucide-react";
+import { Sun, Moon, Monitor, Palette, Type, Database, Layout, Sparkles, Info, Mail } from "lucide-react";
+import { APP_VERSION, APP_STAGE, FEEDBACK_EMAIL } from "@/lib/constants";
 import { useTheme } from "@/providers/ThemeProvider";
 import { useLayout, type LayoutMode } from "@/providers/LayoutProvider";
 import { useSemanticColors } from "@/hooks/useSemanticColors";
@@ -32,6 +33,7 @@ const settingsCategories = [
   { key: "appearance", label: "Appearance", icon: Palette },
   { key: "typography", label: "Typography", icon: Type },
   { key: "data", label: "Data", icon: Database },
+  { key: "about", label: "About", icon: Info },
 ];
 
 const layoutModeOptions: { key: LayoutMode; label: string; description: string; icon: React.ReactNode }[] = [
@@ -273,6 +275,89 @@ export default function SettingsPage() {
                     >
                       Reset Quiz Progress
                     </button>
+                  </div>
+                </section>
+              </motion.div>
+            )}
+
+            {/* About */}
+            {activeCategory === "about" && (
+              <motion.div
+                key="about"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25 }}
+                className="space-y-6"
+              >
+                {/* App info card */}
+                <div
+                  className="rounded-2xl p-6 flex items-center gap-4"
+                  style={styles.inactiveBg}
+                >
+                  <img
+                    src="/logo.svg"
+                    alt="Names of Allah"
+                    className="w-14 h-14 object-contain"
+                  />
+                  <div>
+                    <h2 className="text-lg font-semibold" style={styles.text}>
+                      Names of Allah
+                    </h2>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-sm" style={styles.textMuted}>
+                        Version {APP_VERSION}
+                      </span>
+                      <span
+                        className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider"
+                        style={{
+                          background: "var(--article-btn-bg)",
+                          color: "var(--article-accent)",
+                          border: "1px solid var(--article-cta-border)",
+                        }}
+                      >
+                        {APP_STAGE}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <div
+                  className="rounded-2xl p-5"
+                  style={styles.inactiveBg}
+                >
+                  <p className="text-sm font-serif leading-relaxed" style={styles.textMuted}>
+                    An interactive platform for learning and reflecting on the 99
+                    Beautiful Names of Allah through Quranic stories, hadiths, scholarly
+                    insights, and personal reflection. Built with love for the Ummah.
+                  </p>
+                </div>
+
+                {/* Feedback */}
+                <section>
+                  <h2 className="text-sm font-medium uppercase tracking-wider mb-4" style={styles.textSubtle}>
+                    Feedback
+                  </h2>
+                  <div
+                    className="rounded-2xl p-5"
+                    style={styles.inactiveBg}
+                  >
+                    <p className="text-sm mb-4" style={styles.textMuted}>
+                      This app is in beta. Your feedback helps us improve the
+                      experience for everyone. Let us know what you think!
+                    </p>
+                    <a
+                      href={`mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent("Feedback — Names of Allah App")}`}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all"
+                      style={{
+                        background: "var(--article-btn-bg)",
+                        color: "var(--article-accent)",
+                        border: "1px solid var(--article-btn-border)",
+                      }}
+                    >
+                      <Mail size={15} />
+                      Send Feedback
+                    </a>
                   </div>
                 </section>
               </motion.div>
