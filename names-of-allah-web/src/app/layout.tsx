@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { LayoutProvider } from "@/providers/LayoutProvider";
 import { LayoutShellSwitch } from "@/components/layout/LayoutShellSwitch";
@@ -144,6 +146,8 @@ export default function RootLayout({
             <LayoutShellSwitch>{children}</LayoutShellSwitch>
           </LayoutProvider>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
