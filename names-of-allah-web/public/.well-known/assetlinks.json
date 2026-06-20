@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.namesofallah.twa",
+      "sha256_cert_fingerprints": [
+        "91:9F:16:59:BF:5E:A9:CB:8F:ED:91:25:84:17:05:16:E9:48:F5:53:4A:5D:CE:C9:33:96:F5:0D:17:F1:C2:13"
+      ]
+    }
+  }
+]
